@@ -1,27 +1,17 @@
 # Ngày mai, mình sẽ…
 
-Vietnamese storytelling application implemented from the v1.0 handoff. Next.js App Router, TypeScript, static export, 12 chapters and all 55 scenes. Text-first editorial design; draft disclosures remain visible throughout.
+Vietnamese interactive history notebook, implemented from `Ngay_Mai_Minh_Se_Requirements_Implementation_Agent_Handoff.md`.
 
-## Run
+Five complete episodes with original explanatory SVG art: Kim Đồng, collective famine relief, transport bicycles, Phương Đông 1 and the Côn Đảo radio. Each has a different interaction, original narration, historical outcome, course bridge, source drawer and replay. Local progress resumes after reload. No accounts, tracking, audio or backend.
 
-Node 22: `npm ci`, `npm run dev`.
+## Development
 
-Checks: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
+Node 22. `npm ci`, `npm run dev`.
 
-GitHub Pages preview uses `/ngay-mai-minh-se` as its base path. For root hosting leave `NEXT_PUBLIC_BASE_PATH` unset. CI stores the static export as a Pages artifact; rerun an earlier successful workflow commit to roll back.
+`npm run lint`, `npm run typecheck`, `npm test`, `npm run build`.
 
-## Content and release
+GitHub Pages: `NEXT_PUBLIC_BASE_PATH=/ngay-mai-minh-se npm run build`; publish `out/` using the included Actions workflow.
 
-Narration/dialogue are read verbatim from `content/story_manifest.v1.json`. Source documents are retained locally and excluded from the public repository. No historical photos or audio have cleared rights; none are distributed. Sources page reports pending reviews without inventing citations. No trackers, backend or cloud reflection storage.
+Browser verification: install Playwright/Chromium separately, then `REVIEW_URL=http://localhost:3000 node qa/game-check.mjs` (include the base path in REVIEW_URL when configured).
 
-`npm run release:verify` intentionally fails for the supplied draft. Editorial, historical, media-rights and release-owner approval must be completed before a production release. This implementation is a draft technical preview.
-
-## Remaining work
-
-Qualified historical review and claim/source mapping; licensed media and recorded narration; expanded synchronized timeline treatment; browser E2E, accessibility, device and performance audit. Current checks validate content integrity, TypeScript, lint and static export; they do not establish production readiness.
-
-## Typography and UI revision
-
-Self-hosted Be Vietnam Pro and Noto Serif (SIL OFL licenses in `public/fonts`) include every Vietnamese letter used by the manuscript. Next.js emits hashed WOFF2 font URLs for static hosting; no runtime Google Fonts request. Natural letter spacing, complete normal/italic faces, and no synthetic styles. Custom SVG window illustration is symbolic original artwork, not historical evidence.
-
-Visual checks: Chromium screenshots at 320, 390 and 1440px; homepage, contents and chapters 07/08 tested at 320, 390, 768 and 1440px for font loading and horizontal overflow. `qa/visual-check.mjs` records the browser checks (requires Playwright and Chromium; set REVIEW_URL to target another host).
+See [IMPLEMENTATION.md](IMPLEMENTATION.md) for scope, evidence, uncertainties, original asset attribution and verification. Earlier fixed-manuscript documents/data are retained for reference; the new handoff supersedes them. No external approval roles or unavailable-media gates are imposed.

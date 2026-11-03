@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test": "tsx --test scripts/content.test.ts",
     "content:validate": "tsx scripts/validate.ts",
-    "release:verify": "RELEASE_MODE=production tsx scripts/validate.ts"
+    "release:verify": "npm run content:validate && npm run typecheck && npm test"
   },
   "dependencies": {
     "next": "^15.5.0",

@@ -1,4 +1,4 @@
-name: Draft preview on Pages
+name: Interactive notebook on Pages
 on:
   push:
     branches: [main]
