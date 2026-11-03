@@ -1,0 +1,1 @@
+import raw from '../../content/story_manifest.v1.json'; import index from '../../content/chapters.v1.json'; import { ScriptManifestSchema } from './schema'; export const story = ScriptManifestSchema.parse(raw); export const chapters = index.chapters; export const href = (slug:string) => `/story/chapter/${slug}/`;

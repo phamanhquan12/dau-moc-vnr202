@@ -1,0 +1,1 @@
+import { FlatCompat } from '@eslint/eslintrc'; const compat = new FlatCompat({baseDirectory:import.meta.dirname}); export default [...compat.extends('next/core-web-vitals','next/typescript'),{ignores:['out/**','.next/**','Ngay_Mai_Minh_Se_Developer_Handoff_Full_v1.0/**']}];

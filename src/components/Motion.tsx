@@ -1,0 +1,3 @@
+"use client";
+import {useEffect} from 'react';import {gsap} from 'gsap';import {ScrollTrigger} from 'gsap/ScrollTrigger';
+export default function Motion(){useEffect(()=>{gsap.registerPlugin(ScrollTrigger);const media=gsap.matchMedia();media.add('(prefers-reduced-motion: no-preference)',()=>{if(document.documentElement.dataset.motion==='true'||document.documentElement.dataset.reader==='true')return;gsap.utils.toArray<HTMLElement>('.scene h2').forEach(el=>{gsap.fromTo(el,{y:10},{y:0,duration:0.7,scrollTrigger:{trigger:el,start:'top 90%',once:true}})});});return ()=>media.revert()},[]);return null}

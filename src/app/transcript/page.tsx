@@ -1,0 +1,1 @@
+import {story} from '../../lib/content';import Scene from '../../components/Scene';export default function Transcript(){return <div className="reading"><p className="eyebrow">BẢN ĐỌC ĐẦY ĐỦ</p><h1>55 lát cắt.<br/><em>Một câu chuyện.</em></h1>{story.scenes.map(s=><Scene key={s.id} scene={s}/>)}</div>}
