@@ -111,11 +111,9 @@ test("mobile play, direct routes, search without accents and honest image fallba
   await page.locator(".options button").first().click();
   await page.getByRole("button", { name: "Chốt đáp án" }).click();
   await expect(page.locator(".feedback")).toBeVisible();
-  await page.goto("./#profile/duong-kach-menh");
+  await page.goto("./#profile/giai-phong");
   await expect(page.getByText("Tư liệu ảnh chưa được tích hợp")).toBeVisible();
-  expect((await snapshot(page)).progress.seenEventIds).toContain(
-    "duong-kach-menh",
-  );
+  expect((await snapshot(page)).progress.seenEventIds).toContain("giai-phong");
   await page.getByRole("link", { name: "Hồ sơ tư liệu", exact: true }).click();
   await page.getByLabel("Tìm kiếm", { exact: true }).fill("Doi moi");
   await expect(
@@ -219,4 +217,80 @@ test("visual routes desktop/projector/mobile/360, all five shared time bands and
   }
   expect(errors).toEqual([]);
   expect(assets).toEqual([]);
+});
+
+test("all 26 profiles expose specific source passages and all five historical images load on desktop and mobile", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  for (const event of data.events) {
+    await page.goto(`./#profile/${event.id}`);
+    const primary = data.sources.find((s) => s.id === event.sourceId)!;
+    await expect(
+      page.locator(".source-note").first().getByRole("link").first(),
+    ).toHaveAttribute("href", primary.url!);
+    await expect(page.locator(".source-note").first()).toContainText(
+      primary.supports!,
+    );
+    await expect(
+      page.getByText("Tham chiếu cấp chương; chưa xác minh trang."),
+    ).toHaveCount(0);
+  }
+  for (const width of [1440, 360]) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const event of data.events.filter((e) =>
+      ["tours", "doc-lap", "dien-bien", "duong-kach-menh", "paris"].includes(
+        e.id,
+      ),
+    )) {
+      await page.goto(`./#profile/${event.id}`);
+      const img = page.locator(".image-evidence img");
+      await img.scrollIntoViewIfNeeded();
+      await expect
+        .poll(() =>
+          img.evaluate(
+            (el: HTMLImageElement) => el.complete && el.naturalWidth > 0,
+          ),
+        )
+        .toBe(true);
+      await expect(page.locator(".image-license")).toBeVisible();
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth > innerWidth,
+        ),
+      ).toBe(false);
+      if (["tours", "duong-kach-menh"].includes(event.id))
+        await page.screenshot({
+          path: `screenshots/${width}-profile-${event.id}.png`,
+          fullPage: true,
+        });
+    }
+  }
+  expect(errors).toEqual([]);
+});
+
+test("image catalogue has complete credits and unanswered date quiz does not expose source or photo", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto("./#materials");
+  await expect(page.locator(".media-catalog .image-evidence img")).toHaveCount(
+    5,
+  );
+  await expect(page.locator(".media-catalog .image-license")).toHaveCount(5);
+  await expect(page.locator(".media-catalog .image-placeholder")).toHaveCount(
+    1,
+  );
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth > innerWidth,
+    ),
+  ).toBe(false);
+  await page.goto("./#quiz");
+  await page.getByRole("button", { name: "Bắt đầu lượt", exact: true }).click();
+  await expect(page.locator(".source-note, .image-evidence")).toHaveCount(0);
+  await page.locator(".options button").first().click();
+  await page.getByRole("button", { name: "Chốt đáp án" }).click();
+  await expect(page.locator(".source-note").first()).toBeVisible();
 });

@@ -13,6 +13,7 @@ export type EventRecord = {
   datePrecision: "year" | "month" | "day";
   displayDate: string;
   sourceId: string;
+  additionalSourceIds?: string[];
   imageId: string | null;
 };
 export type Question = {
@@ -35,6 +36,13 @@ export type Source = {
   page: number | null;
   url: string | null;
   reviewStatus: string;
+  pageEnd?: number;
+  pdfPage?: number;
+  pdfPageEnd?: number;
+  publisher?: string;
+  checkedAt?: string;
+  supports?: string;
+  caveat?: string;
 };
 export type ImageRecord = {
   id: string;
@@ -45,6 +53,10 @@ export type ImageRecord = {
   localPath: string | null;
   licenseStatus: string;
   usageNote: string;
+  license?: string;
+  licenseUrl?: string;
+  originalUrl?: string;
+  checkedAt?: string;
 };
 export type Content = {
   schemaVersion: number;

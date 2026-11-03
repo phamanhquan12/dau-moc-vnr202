@@ -1,55 +1,467 @@
 {
   "schemaVersion": 1,
-  "contentStatus": "starter-content-requires-academic-review",
+  "contentStatus": "source-grounded-passages-checked-not-academic-signoff",
   "sources": [
     {
-      "id": "textbook-2019-ch1",
-      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (2019)",
+      "id": "textbook-2019-tours",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
       "chapter": 1,
-      "locator": "Chương 1",
-      "page": null,
-      "url": null,
-      "reviewStatus": "chapter-reference-only"
+      "locator": "Chương 1 · Bước ngoặt ở Đại hội Tours",
+      "page": 22,
+      "pageEnd": 22,
+      "pdfPage": 23,
+      "pdfPageEnd": 23,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=23",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Nguyễn Ái Quốc tán thành Quốc tế III và tham gia sáng lập Đảng Cộng sản Pháp. Đánh dấu bước chuyển từ chủ nghĩa yêu nước đến chủ nghĩa cộng sản."
     },
     {
-      "id": "textbook-2019-ch2",
-      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (2019)",
+      "id": "textbook-2019-thanh-nien",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 1,
+      "locator": "Chương 1 · Chuẩn bị lực lượng cách mạng",
+      "page": 24,
+      "pageEnd": 25,
+      "pdfPage": 25,
+      "pdfPageEnd": 26,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=25",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Nguyễn Ái Quốc thành lập Hội Việt Nam Cách mạng Thanh niên. Đào tạo cán bộ và chuẩn bị tổ chức cho sự ra đời của Đảng."
+    },
+    {
+      "id": "textbook-2019-duong-kach-menh",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 1,
+      "locator": "Chương 1 · Đường Kách mệnh",
+      "page": 25,
+      "pageEnd": 25,
+      "pdfPage": 26,
+      "pdfPageEnd": 26,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=26",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Tập hợp các bài giảng của Nguyễn Ái Quốc thành tác phẩm Đường Kách mệnh. Góp phần chuẩn bị tư tưởng, chính trị và tổ chức cho cách mạng.",
+      "caveat": "Mốc 1927 thuộc tác phẩm; ảnh hiện vật bên trên được chụp năm 2017."
+    },
+    {
+      "id": "textbook-2019-thanh-lap-dang",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 1,
+      "locator": "Chương 1 · Đảng ra đời, Cương lĩnh đầu tiên",
+      "page": 27,
+      "pageEnd": 31,
+      "pdfPage": 28,
+      "pdfPageEnd": 32,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=28",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Hội nghị do Nguyễn Ái Quốc chủ trì hợp nhất các tổ chức và thông qua Cương lĩnh đầu tiên. Tạo sự thống nhất lãnh đạo và định hướng giải phóng dân tộc.",
+      "caveat": "03/02 là ngày kỷ niệm thành lập Đảng. Giáo trình ghi hội nghị diễn ra từ 06/01 đến 07/02/1930; không quy cả quá trình hợp nhất vào một ngày."
+    },
+    {
+      "id": "textbook-2019-dan-chu",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 1,
+      "locator": "Chương 1 · Phong trào dân chủ 1936–1939",
+      "page": 38,
+      "pageEnd": 42,
+      "pdfPage": 39,
+      "pdfPageEnd": 43,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=39",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Kết hợp các hình thức hợp pháp, nửa hợp pháp, đòi dân sinh và dân chủ. Mở rộng tập hợp quần chúng, tích lũy kinh nghiệm tổ chức đấu tranh."
+    },
+    {
+      "id": "textbook-2019-viet-minh",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 1,
+      "locator": "Chương 1 · Đặt giải phóng dân tộc lên hàng đầu",
+      "page": 43,
+      "pageEnd": 47,
+      "pdfPage": 44,
+      "pdfPageEnd": 48,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=44",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Hội nghị Trung ương 8 hoàn chỉnh chuyển hướng chiến lược; thành lập Mặt trận Việt Minh. Mở rộng đoàn kết và chuẩn bị cho khởi nghĩa giành chính quyền."
+    },
+    {
+      "id": "textbook-2019-thang-tam",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 1,
+      "locator": "Chương 1 · Tổng khởi nghĩa Tháng Tám",
+      "page": 52,
+      "pageEnd": 54,
+      "pdfPage": 53,
+      "pdfPageEnd": 55,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=53",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Lãnh đạo toàn dân tổng khởi nghĩa giành chính quyền. Chính quyền về tay nhân dân ở nhiều địa phương và trên phạm vi cả nước."
+    },
+    {
+      "id": "textbook-2019-doc-lap",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 1,
+      "locator": "Chương 1 · Ngày khai sinh một nhà nước mới",
+      "page": 55,
+      "pageEnd": 55,
+      "pdfPage": 56,
+      "pdfPageEnd": 56,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=56",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập. Nước Việt Nam Dân chủ Cộng hòa ra đời."
+    },
+    {
+      "id": "textbook-2019-khang-chien",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
       "chapter": 2,
-      "locator": "Chương 2",
-      "page": null,
-      "url": null,
-      "reviewStatus": "chapter-reference-only"
+      "locator": "Chương 2 · Toàn quốc kháng chiến",
+      "page": 70,
+      "pageEnd": 72,
+      "pdfPage": 71,
+      "pdfPageEnd": 73,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=71",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Phát động toàn quốc kháng chiến, bảo vệ độc lập. Cuộc kháng chiến chống Pháp phát triển trên phạm vi cả nước."
     },
     {
-      "id": "textbook-2019-ch3",
-      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (2019)",
+      "id": "textbook-2019-dai-hoi-ii",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Đại hội II của Đảng",
+      "page": 76,
+      "pageEnd": 79,
+      "pdfPage": 77,
+      "pdfPageEnd": 80,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=77",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Đảng hoạt động công khai với tên Đảng Lao động Việt Nam. Tăng cường sự lãnh đạo và sức mạnh tổ chức trong kháng chiến."
+    },
+    {
+      "id": "textbook-2019-dien-bien",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Điện Biên Phủ: bước ngoặt quyết định",
+      "page": 81,
+      "pageEnd": 83,
+      "pdfPage": 82,
+      "pdfPageEnd": 84,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=82",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Tập trung sức mạnh cho trận quyết chiến chiến lược Điện Biên Phủ. Tạo cơ sở quân sự quan trọng cho giải pháp ngoại giao tại Giơnevơ."
+    },
+    {
+      "id": "textbook-2019-geneva",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Giơnevơ và cục diện hai miền",
+      "page": 83,
+      "pageEnd": 83,
+      "pdfPage": 84,
+      "pdfPageEnd": 84,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=84",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Hiệp định Giơnevơ về Đông Dương được ký kết. Miền Bắc được giải phóng; đất nước tạm thời chia cắt, thống nhất chưa hoàn thành."
+    },
+    {
+      "id": "textbook-2019-nghi-quyet-15",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Nghị quyết 15: mở hướng đấu tranh",
+      "page": 91,
+      "pageEnd": 91,
+      "pdfPage": 92,
+      "pdfPageEnd": 92,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=92",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Kết hợp đấu tranh chính trị với đấu tranh vũ trang. Tạo định hướng cho sự phát triển của phong trào cách mạng miền Nam."
+    },
+    {
+      "id": "textbook-2019-dong-khoi",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Đồng khởi Bến Tre",
+      "page": 92,
+      "pageEnd": 92,
+      "pdfPage": 93,
+      "pdfPageEnd": 93,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=93",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Kết hợp nổi dậy của quần chúng với lực lượng vũ trang. Góp phần chuyển cách mạng miền Nam sang thế tiến công."
+    },
+    {
+      "id": "textbook-2019-dai-hoi-iii",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Hai chiến lược, một mục tiêu",
+      "page": 93,
+      "pageEnd": 95,
+      "pdfPage": 94,
+      "pdfPageEnd": 96,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=94",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Đại hội III xác định hai nhiệm vụ chiến lược cách mạng ở hai miền. Kết hợp sức mạnh hậu phương và tiền tuyến vì thống nhất đất nước."
+    },
+    {
+      "id": "textbook-2019-mau-than",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Tổng tiến công và nổi dậy Tết Mậu Thân",
+      "page": 105,
+      "pageEnd": 106,
+      "pdfPage": 106,
+      "pdfPageEnd": 107,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=106",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Tiến công và nổi dậy trên nhiều địa bàn trong dịp Tết Mậu Thân. Tác động mạnh tới cục diện chiến tranh và quá trình đàm phán; có tổn thất và hạn chế.",
+      "caveat": "Cần đọc cả đánh giá về tác động chiến lược và những tổn thất, hạn chế ở trang in 106."
+    },
+    {
+      "id": "textbook-2019-dien-bien-tren-khong",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Bảo vệ bầu trời miền Bắc",
+      "page": 107,
+      "pageEnd": 107,
+      "pdfPage": 108,
+      "pdfPageEnd": 108,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=108",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Quân và dân miền Bắc tổ chức chiến đấu bảo vệ các địa bàn trọng yếu. Thắng lợi góp phần buộc Mỹ ký Hiệp định Paris.",
+      "caveat": "Thắng lợi tháng 12/1972 nằm trong quá trình đấu tranh quân sự, chính trị và ngoại giao; không coi đây là nguyên nhân duy nhất của Hiệp định Paris."
+    },
+    {
+      "id": "textbook-2019-paris",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Hiệp định Paris",
+      "page": 110,
+      "pageEnd": 111,
+      "pdfPage": 111,
+      "pdfPageEnd": 112,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=111",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Ký Hiệp định về chấm dứt chiến tranh, lập lại hòa bình ở Việt Nam. Mỹ rút quân; nhiệm vụ giải phóng miền Nam còn tiếp tục."
+    },
+    {
+      "id": "textbook-2019-giai-phong",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 2,
+      "locator": "Chương 2 · Mùa xuân toàn thắng",
+      "page": 112,
+      "pageEnd": 113,
+      "pdfPage": 113,
+      "pdfPageEnd": 114,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=113",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Chiến dịch Hồ Chí Minh tiến tới giải phóng Sài Gòn. Giải phóng miền Nam, kết thúc chiến tranh; mở thời kỳ cả nước đi lên chủ nghĩa xã hội."
+    },
+    {
+      "id": "textbook-2019-thong-nhat",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
       "chapter": 3,
-      "locator": "Chương 3",
+      "locator": "Chương 3 · Thống nhất về mặt nhà nước",
+      "page": 116,
+      "pageEnd": 117,
+      "pdfPage": 117,
+      "pdfPageEnd": 118,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=117",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Quốc hội khóa VI quyết định tên nước Cộng hòa xã hội chủ nghĩa Việt Nam. Hoàn thành thống nhất đất nước về mặt nhà nước."
+    },
+    {
+      "id": "textbook-2019-doi-moi",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 3,
+      "locator": "Chương 3 · Đại hội VI: khởi xướng Đổi mới",
+      "page": 127,
+      "pageEnd": 129,
+      "pdfPage": 128,
+      "pdfPageEnd": 130,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=128",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Đề ra đường lối đổi mới toàn diện đất nước. Mở bước ngoặt trong quá trình xây dựng và phát triển."
+    },
+    {
+      "id": "textbook-2019-cuong-linh",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 3,
+      "locator": "Chương 3 · Cương lĩnh xây dựng đất nước",
+      "page": 134,
+      "pageEnd": 137,
+      "pdfPage": 135,
+      "pdfPageEnd": 138,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=135",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Đại hội VII thông qua Cương lĩnh xây dựng đất nước trong thời kỳ quá độ. Xác định định hướng và những vấn đề cơ bản của con đường phát triển."
+    },
+    {
+      "id": "textbook-2019-asean",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 3,
+      "locator": "Chương 3 · Việt Nam gia nhập ASEAN",
+      "page": 138,
+      "pageEnd": 138,
+      "pdfPage": 139,
+      "pdfPageEnd": 139,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=139",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Việt Nam trở thành thành viên ASEAN. Tăng cường liên kết khu vực và mở rộng hợp tác."
+    },
+    {
+      "id": "textbook-2019-wto",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 3,
+      "locator": "Chương 3 · Bước hội nhập kinh tế toàn cầu",
+      "page": 165,
+      "pageEnd": 166,
+      "pdfPage": 166,
+      "pdfPageEnd": 167,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=166",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Bối cảnh đường lối hội nhập kinh tế quốc tế và quá trình gia nhập WTO; ngày có hiệu lực dùng nguồn WTO.",
+      "caveat": "Các trang này dùng mốc tháng 11/2006 khi nói về kết nạp. Ngày tư cách thành viên có hiệu lực 11/01/2007 được xác nhận riêng bằng hồ sơ WTO bên dưới."
+    },
+    {
+      "id": "textbook-2019-cuong-linh-2011",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 3,
+      "locator": "Chương 3 · Bổ sung, phát triển Cương lĩnh",
+      "page": 166,
+      "pageEnd": 172,
+      "pdfPage": 167,
+      "pdfPageEnd": 173,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=167",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Đại hội XI thông qua Cương lĩnh bổ sung, phát triển năm 2011. Tiếp tục làm rõ định hướng xây dựng đất nước trong thời kỳ quá độ."
+    },
+    {
+      "id": "textbook-2019-kinh-te-bien",
+      "title": "Giáo trình Lịch sử Đảng Cộng sản Việt Nam (bản tháng 6/2019)",
+      "chapter": 3,
+      "locator": "Chương 3 · Hướng tới phát triển kinh tế biển bền vững",
+      "page": 191,
+      "pageEnd": 192,
+      "pdfPage": 192,
+      "pdfPageEnd": 193,
+      "url": "https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=192",
+      "reviewStatus": "passage-checked",
+      "publisher": "Ban Tuyên giáo Trung ương · Bộ Giáo dục và Đào tạo; bản PDF do Trường Đại học Công nghiệp Vinh lưu trữ",
+      "checkedAt": "2026-11-03",
+      "supports": "Hội nghị Trung ương 8 khóa XII đề ra chiến lược phát triển bền vững kinh tế biển. Kết hợp mục tiêu phát triển với bảo vệ môi trường và quốc phòng – an ninh."
+    },
+    {
+      "id": "wto-membership",
+      "title": "WTO · Viet Nam and the WTO",
+      "chapter": 3,
+      "locator": "Member information · đoạn mở đầu",
       "page": null,
-      "url": null,
-      "reviewStatus": "chapter-reference-only"
+      "url": "https://www.wto.org/english/theWTO_e/countries_e/vietnam_e.htm",
+      "reviewStatus": "passage-checked",
+      "publisher": "World Trade Organization",
+      "checkedAt": "2026-11-03",
+      "supports": "Việt Nam là thành viên WTO từ ngày 11/01/2007. Phân biệt ngày có hiệu lực với quá trình thông qua hồ sơ gia nhập năm 2006."
+    },
+    {
+      "id": "national-assembly-1976",
+      "title": "Vài nét về Quốc hội nước CHXHCN Việt Nam",
+      "chapter": 3,
+      "locator": "Quốc hội khóa VI · đoạn về kỳ họp thứ nhất và ngày 02/07/1976",
+      "page": null,
+      "url": "https://baochinhphu.vn/vai-net-ve-quoc-hoi-nuoc-chxhcn-viet-nam-10271664.htm",
+      "reviewStatus": "passage-checked",
+      "publisher": "Báo Điện tử Chính phủ",
+      "checkedAt": "2026-11-03",
+      "supports": "Tại kỳ họp thứ nhất Quốc hội khóa VI, ngày 02/07/1976, Quốc hội quyết định tên nước Cộng hòa xã hội chủ nghĩa Việt Nam."
+    },
+    {
+      "id": "resolution-36-2018",
+      "title": "Nghị quyết 36-NQ/TW ngày 22/10/2018",
+      "chapter": 3,
+      "locator": "Phần II · Quan điểm, mục tiêu",
+      "page": null,
+      "url": "https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/hoi-nghi-bch-trung-uong/khoa-xii/nghi-quyet-so-36-nqtw-ngay-22102018-hoi-nghi-lan-thu-tam-ban-chap-hanh-trung-uong-dang-khoa-xii-ve-chien-luoc-phat-trien-ben-3453",
+      "reviewStatus": "passage-checked",
+      "publisher": "Hệ thống Tư liệu – Văn kiện Đảng",
+      "checkedAt": "2026-11-03",
+      "supports": "Chiến lược phát triển bền vững kinh tế biển đến năm 2030, tầm nhìn 2045 gắn phát triển với môi trường, quốc phòng và an ninh."
     }
   ],
   "images": [
     {
       "id": "ba-dinh",
       "title": "Lễ Độc lập tại Quảng trường Ba Đình, 02/09/1945",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ba_Dinh_Square_September_2nd,_1945.jpg",
-      "credit": "Tác giả khuyết danh · Wikimedia Commons",
-      "kind": "Ảnh sự kiện",
-      "localPath": null,
-      "licenseStatus": "verify-before-embedding",
-      "usageNote": "Kiểm tra quyền sử dụng và chú thích tại trang nguồn trước khi tải. Nếu chưa xác minh, hiển thị liên kết nguồn và trạng thái chưa tích hợp ảnh."
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ba_Dinh_Square_September_2nd%2C_1945.jpg",
+      "credit": "Tác giả khuyết danh · nguồn VietnamNet, qua Wikimedia Commons",
+      "kind": "Ảnh sự kiện · 1945",
+      "localPath": "media/ba-dinh.jpg",
+      "licenseStatus": "verified",
+      "usageNote": "Trang nguồn định danh sự kiện ngày 02/09/1945. Giữ nguyên sắc độ và khung hình của bản tải; tác giả chưa được xác định.",
+      "license": "Phạm vi công cộng tại Việt Nam · PD-Vietnam (theo Commons)",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-Vietnam",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Ba_Dinh_Square_September_2nd%2C_1945.jpg",
+      "checkedAt": "2026-11-03"
     },
     {
       "id": "dien-bien",
-      "title": "Cắm cờ trên hầm chỉ huy Pháp tại Điện Biên Phủ, 1954",
+      "title": "Cắm cờ trên hầm chỉ huy Pháp ở Điện Biên Phủ, 1954",
       "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victory_in_Battle_of_Dien_Bien_Phu.jpg",
-      "credit": "Vietnam People’s Army · Wikimedia Commons",
-      "kind": "Ảnh tư liệu",
-      "localPath": null,
-      "licenseStatus": "verify-before-embedding",
-      "usageNote": "Kiểm tra quyền sử dụng và chú thích tại trang nguồn trước khi tải. Nếu chưa xác minh, hiển thị liên kết nguồn và trạng thái chưa tích hợp ảnh."
+      "credit": "Quân đội nhân dân Việt Nam · nguồn hệ thống bảo tàng quân đội, qua Wikimedia Commons",
+      "kind": "Ảnh tư liệu · nguồn ghi năm 1954",
+      "localPath": "media/dien-bien.jpg",
+      "licenseStatus": "verified",
+      "usageNote": "Nguồn xác định năm 1954, không chứng minh thời điểm chụp đúng ngày 07/05 hay ngay khi trận đánh kết thúc. Ảnh không được dùng để xác nhận thời khắc chiến thắng.",
+      "license": "Phạm vi công cộng tại Việt Nam · PD-Vietnam (theo Commons)",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-Vietnam",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Victory_in_Battle_of_Dien_Bien_Phu.jpg",
+      "checkedAt": "2026-11-03"
     },
     {
       "id": "sai-gon",
@@ -63,13 +475,45 @@
     },
     {
       "id": "duong-kach-menh",
-      "title": "Bản gốc Đường Kách mệnh (1927)",
-      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duong_Kach_Menh_(Original).jpg",
+      "title": "Bản gốc Đường Kách mệnh (1927), ảnh chụp ngày 08/02/2017",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duong_Kach_Menh_%28Original%29.jpg",
       "credit": "Hoangkid · Bảo tàng Lịch sử Quốc gia / Wikimedia Commons",
-      "kind": "Ảnh hiện vật",
-      "localPath": null,
-      "licenseStatus": "verify-before-embedding",
-      "usageNote": "Kiểm tra quyền sử dụng và chú thích tại trang nguồn trước khi tải. Nếu chưa xác minh, hiển thị liên kết nguồn và trạng thái chưa tích hợp ảnh."
+      "kind": "Ảnh hiện vật · chụp năm 2017",
+      "localPath": "media/duong-kach-menh.jpg",
+      "licenseStatus": "verified",
+      "usageNote": "Ảnh chụp cuốn sách trưng bày tại Bảo tàng Lịch sử Quốc gia. Năm 1927 là năm của tác phẩm, không phải năm chụp ảnh. Bản thu nhỏ từ Commons, không cắt xén hay đổi màu.",
+      "license": "CC BY-SA 4.0 · Hoangkid",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Duong_Kach_Menh_%28Original%29.jpg",
+      "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "tours",
+      "title": "Toàn cảnh hội trường Đại hội Tours, tháng 12/1920",
+      "credit": "Agence de presse Meurisse · Bibliothèque nationale de France / Gallica, qua Wikimedia Commons",
+      "kind": "Ảnh bối cảnh sự kiện · 1920",
+      "license": "Phạm vi công cộng · PD-France / PD-US (theo Commons)",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Congr%C3%A8s_de_Tours_-_vue_g%C3%A9n%C3%A9rale_de_la_salle.jpg#Licensing",
+      "usageNote": "Ảnh toàn cảnh hội trường, không xác định vị trí Nguyễn Ái Quốc trong ảnh. Hồ sơ Gallica: btv1b9038096h; không dùng ảnh để chứng minh một nhân vật cụ thể.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Congr%C3%A8s_de_Tours_-_vue_g%C3%A9n%C3%A9rale_de_la_salle.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Congr%C3%A8s_de_Tours_-_vue_g%C3%A9n%C3%A9rale_de_la_salle.jpg",
+      "localPath": "media/tours.jpg",
+      "licenseStatus": "verified",
+      "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "paris-photo",
+      "title": "William Rogers ký Hiệp định Paris, 27/01/1973",
+      "credit": "Robert LeRoy Knudsen · White House / NARA, qua Wikimedia Commons",
+      "kind": "Ảnh sự kiện · 1973",
+      "license": "Phạm vi công cộng · tác phẩm công vụ của Chính phủ Hoa Kỳ",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "usageNote": "Ngoại trưởng Hoa Kỳ William Rogers tại lễ ký ở Paris. Ảnh thể hiện phía Hoa Kỳ trong buổi lễ; không phải ảnh toàn bộ các đoàn ký kết. NARA: NAID 194482 (trang Commons ghi thêm 27580141).",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vietnam_peace_agreement_signing%2C_27580141%2C_new.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Vietnam_peace_agreement_signing%2C_27580141%2C_new.jpg",
+      "localPath": "media/paris-photo.jpg",
+      "licenseStatus": "verified",
+      "checkedAt": "2026-11-03"
     }
   ],
   "events": [
@@ -86,8 +530,8 @@
       "date": "1920",
       "datePrecision": "year",
       "displayDate": "1920",
-      "sourceId": "textbook-2019-ch1",
-      "imageId": null
+      "sourceId": "textbook-2019-tours",
+      "imageId": "tours"
     },
     {
       "id": "thanh-nien",
@@ -102,7 +546,7 @@
       "date": "1925-06",
       "datePrecision": "month",
       "displayDate": "06/1925",
-      "sourceId": "textbook-2019-ch1",
+      "sourceId": "textbook-2019-thanh-nien",
       "imageId": null
     },
     {
@@ -118,7 +562,7 @@
       "date": "1927",
       "datePrecision": "year",
       "displayDate": "1927",
-      "sourceId": "textbook-2019-ch1",
+      "sourceId": "textbook-2019-duong-kach-menh",
       "imageId": "duong-kach-menh"
     },
     {
@@ -134,7 +578,7 @@
       "date": "1930-02-03",
       "datePrecision": "day",
       "displayDate": "03/02/1930",
-      "sourceId": "textbook-2019-ch1",
+      "sourceId": "textbook-2019-thanh-lap-dang",
       "imageId": null
     },
     {
@@ -150,7 +594,7 @@
       "date": "1936",
       "datePrecision": "year",
       "displayDate": "1936",
-      "sourceId": "textbook-2019-ch1",
+      "sourceId": "textbook-2019-dan-chu",
       "imageId": null
     },
     {
@@ -166,7 +610,7 @@
       "date": "1941-05",
       "datePrecision": "month",
       "displayDate": "05/1941",
-      "sourceId": "textbook-2019-ch1",
+      "sourceId": "textbook-2019-viet-minh",
       "imageId": null
     },
     {
@@ -182,7 +626,7 @@
       "date": "1945-08",
       "datePrecision": "month",
       "displayDate": "08/1945",
-      "sourceId": "textbook-2019-ch1",
+      "sourceId": "textbook-2019-thang-tam",
       "imageId": null
     },
     {
@@ -198,7 +642,7 @@
       "date": "1945-09-02",
       "datePrecision": "day",
       "displayDate": "02/09/1945",
-      "sourceId": "textbook-2019-ch1",
+      "sourceId": "textbook-2019-doc-lap",
       "imageId": "ba-dinh"
     },
     {
@@ -214,7 +658,7 @@
       "date": "1946-12-19",
       "datePrecision": "day",
       "displayDate": "19/12/1946",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-khang-chien",
       "imageId": null
     },
     {
@@ -230,7 +674,7 @@
       "date": "1951-02",
       "datePrecision": "month",
       "displayDate": "02/1951",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-dai-hoi-ii",
       "imageId": null
     },
     {
@@ -246,7 +690,7 @@
       "date": "1954-05-07",
       "datePrecision": "day",
       "displayDate": "07/05/1954",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-dien-bien",
       "imageId": "dien-bien"
     },
     {
@@ -262,7 +706,7 @@
       "date": "1954-07",
       "datePrecision": "month",
       "displayDate": "07/1954",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-geneva",
       "imageId": null
     },
     {
@@ -278,7 +722,7 @@
       "date": "1959-01",
       "datePrecision": "month",
       "displayDate": "01/1959",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-nghi-quyet-15",
       "imageId": null
     },
     {
@@ -294,7 +738,7 @@
       "date": "1960-01-17",
       "datePrecision": "day",
       "displayDate": "17/01/1960",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-dong-khoi",
       "imageId": null
     },
     {
@@ -310,7 +754,7 @@
       "date": "1960-09",
       "datePrecision": "month",
       "displayDate": "09/1960",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-dai-hoi-iii",
       "imageId": null
     },
     {
@@ -326,7 +770,7 @@
       "date": "1968",
       "datePrecision": "year",
       "displayDate": "1968",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-mau-than",
       "imageId": null
     },
     {
@@ -342,7 +786,7 @@
       "date": "1972-12",
       "datePrecision": "month",
       "displayDate": "12/1972",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-dien-bien-tren-khong",
       "imageId": null
     },
     {
@@ -358,8 +802,8 @@
       "date": "1973-01-27",
       "datePrecision": "day",
       "displayDate": "27/01/1973",
-      "sourceId": "textbook-2019-ch2",
-      "imageId": null
+      "sourceId": "textbook-2019-paris",
+      "imageId": "paris-photo"
     },
     {
       "id": "giai-phong",
@@ -374,7 +818,7 @@
       "date": "1975-04-30",
       "datePrecision": "day",
       "displayDate": "30/04/1975",
-      "sourceId": "textbook-2019-ch2",
+      "sourceId": "textbook-2019-giai-phong",
       "imageId": "sai-gon"
     },
     {
@@ -390,8 +834,11 @@
       "date": "1976-07-02",
       "datePrecision": "day",
       "displayDate": "02/07/1976",
-      "sourceId": "textbook-2019-ch3",
-      "imageId": null
+      "sourceId": "textbook-2019-thong-nhat",
+      "imageId": null,
+      "additionalSourceIds": [
+        "national-assembly-1976"
+      ]
     },
     {
       "id": "doi-moi",
@@ -406,7 +853,7 @@
       "date": "1986-12",
       "datePrecision": "month",
       "displayDate": "12/1986",
-      "sourceId": "textbook-2019-ch3",
+      "sourceId": "textbook-2019-doi-moi",
       "imageId": null
     },
     {
@@ -422,7 +869,7 @@
       "date": "1991-06",
       "datePrecision": "month",
       "displayDate": "06/1991",
-      "sourceId": "textbook-2019-ch3",
+      "sourceId": "textbook-2019-cuong-linh",
       "imageId": null
     },
     {
@@ -438,7 +885,7 @@
       "date": "1995-07-28",
       "datePrecision": "day",
       "displayDate": "28/07/1995",
-      "sourceId": "textbook-2019-ch3",
+      "sourceId": "textbook-2019-asean",
       "imageId": null
     },
     {
@@ -454,8 +901,11 @@
       "date": "2007-01-11",
       "datePrecision": "day",
       "displayDate": "11/01/2007",
-      "sourceId": "textbook-2019-ch3",
-      "imageId": null
+      "sourceId": "wto-membership",
+      "imageId": null,
+      "additionalSourceIds": [
+        "textbook-2019-wto"
+      ]
     },
     {
       "id": "cuong-linh-2011",
@@ -470,7 +920,7 @@
       "date": "2011-01",
       "datePrecision": "month",
       "displayDate": "01/2011",
-      "sourceId": "textbook-2019-ch3",
+      "sourceId": "textbook-2019-cuong-linh-2011",
       "imageId": null
     },
     {
@@ -486,8 +936,11 @@
       "date": "2018-10",
       "datePrecision": "month",
       "displayDate": "10/2018",
-      "sourceId": "textbook-2019-ch3",
-      "imageId": null
+      "sourceId": "textbook-2019-kinh-te-bien",
+      "imageId": null,
+      "additionalSourceIds": [
+        "resolution-36-2018"
+      ]
     }
   ],
   "questions": [
@@ -518,7 +971,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1920: Phong trào yêu nước Việt Nam đứng trước yêu cầu tìm con đường giải phóng mới. Đánh dấu bước chuyển từ chủ nghĩa yêu nước đến chủ nghĩa cộng sản.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-tours"
     },
     {
       "id": "tours-meaning",
@@ -547,7 +1000,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Đánh dấu bước chuyển từ chủ nghĩa yêu nước đến chủ nghĩa cộng sản. Nguyễn Ái Quốc tán thành Quốc tế III và tham gia sáng lập Đảng Cộng sản Pháp.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-tours"
     },
     {
       "id": "thanh-nien-year",
@@ -576,7 +1029,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1925: Cần chuẩn bị về tổ chức và truyền bá lý luận vào phong trào trong nước. Đào tạo cán bộ và chuẩn bị tổ chức cho sự ra đời của Đảng.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-thanh-nien"
     },
     {
       "id": "thanh-nien-meaning",
@@ -605,7 +1058,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Đào tạo cán bộ và chuẩn bị tổ chức cho sự ra đời của Đảng. Nguyễn Ái Quốc thành lập Hội Việt Nam Cách mạng Thanh niên.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-thanh-nien"
     },
     {
       "id": "duong-kach-menh-year",
@@ -634,7 +1087,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1927: Các lớp huấn luyện cán bộ cần một hệ thống lý luận và phương pháp hoạt động. Góp phần chuẩn bị tư tưởng, chính trị và tổ chức cho cách mạng.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-duong-kach-menh"
     },
     {
       "id": "duong-kach-menh-meaning",
@@ -663,7 +1116,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Góp phần chuẩn bị tư tưởng, chính trị và tổ chức cho cách mạng. Tập hợp các bài giảng của Nguyễn Ái Quốc thành tác phẩm Đường Kách mệnh.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-duong-kach-menh"
     },
     {
       "id": "thanh-lap-dang-year",
@@ -692,7 +1145,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1930: Các tổ chức cộng sản ra đời nhưng hoạt động phân tán, cần thống nhất. Tạo sự thống nhất lãnh đạo và định hướng giải phóng dân tộc.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-thanh-lap-dang"
     },
     {
       "id": "thanh-lap-dang-meaning",
@@ -721,7 +1174,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Tạo sự thống nhất lãnh đạo và định hướng giải phóng dân tộc. Hội nghị do Nguyễn Ái Quốc chủ trì hợp nhất các tổ chức và thông qua Cương lĩnh đầu tiên.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-thanh-lap-dang"
     },
     {
       "id": "dan-chu-year",
@@ -750,7 +1203,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1936: Tình hình quốc tế và trong nước có điều kiện mới cho đấu tranh dân chủ. Mở rộng tập hợp quần chúng, tích lũy kinh nghiệm tổ chức đấu tranh.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-dan-chu"
     },
     {
       "id": "dan-chu-meaning",
@@ -779,7 +1232,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mở rộng tập hợp quần chúng, tích lũy kinh nghiệm tổ chức đấu tranh. Kết hợp các hình thức hợp pháp, nửa hợp pháp, đòi dân sinh và dân chủ.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-dan-chu"
     },
     {
       "id": "viet-minh-year",
@@ -808,7 +1261,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1941: Chiến tranh thế giới và ách thống trị đặt dân tộc trước nhiệm vụ cấp bách. Mở rộng đoàn kết và chuẩn bị cho khởi nghĩa giành chính quyền.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-viet-minh"
     },
     {
       "id": "viet-minh-meaning",
@@ -837,7 +1290,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mở rộng đoàn kết và chuẩn bị cho khởi nghĩa giành chính quyền. Hội nghị Trung ương 8 hoàn chỉnh chuyển hướng chiến lược; thành lập Mặt trận Việt Minh.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-viet-minh"
     },
     {
       "id": "thang-tam-year",
@@ -866,7 +1319,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1945: Nhật đầu hàng Đồng minh, thời cơ cách mạng xuất hiện. Chính quyền về tay nhân dân ở nhiều địa phương và trên phạm vi cả nước.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-thang-tam"
     },
     {
       "id": "thang-tam-meaning",
@@ -895,7 +1348,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Chính quyền về tay nhân dân ở nhiều địa phương và trên phạm vi cả nước. Lãnh đạo toàn dân tổng khởi nghĩa giành chính quyền.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-thang-tam"
     },
     {
       "id": "doc-lap-year",
@@ -924,7 +1377,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1945: Cách mạng Tháng Tám thắng lợi, cần tuyên bố nền độc lập trước quốc dân và thế giới. Nước Việt Nam Dân chủ Cộng hòa ra đời.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-doc-lap"
     },
     {
       "id": "doc-lap-meaning",
@@ -953,7 +1406,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Nước Việt Nam Dân chủ Cộng hòa ra đời. Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập.",
-      "sourceId": "textbook-2019-ch1"
+      "sourceId": "textbook-2019-doc-lap"
     },
     {
       "id": "khang-chien-year",
@@ -982,7 +1435,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1946: Nỗ lực hòa hoãn không ngăn được việc thực dân Pháp mở rộng xâm lược. Cuộc kháng chiến chống Pháp phát triển trên phạm vi cả nước.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-khang-chien"
     },
     {
       "id": "khang-chien-meaning",
@@ -1011,7 +1464,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Cuộc kháng chiến chống Pháp phát triển trên phạm vi cả nước. Phát động toàn quốc kháng chiến, bảo vệ độc lập.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-khang-chien"
     },
     {
       "id": "dai-hoi-ii-year",
@@ -1040,7 +1493,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1951: Kháng chiến cần tiếp tục củng cố tổ chức và đường lối lãnh đạo. Tăng cường sự lãnh đạo và sức mạnh tổ chức trong kháng chiến.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dai-hoi-ii"
     },
     {
       "id": "dai-hoi-ii-meaning",
@@ -1069,7 +1522,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Tăng cường sự lãnh đạo và sức mạnh tổ chức trong kháng chiến. Đảng hoạt động công khai với tên Đảng Lao động Việt Nam.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dai-hoi-ii"
     },
     {
       "id": "dien-bien-year",
@@ -1098,7 +1551,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1954: Kế hoạch Nava tìm cách giành lại thế chủ động quân sự. Tạo cơ sở quân sự quan trọng cho giải pháp ngoại giao tại Giơnevơ.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dien-bien"
     },
     {
       "id": "dien-bien-meaning",
@@ -1127,7 +1580,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Tạo cơ sở quân sự quan trọng cho giải pháp ngoại giao tại Giơnevơ. Tập trung sức mạnh cho trận quyết chiến chiến lược Điện Biên Phủ.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dien-bien"
     },
     {
       "id": "geneva-year",
@@ -1156,7 +1609,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1954: Thắng lợi kháng chiến tạo cơ sở cho đàm phán kết thúc chiến tranh. Miền Bắc được giải phóng; đất nước tạm thời chia cắt, thống nhất chưa hoàn thành.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-geneva"
     },
     {
       "id": "geneva-meaning",
@@ -1185,7 +1638,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Miền Bắc được giải phóng; đất nước tạm thời chia cắt, thống nhất chưa hoàn thành. Hiệp định Giơnevơ về Đông Dương được ký kết.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-geneva"
     },
     {
       "id": "nghi-quyet-15-year",
@@ -1214,7 +1667,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1959: Chính sách đàn áp đặt phong trào trước yêu cầu chuyển biến phương thức đấu tranh. Tạo định hướng cho sự phát triển của phong trào cách mạng miền Nam.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-nghi-quyet-15"
     },
     {
       "id": "nghi-quyet-15-meaning",
@@ -1243,7 +1696,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Tạo định hướng cho sự phát triển của phong trào cách mạng miền Nam. Kết hợp đấu tranh chính trị với đấu tranh vũ trang.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-nghi-quyet-15"
     },
     {
       "id": "dong-khoi-year",
@@ -1272,7 +1725,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1960: Phong trào cần vượt thế giữ gìn lực lượng, phát huy quần chúng. Góp phần chuyển cách mạng miền Nam sang thế tiến công.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dong-khoi"
     },
     {
       "id": "dong-khoi-meaning",
@@ -1301,7 +1754,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Góp phần chuyển cách mạng miền Nam sang thế tiến công. Kết hợp nổi dậy của quần chúng với lực lượng vũ trang.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dong-khoi"
     },
     {
       "id": "dai-hoi-iii-year",
@@ -1330,7 +1783,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1960: Miền Bắc xây dựng hậu phương, miền Nam phát triển đấu tranh giải phóng. Kết hợp sức mạnh hậu phương và tiền tuyến vì thống nhất đất nước.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dai-hoi-iii"
     },
     {
       "id": "dai-hoi-iii-meaning",
@@ -1359,7 +1812,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Kết hợp sức mạnh hậu phương và tiền tuyến vì thống nhất đất nước. Đại hội III xác định hai nhiệm vụ chiến lược cách mạng ở hai miền.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dai-hoi-iii"
     },
     {
       "id": "mau-than-year",
@@ -1388,7 +1841,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1968: Cuộc kháng chiến chống Mỹ cần tạo chuyển biến chiến lược. Tác động mạnh tới cục diện chiến tranh và quá trình đàm phán; có tổn thất và hạn chế.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-mau-than"
     },
     {
       "id": "mau-than-meaning",
@@ -1417,7 +1870,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Tác động mạnh tới cục diện chiến tranh và quá trình đàm phán; có tổn thất và hạn chế. Tiến công và nổi dậy trên nhiều địa bàn trong dịp Tết Mậu Thân.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-mau-than"
     },
     {
       "id": "dien-bien-tren-khong-year",
@@ -1446,7 +1899,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1972: Mỹ mở cuộc tập kích đường không chiến lược tháng 12/1972. Thắng lợi góp phần buộc Mỹ ký Hiệp định Paris.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dien-bien-tren-khong"
     },
     {
       "id": "dien-bien-tren-khong-meaning",
@@ -1475,7 +1928,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Thắng lợi góp phần buộc Mỹ ký Hiệp định Paris. Quân và dân miền Bắc tổ chức chiến đấu bảo vệ các địa bàn trọng yếu.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-dien-bien-tren-khong"
     },
     {
       "id": "paris-year",
@@ -1504,7 +1957,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1973: Đấu tranh quân sự, chính trị và ngoại giao tạo chuyển biến cục diện. Mỹ rút quân; nhiệm vụ giải phóng miền Nam còn tiếp tục.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-paris"
     },
     {
       "id": "paris-meaning",
@@ -1533,7 +1986,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mỹ rút quân; nhiệm vụ giải phóng miền Nam còn tiếp tục. Ký Hiệp định về chấm dứt chiến tranh, lập lại hòa bình ở Việt Nam.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-paris"
     },
     {
       "id": "giai-phong-year",
@@ -1562,7 +2015,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1975: Thắng lợi trên các chiến trường tạo thời cơ giải phóng miền Nam. Giải phóng miền Nam, kết thúc chiến tranh; mở thời kỳ cả nước đi lên chủ nghĩa xã hội.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-giai-phong"
     },
     {
       "id": "giai-phong-meaning",
@@ -1591,7 +2044,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Giải phóng miền Nam, kết thúc chiến tranh; mở thời kỳ cả nước đi lên chủ nghĩa xã hội. Chiến dịch Hồ Chí Minh tiến tới giải phóng Sài Gòn.",
-      "sourceId": "textbook-2019-ch2"
+      "sourceId": "textbook-2019-giai-phong"
     },
     {
       "id": "thong-nhat-year",
@@ -1620,7 +2073,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1976: Sau giải phóng cần hoàn thành thống nhất về tổ chức nhà nước. Hoàn thành thống nhất đất nước về mặt nhà nước.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-thong-nhat"
     },
     {
       "id": "thong-nhat-meaning",
@@ -1649,7 +2102,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Hoàn thành thống nhất đất nước về mặt nhà nước. Quốc hội khóa VI quyết định tên nước Cộng hòa xã hội chủ nghĩa Việt Nam.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-thong-nhat"
     },
     {
       "id": "doi-moi-year",
@@ -1678,7 +2131,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1986: Khó khăn kinh tế – xã hội đòi hỏi đổi mới tư duy và cơ chế quản lý. Mở bước ngoặt trong quá trình xây dựng và phát triển.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-doi-moi"
     },
     {
       "id": "doi-moi-meaning",
@@ -1707,7 +2160,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mở bước ngoặt trong quá trình xây dựng và phát triển. Đề ra đường lối đổi mới toàn diện đất nước.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-doi-moi"
     },
     {
       "id": "cuong-linh-year",
@@ -1736,7 +2189,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1991: Tình hình thế giới biến động, đất nước tiếp tục công cuộc đổi mới. Xác định định hướng và những vấn đề cơ bản của con đường phát triển.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-cuong-linh"
     },
     {
       "id": "cuong-linh-meaning",
@@ -1765,7 +2218,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Cương lĩnh xác định những định hướng và vấn đề cơ bản của con đường phát triển, khác với kế hoạch điều hành kinh tế trong một năm.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-cuong-linh"
     },
     {
       "id": "asean-year",
@@ -1794,7 +2247,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 1995: Đổi mới gắn với mở rộng quan hệ đối ngoại và hội nhập. Tăng cường liên kết khu vực và mở rộng hợp tác.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-asean"
     },
     {
       "id": "asean-meaning",
@@ -1823,7 +2276,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Tăng cường liên kết khu vực và mở rộng hợp tác. Việt Nam trở thành thành viên ASEAN.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-asean"
     },
     {
       "id": "wto-year",
@@ -1852,7 +2305,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 2007: Quá trình đổi mới mở rộng sự tham gia vào các thể chế kinh tế quốc tế. Mở cơ hội và đặt ra yêu cầu nâng năng lực cạnh tranh, thực hiện cam kết.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "wto-membership"
     },
     {
       "id": "wto-meaning",
@@ -1881,7 +2334,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mở cơ hội và đặt ra yêu cầu nâng năng lực cạnh tranh, thực hiện cam kết. Việt Nam chính thức trở thành thành viên WTO.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "wto-membership"
     },
     {
       "id": "cuong-linh-2011-year",
@@ -1910,7 +2363,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 2011: Đổi mới tiếp tục đặt ra yêu cầu tổng kết thực tiễn và phát triển nhận thức. Tiếp tục làm rõ định hướng xây dựng đất nước trong thời kỳ quá độ.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-cuong-linh-2011"
     },
     {
       "id": "cuong-linh-2011-meaning",
@@ -1939,7 +2392,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Tiếp tục làm rõ định hướng xây dựng đất nước trong thời kỳ quá độ. Đại hội XI thông qua Cương lĩnh bổ sung, phát triển năm 2011.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-cuong-linh-2011"
     },
     {
       "id": "kinh-te-bien-year",
@@ -1968,7 +2421,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Mốc 2018: Phát triển kinh tế đặt ra yêu cầu gắn với môi trường và bảo vệ chủ quyền. Kết hợp mục tiêu phát triển với bảo vệ môi trường và quốc phòng – an ninh.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-kinh-te-bien"
     },
     {
       "id": "kinh-te-bien-meaning",
@@ -1997,7 +2450,7 @@
       ],
       "correctOptionId": "a",
       "explanation": "Kết hợp mục tiêu phát triển với bảo vệ môi trường và quốc phòng – an ninh. Hội nghị Trung ương 8 khóa XII đề ra chiến lược phát triển bền vững kinh tế biển.",
-      "sourceId": "textbook-2019-ch3"
+      "sourceId": "textbook-2019-kinh-te-bien"
     }
   ]
 }

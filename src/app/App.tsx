@@ -27,7 +27,7 @@ import {
   restoreSession,
   STORAGE_KEY,
 } from "../storage/state";
-import { ImageEvidence, SourceNote } from "../components/Evidence";
+import { ImageEvidence, EventSources } from "../components/Evidence";
 export const parseRoute = (hash: string) => {
   const [view, id] = hash.replace(/^#\/?/, "").split("/");
   return {
@@ -439,7 +439,7 @@ export function App() {
                   {q.options.find((o) => o.id === q.correctOptionId)!.text}
                 </p>
                 <p>{q.explanation}</p>
-                <SourceNote id={q.sourceId} />
+                <EventSources eventId={q.eventId} />
               </section>
               <button
                 className="primary"
@@ -724,7 +724,7 @@ export function App() {
         <section className="evidence">
           <h2>Tư liệu & nguồn</h2>
           <ImageEvidence key={e.imageId || e.id} id={e.imageId} />
-          <SourceNote id={e.sourceId} />
+          <EventSources eventId={e.id} />
         </section>
         <div className="actions">
           <button className="primary" onClick={requestQuiz}>
@@ -794,27 +794,28 @@ export function App() {
             [
               "Nghị quyết 15 → Đồng khởi",
               "Đường lối năm 1959 là một căn cứ của phong trào; việc tổ chức ở địa phương và quần chúng cũng quyết định cách triển khai.",
+              "dong-khoi",
             ],
             [
               "Đại hội III → hai nhiệm vụ chiến lược",
               "Miền Bắc và miền Nam có nhiệm vụ, vai trò khác nhau trong mục tiêu thống nhất; không thay thế đóng góp của nhau.",
+              "dai-hoi-iii",
             ],
             [
               "Tháng 12/1972 → Hiệp định Paris",
               "Chiến đấu ở miền Bắc gắn với cả quá trình đấu tranh quân sự, chính trị và ngoại giao; không phải nguyên nhân duy nhất của hiệp định.",
+              "dien-bien-tren-khong",
             ],
             [
               "Paris → nhiệm vụ giải phóng miền Nam",
               "Hiệp định tạo cục diện mới; nhiệm vụ giải phóng miền Nam tiếp tục đến năm 1975.",
+              "paris",
             ],
-          ].map(([title, text]) => (
+          ].map(([title, text, eventId]) => (
             <article key={title}>
               <h3>{title}</h3>
               <p>{text}</p>
-              <small>
-                Căn cứ khởi tạo: giáo trình 2019, Chương 2; cần đối chiếu học
-                thuật.
-              </small>
+              <a href={"#profile/" + eventId}>Xem đoạn nguồn & bối cảnh ↗</a>
             </article>
           ))}
         </section>
@@ -832,8 +833,9 @@ export function App() {
           Kiểm tra căn cứ.
         </h1>
         <p>
-          26 hồ sơ / 52 MCQ từ JSON trong handoff sửa đổi. Phạm vi chọn lọc
-          1920–2018; nguồn giáo trình ở cấp chương, chưa phải nội dung đã duyệt.
+          26 hồ sơ trong phạm vi VNR202, từ 1920 đến 2018. Mỗi hồ sơ dẫn tới
+          đoạn nguồn cụ thể trong giáo trình 2019; các văn kiện và tư liệu chính
+          thức bổ sung giúp kiểm tra những mốc cần phân biệt.
         </p>
         <div className="filters">
           <label>
@@ -883,21 +885,28 @@ export function App() {
             <p>{e.context}</p>
           </article>
         ))}
-        <h2>Trạng thái bốn hồ sơ ảnh</h2>
-        {content.images.map((i) => (
-          <section className="review-item" key={i.id}>
-            <h3>{i.title}</h3>
-            <p>
-              {i.kind} ·{" "}
-              {i.licenseStatus === "verified"
-                ? "Đã tích hợp có kiểm tra quyền"
-                : "Chưa tích hợp — cần xác minh quyền và ảnh"}
-            </p>
-            <a href={i.sourceUrl} target="_blank" rel="noreferrer">
-              Trang nguồn ↗
-            </a>
-          </section>
-        ))}
+        <section className="source-method">
+          <h2>Cách đọc nguồn</h2>
+          <p>
+            Trang in là số ở chân trang giáo trình; trang PDF là vị trí trong
+            tệp. Trong bản tháng 6/2019 này, trang PDF lớn hơn trang in một đơn
+            vị. Các đoạn tham chiếu đã được kiểm tra; đây là ghi nhận đối chiếu
+            nguồn, chưa phải xác nhận duyệt học thuật của giảng viên.
+          </p>
+          <p>
+            Ảnh có nguồn và chú thích riêng. Ngày của hiện vật, ngày chụp và
+            ngày sự kiện được phân biệt khi chúng khác nhau.
+          </p>
+        </section>
+        <h2>Ảnh & xuất xứ</h2>
+        <p>
+          5 ảnh đã tích hợp; 1 hồ sơ ảnh xe tăng còn chờ xác minh quyền sử dụng.
+        </p>
+        <div className="media-catalog">
+          {content.images.map((i) => (
+            <ImageEvidence key={i.id} id={i.id} />
+          ))}
+        </div>
       </section>
     );
   }
@@ -964,7 +973,7 @@ export function App() {
                 </p>
                 <p>{q.explanation}</p>
                 <a href={"#profile/" + q.eventId}>Ôn hồ sơ →</a>
-                <SourceNote id={q.sourceId} />
+                <EventSources eventId={q.eventId} />
               </article>
             );
           })}
@@ -1019,7 +1028,7 @@ export function App() {
         </button>
       </nav>
       <div className="scope-note">
-        26 HỒ SƠ / 52 MCQ · SEED CẦN ĐỐI CHIẾU HỌC THUẬT · Best quiz{" "}
+        26 HỒ SƠ CÓ NGUỒN / 52 MCQ · 5 ẢNH TƯ LIỆU · Best quiz{" "}
         {state.progress.bestQuiz} / Best xếp mốc {state.progress.bestOrdering}
       </div>
       {(state.notice || storageError) && (

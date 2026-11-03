@@ -1,4 +1,6 @@
 import { describe, it, expect } from "vitest";
+import { createHash } from "node:crypto";
+import { readFileSync, existsSync } from "node:fs";
 import {
   content,
   CONTENT_VERSION,
@@ -147,6 +149,78 @@ describe("quiz transitions and rules", () => {
   });
 });
 describe("ordering, evidence and restoration", () => {
+  it("all events and questions have checked, resolvable source references", () => {
+    for (const event of content.events) {
+      for (const id of [event.sourceId, ...(event.additionalSourceIds ?? [])]) {
+        const source = content.sources.find((s) => s.id === id)!;
+        expect(source.reviewStatus).toBe("passage-checked");
+        expect(source.url).toMatch(/^https:\/\//);
+        expect(source.supports).toBeTruthy();
+      }
+      for (const question of content.questions.filter(
+        (q) => q.eventId === event.id,
+      ))
+        expect(question.sourceId).toBe(event.sourceId);
+    }
+  });
+  it("PDF anchors distinguish printed page from viewer page in the checked edition", () => {
+    const sources = content.sources.filter((s) => s.pdfPage !== undefined);
+    expect(sources).toHaveLength(26);
+    for (const source of sources) {
+      expect(source.url).toContain(`#page=${source.pdfPage}`);
+      expect(source.pdfPage).toBe(source.page! + 1);
+      expect(source.pdfPageEnd).toBe(source.pageEnd! + 1);
+    }
+    expect(content.events.find((e) => e.id === "wto")!.sourceId).toBe(
+      "wto-membership",
+    );
+  });
+  it("bundled images match provenance hashes and pending media is not embedded", () => {
+    const provenance = JSON.parse(
+      readFileSync("public/media/provenance.json", "utf8"),
+    );
+    const bundled = content.images.filter(
+      (i) => i.licenseStatus === "verified",
+    );
+    expect(bundled).toHaveLength(5);
+    for (const image of bundled) {
+      const record = provenance[image.id];
+      expect(record.localPath).toBe(`public/${image.localPath}`);
+      expect(
+        createHash("sha256")
+          .update(readFileSync(record.localPath))
+          .digest("hex"),
+      ).toBe(record.sha256);
+      expect(image.credit).toBeTruthy();
+      expect(image.licenseUrl).toMatch(/^https:\/\//);
+    }
+    expect(
+      content.images.find((i) => i.id === "sai-gon")!.localPath,
+    ).toBeNull();
+    expect(
+      validateContent(content, (path) => existsSync(`public/${path}`)),
+    ).toEqual([]);
+  });
+  it("checked references reject absent provenance, bad page anchors and dangling supplements", () => {
+    for (const mutate of [
+      (d: Content) => {
+        d.events[0].additionalSourceIds = ["missing"];
+      },
+      (d: Content) => {
+        d.sources[0].url = "https://example.org/#page=999";
+      },
+      (d: Content) => {
+        d.sources[0].supports = "";
+      },
+      (d: Content) => {
+        d.images[0].licenseUrl = "";
+      },
+    ]) {
+      const data = structuredClone(content);
+      mutate(data);
+      expect(validateContent(data).length).toBeGreaterThan(0);
+    }
+  });
   it("ordering uses distinct years, grades once and preserves round", () => {
     let s = createOrderingRound(content, 2, 1000),
       ids = s.eventIds;

@@ -82,9 +82,29 @@ export function validateContent(
     }
     if (
       !data.sources.some((s) => s.id === e.sourceId) ||
+      e.additionalSourceIds?.some(
+        (id) => !data.sources.some((s) => s.id === id),
+      ) ||
       (e.imageId && !data.images.some((i) => i.id === e.imageId))
     )
       errors.push("Event reference " + e.id);
+  }
+  for (const s of data.sources) {
+    if (
+      s.reviewStatus === "passage-checked" &&
+      (!s.url?.startsWith("https://") || !s.checkedAt || !s.supports)
+    )
+      errors.push("Incomplete checked source " + s.id);
+    if (
+      s.pdfPage !== undefined &&
+      (s.page === null ||
+        s.pdfPage < 1 ||
+        !Number.isInteger(s.pdfPage) ||
+        !s.url?.endsWith(`#page=${s.pdfPage}`) ||
+        (s.pageEnd !== undefined && s.pageEnd < s.page) ||
+        (s.pdfPageEnd !== undefined && s.pdfPageEnd < s.pdfPage))
+    )
+      errors.push("Invalid source pages " + s.id);
   }
   for (const q of data.questions) {
     if (
@@ -113,6 +133,15 @@ export function validateContent(
       errors.push("Invalid local asset path " + i.id);
     if (i.localPath && assetExists && !assetExists(i.localPath))
       errors.push("Missing asset " + i.id);
+    if (
+      i.licenseStatus === "verified" &&
+      (!i.credit ||
+        !i.license ||
+        !i.licenseUrl ||
+        !i.originalUrl ||
+        !i.checkedAt)
+    )
+      errors.push("Incomplete image provenance " + i.id);
   }
   return errors;
 }

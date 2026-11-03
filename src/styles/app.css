@@ -1285,3 +1285,51 @@ input {
   min-height: 44px;
   font-size: 12px;
 }
+/* Evidence keeps each photograph's full frame and its original colors. */
+.image-evidence > a {
+  display: block;
+  margin: 0;
+  background: #0e171e;
+}
+.image-evidence img {
+  max-height: 560px;
+  object-fit: contain;
+}
+.image-evidence figcaption a {
+  display: inline-block;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+  margin: 4px 0;
+}
+.image-evidence figcaption p { margin: 10px 0; }
+.image-license { color: var(--mint); font-size: 12px; }
+.evidence-label {
+  display: block;
+  color: var(--mint);
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.source-note + .source-note { border-top: 1px solid var(--line); }
+.source-note strong { display: block; font-size: 15px; }
+.source-note small { display: block; color: var(--muted); margin-top: 8px; }
+.source-note .source-caveat {
+  border-left: 2px solid var(--gold);
+  padding: 8px 12px;
+  color: var(--text);
+  background: #23313b;
+}
+.source-method {
+  border-left: 2px solid var(--mint);
+  padding: 6px 22px;
+  margin: 36px 0;
+}
+.source-method p { color: var(--muted); font-size: 14px; }
+.media-catalog { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.media-catalog .image-evidence { margin: 0; }
+.media-catalog .image-evidence img { height: 260px; }
+@media (max-width: 680px) {
+  .media-catalog { grid-template-columns: minmax(0, 1fr); }
+  .image-evidence figcaption { padding: 16px; }
+}

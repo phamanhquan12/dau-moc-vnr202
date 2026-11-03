@@ -1,0 +1,57 @@
+{
+  "ba-dinh": {
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ba_Dinh_Square_September_2nd%2C_1945.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Ba_Dinh_Square_September_2nd%2C_1945.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Ba_Dinh_Square_September_2nd%2C_1945.jpg/1280px-Ba_Dinh_Square_September_2nd%2C_1945.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "localPath": "public/media/ba-dinh.jpg",
+    "sha256": "db8b451e99ede674db664fa5f076d13d89df7a65a374650be5bb66109c3a2a94",
+    "checkedAt": "2026-11-03",
+    "license": "Phạm vi công cộng tại Việt Nam · PD-Vietnam (theo Commons)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-Vietnam",
+    "modifications": "Commons-generated thumbnail; no additional cropping, colorization or retouching."
+  },
+  "dien-bien": {
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victory_in_Battle_of_Dien_Bien_Phu.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Victory_in_Battle_of_Dien_Bien_Phu.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Victory_in_Battle_of_Dien_Bien_Phu.jpg/1280px-Victory_in_Battle_of_Dien_Bien_Phu.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "localPath": "public/media/dien-bien.jpg",
+    "sha256": "83285c85e71f123530365d2c5051a8d702db3f335ba649b9cb5da83ef94dfd26",
+    "checkedAt": "2026-11-03",
+    "license": "Phạm vi công cộng tại Việt Nam · PD-Vietnam (theo Commons)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-Vietnam",
+    "modifications": "Commons-generated thumbnail; no additional cropping, colorization or retouching."
+  },
+  "duong-kach-menh": {
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Duong_Kach_Menh_%28Original%29.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Duong_Kach_Menh_%28Original%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Duong_Kach_Menh_%28Original%29.jpg/1280px-Duong_Kach_Menh_%28Original%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "localPath": "public/media/duong-kach-menh.jpg",
+    "sha256": "e6ba168a2c4bb8bd1939c3bed0a3ffec7e626d799d544bdb98f44691afd3c3d4",
+    "checkedAt": "2026-11-03",
+    "license": "CC BY-SA 4.0 · Hoangkid",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "modifications": "Commons-generated thumbnail; no additional cropping, colorization or retouching."
+  },
+  "tours": {
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Congr%C3%A8s_de_Tours_-_vue_g%C3%A9n%C3%A9rale_de_la_salle.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Congr%C3%A8s_de_Tours_-_vue_g%C3%A9n%C3%A9rale_de_la_salle.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Congr%C3%A8s_de_Tours_-_vue_g%C3%A9n%C3%A9rale_de_la_salle.jpg/1280px-Congr%C3%A8s_de_Tours_-_vue_g%C3%A9n%C3%A9rale_de_la_salle.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "localPath": "public/media/tours.jpg",
+    "sha256": "525668c3f116d0d88605505f82fffb50f0b8f43a3056460eab6f377aa4f6c37b",
+    "checkedAt": "2026-11-03",
+    "license": "Phạm vi công cộng · PD-France / PD-US (theo Commons)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/File:Congr%C3%A8s_de_Tours_-_vue_g%C3%A9n%C3%A9rale_de_la_salle.jpg#Licensing",
+    "modifications": "Commons-generated thumbnail; no additional cropping, colorization or retouching."
+  },
+  "paris-photo": {
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vietnam_peace_agreement_signing%2C_27580141%2C_new.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Vietnam_peace_agreement_signing%2C_27580141%2C_new.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Vietnam_peace_agreement_signing%2C_27580141%2C_new.jpg/1280px-Vietnam_peace_agreement_signing%2C_27580141%2C_new.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "localPath": "public/media/paris-photo.jpg",
+    "sha256": "1e0ea17846a4cb62dc6cf646414e998ee371dd94b3ed53f952fe81854ce2d808",
+    "checkedAt": "2026-11-03",
+    "license": "Phạm vi công cộng · tác phẩm công vụ của Chính phủ Hoa Kỳ",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+    "modifications": "Commons-generated thumbnail; no additional cropping, colorization or retouching."
+  }
+}

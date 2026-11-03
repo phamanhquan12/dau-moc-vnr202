@@ -6,7 +6,7 @@ import {
   waitFor,
 } from "@testing-library/react";
 import { beforeEach, describe, it, expect, vi } from "vitest";
-import { ImageEvidence } from "../../src/components/Evidence";
+import { ImageEvidence, EventSources } from "../../src/components/Evidence";
 import { App } from "../../src/app/App";
 import { content } from "../../src/domain/content";
 import { initialState, STORAGE_KEY } from "../../src/storage/state";
@@ -94,7 +94,7 @@ describe("real React and domain integration", () => {
       target: { value: "3" },
     });
     expect(screen.getByRole("status").textContent).toContain("1 hồ sơ");
-    location.hash = "profile/duong-kach-menh";
+    location.hash = "profile/giai-phong";
     fireEvent(window, new HashChangeEvent("hashchange"));
     await screen.findByText("Tư liệu ảnh chưa được tích hợp");
     expect(
@@ -127,11 +127,38 @@ it("failed verified image preserves caption/source and switches to honest fallba
   try {
     render(<ImageEvidence id={image.id} />);
     fireEvent.error(screen.getByRole("img"));
-    expect(screen.getByText("Tư liệu ảnh chưa được tích hợp")).toBeTruthy();
+    expect(
+      screen.getByText("Không tải được ảnh. Mở trang nguồn để xem."),
+    ).toBeTruthy();
     expect(
       screen.getByRole("link", { name: "Trang nguồn & điều kiện sử dụng ↗" }),
     ).toBeTruthy();
   } finally {
     Object.assign(image, before);
   }
+});
+
+it("WTO evidence includes authoritative date and explains the textbook's different milestone", () => {
+  render(<EventSources eventId="wto" />);
+  expect(screen.getByText(/Trang in 165–166 · Trang PDF 166–167/)).toBeTruthy();
+  expect(
+    screen
+      .getByRole("link", { name: "Đọc nguồn đối chiếu ↗" })
+      .getAttribute("href"),
+  ).toContain("wto.org");
+  expect(screen.getByText(/ngày tư cách thành viên/i)).toBeTruthy();
+  expect(screen.queryByText(/chưa xác minh trang/)).toBeNull();
+});
+
+it("unassigned photographs omit empty messaging; real artifact includes date and license", () => {
+  const view = render(<ImageEvidence id={null} />);
+  expect(view.container.innerHTML).toBe("");
+  view.rerender(<ImageEvidence id="duong-kach-menh" />);
+  expect(screen.getByRole("img").getAttribute("src")).toContain(
+    "media/duong-kach-menh.jpg",
+  );
+  expect(screen.getByText(/ảnh chụp ngày 08\/02\/2017/)).toBeTruthy();
+  expect(
+    screen.getByRole("link", { name: /CC BY-SA 4.0/ }).getAttribute("href"),
+  ).toBe("https://creativecommons.org/licenses/by-sa/4.0/");
 });
