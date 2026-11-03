@@ -37,3 +37,7 @@ Screenshots in screenshots/: desktop 1440×900, projector1280×720, mobile390×8
 | Search Vietnamese with/without accents | integration and mobile browser tests |
 | Clear incomplete media and sources | profile placeholders and image-error integration |
 | Corrupt state safe, no unrelated deletion | unit/integration recovery/reset tests |
+
+## CI and deployed verification
+
+GitHub Actions run **41668904527** passed clean `npm ci`, TypeScript, 21 unit tests, 7 React integration tests, 5 Playwright production-preview tests and deployment for commit **5cce238**. All five Playwright journeys were then rerun against **https://phamanhquan12.github.io/dau-moc-vnr202/**: **5 passed**, including subpath assets with no detected 404s or runtime page errors. Committed screenshots are the local production-preview comparison set; live-run captures were used for verification without replacing that set.
