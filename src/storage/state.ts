@@ -12,7 +12,13 @@ export const initialState = (data: Content): AppState => ({
   },
   quiz: null,
   ordering: null,
-  ui: { chapter: 1, selected: data.events[0].id, period: 0 },
+  ui: {
+    chapter: 1,
+    selected: data.events[0].id,
+    period: 0,
+    historyAll: true,
+    historyView: "map",
+  },
   notice: "",
 });
 export function restoreSession(
@@ -70,6 +76,10 @@ export function restoreSession(
       base.ui.selected = s.ui.selected;
     if (Number.isInteger(s.ui?.period) && s.ui.period >= 0 && s.ui.period < 5)
       base.ui.period = s.ui.period;
+    if (typeof s.ui?.historyAll === "boolean")
+      base.ui.historyAll = s.ui.historyAll;
+    if (s.ui?.historyView === "map" || s.ui?.historyView === "lanes")
+      base.ui.historyView = s.ui.historyView;
     return base;
   } catch {
     return {

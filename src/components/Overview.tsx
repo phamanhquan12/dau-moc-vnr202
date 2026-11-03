@@ -76,17 +76,17 @@ export function Overview({
             className="primary overview-first-action"
             href="#profile/thanh-lap-dang"
           >
-            Đọc hồ sơ đầu tiên →
+            Đọc hồ sơ đầu tiên
           </a>
           <div className="overview-shortcuts">
             <a href="#how-to" onClick={(event) => jumpTo(event, "how-to")}>
-              Xem cách học ↓
+              Xem cách học
             </a>
             <a
               href="#video-library"
               onClick={(event) => jumpTo(event, "video-library")}
             >
-              Xem video ↓
+              Xem video
             </a>
           </div>
         </div>
@@ -114,7 +114,7 @@ export function Overview({
               “Hồ sơ” là bài đọc ngắn gồm bối cảnh, chủ trương, kết quả và
               nguồn. Bắt đầu với sự kiện Đảng ra đời năm 1930.
             </p>
-            <a href="#profile/thanh-lap-dang">Mở hồ sơ: Đảng ra đời →</a>
+            <a href="#profile/thanh-lap-dang">Mở hồ sơ: Đảng ra đời</a>
           </li>
           <li>
             <span className="step-number">02</span>
@@ -124,7 +124,7 @@ export function Overview({
               giúp bạn lần theo tiến trình của chương.
             </p>
             <button className="guide-text-action" onClick={() => onChapter(1)}>
-              Khám phá Chương 1 →
+              Khám phá Chương 1
             </button>
           </li>
           <li>
@@ -135,7 +135,7 @@ export function Overview({
               “Chốt đáp án”; đọc lời giải và nguồn sau mỗi câu.
             </p>
             <button className="primary" onClick={onQuiz}>
-              Bắt đầu quiz →
+              Bắt đầu quiz
             </button>
           </li>
         </ol>
@@ -157,7 +157,6 @@ export function Overview({
               onClick={() => onChapter(journey.chapter)}
             >
               <h3>{journey.title}</h3>
-              <span aria-hidden="true">↗</span>
             </button>
             <p>{journey.text}</p>
           </article>
@@ -177,13 +176,13 @@ export function Overview({
         <dl>
           <div>
             <dt>
-              <a href="#board">Bàn nhiệm vụ ↗</a>
+              <a href="#board">Bàn nhiệm vụ</a>
             </dt>
             <dd>Chọn chương và mở lần lượt các hồ sơ trên tuyến sự kiện.</dd>
           </div>
           <div>
             <dt>
-              <a href="#quiz">Quiz ↗</a>
+              <a href="#quiz">Quiz</a>
             </dt>
             <dd>
               Trả lời câu hỏi trắc nghiệm để ôn kiến thức. Đọc giải thích và
@@ -192,7 +191,7 @@ export function Overview({
           </div>
           <div>
             <dt>
-              <a href="#order">Xếp mốc ↗</a>
+              <a href="#order">Xếp mốc</a>
             </dt>
             <dd>
               Xếp các sự kiện từ sớm đến muộn rồi bấm “Kiểm tra”. Có thể chọn
@@ -201,16 +200,16 @@ export function Overview({
           </div>
           <div>
             <dt>
-              <a href="#lanes">Hai miền cùng thời ↗</a>
+              <a href="#lanes">Hai miền cùng thời</a>
             </dt>
             <dd>
-              So sánh các mốc ở miền Bắc, miền Nam và ngoại giao trong cùng một
-              giai đoạn 1954–1975.
+              Khám phá bản đồ tương tác, chọn giai đoạn 1954–1975 và so sánh các
+              mốc ở miền Bắc, miền Nam, ngoại giao.
             </dd>
           </div>
           <div>
             <dt>
-              <a href="#materials">Hồ sơ tư liệu ↗</a>
+              <a href="#materials">Hồ sơ tư liệu</a>
             </dt>
             <dd>
               Tìm sự kiện theo tên hoặc thời gian, lọc chương và mở nguồn để đối
@@ -220,7 +219,7 @@ export function Overview({
         </dl>
         <div className="overview-practice">
           <span>Sẵn sàng thử thứ tự các sự kiện?</span>
-          <button onClick={onOrder}>Xếp mốc →</button>
+          <button onClick={onOrder}>Xếp mốc</button>
         </div>
       </section>
       <VideoLibrary />

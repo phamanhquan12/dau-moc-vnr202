@@ -113,6 +113,12 @@ export type AppState = {
   progress: Progress;
   quiz: QuizSession | null;
   ordering: OrderingRound | null;
-  ui: { chapter: Chapter; selected: string; period: number };
+  ui: {
+    chapter: Chapter;
+    selected: string;
+    period: number;
+    historyAll?: boolean;
+    historyView?: "map" | "lanes";
+  };
   notice: string;
 };

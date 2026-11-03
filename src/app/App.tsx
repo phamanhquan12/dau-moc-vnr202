@@ -30,6 +30,8 @@ import {
 import { ImageEvidence, EventSources } from "../components/Evidence";
 import { Overview } from "../components/Overview";
 import { VideoLibrary } from "../components/VideoLibrary";
+import { HistoryMap } from "../components/HistoryMap";
+import { allHistoryPeriod } from "../domain/history";
 import { ArchiveImage } from "../components/ArchiveImage";
 export const parseRoute = (hash: string) => {
   const [view, id] = hash.replace(/^#\/?/, "").split("/");
@@ -215,7 +217,7 @@ export function App() {
           Toàn bộ ba chương
         </button>
         <div className="dock-note">
-          26 hồ sơ / 52 câu hỏi
+          {content.events.length} hồ sơ / {content.questions.length} câu hỏi
           <br />
           Tham chiếu đoạn nguồn cụ thể.
         </div>
@@ -241,16 +243,16 @@ export function App() {
         </p>
         <div className="actions board-start">
           <button className="primary" onClick={requestQuiz}>
-            Bắt đầu quiz →
+            Bắt đầu quiz
           </button>
-          <button onClick={requestOrder}>Xếp mốc →</button>
+          <button onClick={requestOrder}>Xếp mốc</button>
         </div>
         <div className="board-pages">
           <button
             disabled={offset === 0}
             onClick={() => selectNode(filtered[Math.max(0, offset - 6)].id)}
           >
-            ← Dải trước
+            Dải trước
           </button>
           <span>
             Mốc {offset + 1}–{Math.min(offset + 6, filtered.length)} /{" "}
@@ -260,7 +262,7 @@ export function App() {
             disabled={offset + 6 >= filtered.length}
             onClick={() => selectNode(filtered[offset + 6].id)}
           >
-            Dải tiếp →
+            Dải tiếp
           </button>
         </div>
         <ol className="timeline">
@@ -286,7 +288,7 @@ export function App() {
               selectNode(filtered[filtered.indexOf(selected) - 1].id)
             }
           >
-            ← Mốc trước
+            Mốc trước
           </button>
           <span>{selected.displayDate}</span>
           <button
@@ -295,7 +297,7 @@ export function App() {
               selectNode(filtered[filtered.indexOf(selected) + 1].id)
             }
           >
-            Mốc sau →
+            Mốc sau
           </button>
         </div>
       </section>
@@ -312,7 +314,7 @@ export function App() {
           className="primary"
           onClick={() => navigate("profile/" + selected.id)}
         >
-          Bắt đầu · Mở hồ sơ →
+          Bắt đầu · Mở hồ sơ
         </button>
         <p className="fine">
           Xem hồ sơ không cộng điểm hoặc đánh dấu đã nắm kiến thức.
@@ -353,7 +355,7 @@ export function App() {
         <section className="start-view">
           <h1>Lượt đã kết thúc</h1>
           <a className="primary" href="#results/quiz">
-            Xem kết quả quiz →
+            Xem kết quả quiz
           </a>
           <button onClick={requestQuiz}>Lượt mới</button>
         </section>
@@ -461,7 +463,7 @@ export function App() {
                     navigate("results/quiz");
                 }}
               >
-                Tiếp tục →
+                Tiếp tục
               </button>
             </>
           ) : (
@@ -644,7 +646,7 @@ export function App() {
               })}
             </ol>
             <a className="primary" href="#results/order">
-              Xem kết quả xếp mốc →
+              Xem kết quả xếp mốc
             </a>
           </section>
         ) : (
@@ -707,7 +709,12 @@ export function App() {
       );
     return (
       <section className="profile-view">
-        <a href="#board">← Trở lại node đã chọn</a>
+        <div className="profile-return-links">
+          <a href="#board">Trở lại node đã chọn</a>
+          {e.year >= 1954 && e.year <= 1975 && (
+            <a href="#lanes">Bản đồ & dòng thời gian</a>
+          )}
+        </div>
         <p className="eyebrow">
           {e.displayDate} / {e.place} / {e.region}
         </p>
@@ -741,7 +748,10 @@ export function App() {
     );
   }
   function lanesView() {
-    const period = periods[state.ui.period],
+    const period =
+        state.ui.historyAll !== false
+          ? allHistoryPeriod
+          : periods[state.ui.period],
       events = content.events.filter(
         (e) => e.year >= period.start && e.year < period.end,
       );
@@ -758,113 +768,167 @@ export function App() {
             </h1>
           </div>
           <p>
-            Đặt miền Bắc, miền Nam và mặt trận ngoại giao cạnh nhau. Chọn một
-            giai đoạn để đọc các mốc cùng thời và tìm hiểu mối liên hệ giữa hậu
-            phương, tiền tuyến và ngoại giao.
+            Khám phá các mốc miền Bắc, miền Nam và ngoại giao qua bản đồ cùng
+            dòng thời gian. Chọn giai đoạn, bấm một địa danh hoặc chọn sự kiện
+            để đọc bối cảnh và nguồn.
           </p>
         </div>
-        <div className="period-selector">
+        <div
+          className="history-view-switch"
+          role="group"
+          aria-label="Cách xem lịch sử"
+        >
+          <button
+            aria-pressed={state.ui.historyView !== "lanes"}
+            onClick={() =>
+              setState((s) => ({ ...s, ui: { ...s.ui, historyView: "map" } }))
+            }
+          >
+            Bản đồ & dòng thời gian
+          </button>
+          <button
+            aria-pressed={state.ui.historyView === "lanes"}
+            onClick={() =>
+              setState((s) => ({ ...s, ui: { ...s.ui, historyView: "lanes" } }))
+            }
+          >
+            Ba làn tư liệu
+          </button>
+        </div>
+        <div
+          className="period-selector"
+          role="group"
+          aria-label="Chọn giai đoạn"
+        >
+          <button
+            aria-pressed={state.ui.historyAll !== false}
+            onClick={() =>
+              setState((s) => ({ ...s, ui: { ...s.ui, historyAll: true } }))
+            }
+          >
+            Toàn giai đoạn
+          </button>
           {periods.map((p, i) => (
             <button
               key={p.start}
-              aria-pressed={state.ui.period === i}
+              aria-pressed={
+                state.ui.historyAll === false && state.ui.period === i
+              }
               onClick={() =>
-                setState((s) => ({ ...s, ui: { ...s.ui, period: i } }))
+                setState((s) => ({
+                  ...s,
+                  ui: { ...s.ui, period: i, historyAll: false },
+                }))
               }
             >
               {p.label}
             </button>
           ))}
         </div>
+        <p className="period-boundary-note">
+          Mốc ở năm ranh giới được xếp vào dải bắt đầu bằng năm đó, như 1965 và
+          1973. Một hồ sơ chỉ thuộc một dải.
+        </p>
         <div className="period-banner">
           <span>GIAI ĐOẠN ĐANG KHÁM PHÁ</span>
           <strong>{period.label}</strong>
           <small>{events.length} hồ sơ trong ba làn bối cảnh</small>
         </div>
-        <div className="three-lanes">
-          {[
-            [
-              "north",
-              "Miền Bắc",
-              "Hậu phương & kháng chiến",
-              "dien-bien",
-              "Điện Biên Phủ · tư liệu 1954",
-            ],
-            [
-              "common",
-              "Chung / ngoại giao",
-              "Đàm phán & cục diện chung",
-              "geneva-photo",
-              "Hội nghị Giơnevơ · tư liệu 1954",
-            ],
-            [
-              "south",
-              "Miền Nam",
-              "Phong trào & đấu tranh giải phóng",
-              "nguyen-thi-dinh",
-              "Tượng Nguyễn Thị Định · ảnh hiện vật 2008",
-            ],
-          ].map(([region, title, subtitle, image, caption], index) => (
-            <section key={region}>
-              <div className="lane-heading">
-                <span>0{index + 1}</span>
-                <div>
-                  <h2>{title}</h2>
-                  <p>{subtitle}</p>
-                </div>
-              </div>
-              <ArchiveImage
-                id={
-                  region === "common" && period.start >= 1969
-                    ? "paris-photo"
-                    : image
-                }
-                caption={
-                  region === "common" && period.start >= 1969
-                    ? "Lễ ký Hiệp định Paris · tư liệu 1973"
-                    : caption
-                }
-              />
-              {cards(region).length ? (
-                cards(region).map((e) => (
-                  <article key={e.id}>
-                    <time>{e.displayDate}</time>
-                    <h3>{e.title}</h3>
-                    <p>{e.result}</p>
-                    <a href={"#profile/" + e.id}>Mở hồ sơ & nguồn ↗</a>
-                  </article>
-                ))
-              ) : (
-                <p className="empty">Chưa có hồ sơ trong bộ dữ liệu</p>
-              )}
-            </section>
-          ))}
-        </div>
-        <p className="lane-photo-note">
-          Ảnh đầu mỗi làn giới thiệu chủ đề; ngày chụp được ghi riêng và có thể
-          nằm ngoài giai đoạn đang lọc. Các mốc bên dưới thuộc đúng giai đoạn đã
-          chọn.
-        </p>
+        {state.ui.historyView !== "lanes" ? (
+          <HistoryMap
+            key={`${period.start}-${period.end}`}
+            start={period.start}
+            end={period.end}
+            periodLabel={period.label}
+          />
+        ) : (
+          <>
+            <div className="three-lanes">
+              {[
+                [
+                  "north",
+                  "Miền Bắc",
+                  "Hậu phương & kháng chiến",
+                  "dien-bien",
+                  "Điện Biên Phủ · tư liệu 1954",
+                ],
+                [
+                  "common",
+                  "Chung / ngoại giao",
+                  "Đàm phán & cục diện chung",
+                  "geneva-photo",
+                  "Hội nghị Giơnevơ · tư liệu 1954",
+                ],
+                [
+                  "south",
+                  "Miền Nam",
+                  "Phong trào & đấu tranh giải phóng",
+                  "nguyen-thi-dinh",
+                  "Tượng Nguyễn Thị Định · ảnh hiện vật 2008",
+                ],
+              ].map(([region, title, subtitle, image, caption], index) => (
+                <section key={region}>
+                  <div className="lane-heading">
+                    <span>0{index + 1}</span>
+                    <div>
+                      <h2>{title}</h2>
+                      <p>{subtitle}</p>
+                    </div>
+                  </div>
+                  <ArchiveImage
+                    id={
+                      region === "common" && period.start >= 1969
+                        ? "paris-photo"
+                        : image
+                    }
+                    caption={
+                      region === "common" && period.start >= 1969
+                        ? "Lễ ký Hiệp định Paris · tư liệu 1973"
+                        : caption
+                    }
+                  />
+                  {cards(region).length ? (
+                    cards(region).map((e) => (
+                      <article key={e.id}>
+                        <time>{e.displayDate}</time>
+                        <h3>{e.title}</h3>
+                        <p>{e.result}</p>
+                        <a href={"#profile/" + e.id}>Mở hồ sơ & nguồn</a>
+                      </article>
+                    ))
+                  ) : (
+                    <p className="empty">Chưa có hồ sơ trong bộ dữ liệu</p>
+                  )}
+                </section>
+              ))}
+            </div>
+            <p className="lane-photo-note">
+              Ảnh đầu mỗi làn giới thiệu chủ đề; ngày chụp được ghi riêng và có
+              thể nằm ngoài giai đoạn đang lọc. Các mốc bên dưới thuộc đúng giai
+              đoạn đã chọn.
+            </p>
+          </>
+        )}
         <section className="evidence relation-notes">
           <h2>Kết nối có giới hạn</h2>
           {[
             [
-              "Nghị quyết 15 → Đồng khởi",
+              "Nghị quyết 15 · Đồng khởi",
               "Đường lối năm 1959 là một căn cứ của phong trào; việc tổ chức ở địa phương và quần chúng cũng quyết định cách triển khai.",
               "dong-khoi",
             ],
             [
-              "Đại hội III → hai nhiệm vụ chiến lược",
+              "Đại hội III · hai nhiệm vụ chiến lược",
               "Miền Bắc và miền Nam có nhiệm vụ, vai trò khác nhau trong mục tiêu thống nhất; không thay thế đóng góp của nhau.",
               "dai-hoi-iii",
             ],
             [
-              "Tháng 12/1972 → Hiệp định Paris",
+              "Tháng 12/1972 · Hiệp định Paris",
               "Chiến đấu ở miền Bắc gắn với cả quá trình đấu tranh quân sự, chính trị và ngoại giao; không phải nguyên nhân duy nhất của hiệp định.",
               "dien-bien-tren-khong",
             ],
             [
-              "Paris → nhiệm vụ giải phóng miền Nam",
+              "Paris · nhiệm vụ giải phóng miền Nam",
               "Hiệp định tạo cục diện mới; nhiệm vụ giải phóng miền Nam tiếp tục đến năm 1975.",
               "paris",
             ],
@@ -872,7 +936,7 @@ export function App() {
             <article key={title}>
               <h3>{title}</h3>
               <p>{text}</p>
-              <a href={"#profile/" + eventId}>Xem đoạn nguồn & bối cảnh ↗</a>
+              <a href={"#profile/" + eventId}>Xem đoạn nguồn & bối cảnh</a>
             </article>
           ))}
         </section>
@@ -890,9 +954,10 @@ export function App() {
           Kiểm tra căn cứ.
         </h1>
         <p>
-          26 hồ sơ trong phạm vi VNR202, từ 1920 đến 2018. Mỗi hồ sơ dẫn tới
-          đoạn nguồn cụ thể trong giáo trình 2019; các văn kiện và tư liệu chính
-          thức bổ sung giúp kiểm tra những mốc cần phân biệt.
+          {content.events.length} hồ sơ trong phạm vi VNR202, từ 1920 đến 2018.
+          Mỗi hồ sơ dẫn tới đoạn nguồn cụ thể trong giáo trình 2019; các văn
+          kiện và tư liệu chính thức bổ sung giúp kiểm tra những mốc cần phân
+          biệt.
         </p>
         <div className="filters">
           <label>
@@ -1030,7 +1095,7 @@ export function App() {
                   {q.options.find((o) => o.id === q.correctOptionId)!.text}
                 </p>
                 <p>{q.explanation}</p>
-                <a href={"#profile/" + q.eventId}>Ôn hồ sơ →</a>
+                <a href={"#profile/" + q.eventId}>Ôn hồ sơ</a>
                 <EventSources eventId={q.eventId} />
               </article>
             );
@@ -1075,12 +1140,12 @@ export function App() {
           DẤU MỐC <b>VNR202</b>
         </a>
         <div className="session-meta">
-          {state.progress.seenEventIds.length}/26 đã xem ·{" "}
+          {state.progress.seenEventIds.length}/{content.events.length} đã xem ·{" "}
           {state.progress.correctQuestionIds.length}/52 câu từng trả lời đúng
         </div>
         {state.quiz && state.quiz.phase !== "finished" ? (
           <a className="resume" href="#quiz">
-            Tiếp tục lượt đang dở →
+            Tiếp tục lượt đang dở
           </a>
         ) : (
           <span className="session-tag">HỌC LỊCH SỬ QUA TƯ LIỆU</span>
@@ -1109,8 +1174,9 @@ export function App() {
       </nav>
       {route.view !== "overview" && (
         <div className="scope-note">
-          26 HỒ SƠ / 52 CÂU HỎI · 8 ẢNH TƯ LIỆU & ĐỊA ĐIỂM · Best quiz{" "}
-          {state.progress.bestQuiz} / Best xếp mốc {state.progress.bestOrdering}
+          {content.events.length} HỒ SƠ / {content.questions.length} CÂU HỎI · 8
+          ẢNH TƯ LIỆU & ĐỊA ĐIỂM · Best quiz {state.progress.bestQuiz} / Best
+          xếp mốc {state.progress.bestOrdering}
         </div>
       )}
       {(state.notice || storageError) && (

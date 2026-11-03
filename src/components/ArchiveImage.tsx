@@ -40,10 +40,10 @@ export function ArchiveImage({
             <p>{image.credit}</p>
             <p>{image.usageNote}</p>
             <a href={image.licenseUrl} target="_blank" rel="noreferrer">
-              {image.license} ↗
+              {image.license}
             </a>
             <a href={image.sourceUrl} target="_blank" rel="noreferrer">
-              Trang nguồn ↗
+              Trang nguồn
             </a>
           </div>
         </details>

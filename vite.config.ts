@@ -2,6 +2,7 @@ import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
+import { validateHistory } from "./src/domain/history";
 import { content, validateContent } from "./src/domain/content";
 export default defineConfig({
   plugins: [
@@ -12,6 +13,7 @@ export default defineConfig({
         const errors = validateContent(content, (path) =>
           existsSync(resolve("public", path.replace(/^\//, ""))),
         );
+        errors.push(...validateHistory(content));
         if (errors.length) throw Error(errors.join("\n"));
       },
     },

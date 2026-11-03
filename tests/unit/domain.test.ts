@@ -1,3 +1,10 @@
+import {
+  historyEvents,
+  historyLocation,
+  historyPlaces,
+  projectPoint,
+  validateHistory,
+} from "../../src/domain/history";
 import { videos } from "../../src/data/videos";
 import { describe, it, expect } from "vitest";
 import { createHash } from "node:crypto";
@@ -166,7 +173,7 @@ describe("ordering, evidence and restoration", () => {
   });
   it("PDF anchors distinguish printed page from viewer page in the checked edition", () => {
     const sources = content.sources.filter((s) => s.pdfPage !== undefined);
-    expect(sources).toHaveLength(26);
+    expect(sources).toHaveLength(43);
     for (const source of sources) {
       expect(source.url).toContain(`#page=${source.pdfPage}`);
       expect(source.pdfPage).toBe(source.page! + 1);
@@ -264,8 +271,8 @@ describe("ordering, evidence and restoration", () => {
     expect(state.progress.correctQuestionIds).toHaveLength(6);
     expect(state.progress.seenEventIds).toHaveLength(0);
   });
-  it("seed validates all dates, refs, choices, and 26/52 counts", () => {
-    expect(content.events).toHaveLength(26);
+  it("seed validates all dates, refs, choices, and 43/52 counts", () => {
+    expect(content.events).toHaveLength(43);
     expect(content.questions).toHaveLength(52);
     expect(validateContent(content)).toEqual([]);
     expect(content.events.find((e) => e.id === "thang-tam")!.date).toBe(
@@ -351,4 +358,79 @@ it("curated videos match existing course events, photos and checked publisher me
       );
     } else expect(new URL(video.sourceUrl).hostname).toBe("nhandan.vn");
   }
+});
+
+describe("historical map coverage and geography", () => {
+  it("every requested period has at least five sourced profiles, without duplicate boundary years", () => {
+    const ranges = [
+      [1954, 1961],
+      [1961, 1965],
+      [1965, 1969],
+      [1969, 1973],
+      [1973, 1976],
+    ];
+    expect(
+      ranges.map(([start, end]) => historyEvents(content, start, end).length),
+    ).toEqual([5, 5, 5, 5, 6]);
+    expect(validateHistory(content)).toEqual([]);
+    const ids = ranges.flatMap(([start, end]) =>
+      historyEvents(content, start, end).map((e) => e.id),
+    );
+    expect(new Set(ids).size).toBe(ids.length);
+    expect(
+      historyEvents(content, 1961, 1965).some((e) => e.id === "ap-bac"),
+    ).toBe(true);
+  });
+  it("international and area-wide events are not assigned fictitious domestic points", () => {
+    for (const id of ["geneva", "paris", "paris-bon-ben"]) {
+      expect(historyLocation(id).kind).toBe("overseas");
+      expect(historyLocation(id).placeIds).toEqual([]);
+    }
+    expect(historyLocation("ke-hoach-5-nam-1").kind).toBe("area");
+    expect(historyLocation("mau-than").placeIds).toHaveLength(2);
+    expect(historyLocation("dien-bien-tren-khong").placeIds).toHaveLength(2);
+    expect(historyPlaces.find((p) => p.id === "mo-cay")!.latitude).toBeLessThan(
+      11,
+    );
+    expect(
+      historyPlaces.find((p) => p.id === "phuoc-long")!.latitude,
+    ).toBeGreaterThan(11);
+    for (const place of historyPlaces) {
+      const [x, y] = projectPoint(place.longitude, place.latitude);
+      expect(x).toBeGreaterThan(0);
+      expect(x).toBeLessThan(450);
+      expect(y).toBeGreaterThan(0);
+      expect(y).toBeLessThan(650);
+    }
+  });
+  it("regional and place filters preserve exact event membership", () => {
+    const events = historyEvents(content, 1954, 1976, "north");
+    expect(events.every((e) => e.region === "Miền Bắc")).toBe(true);
+    expect(
+      historyEvents(content, 1954, 1976, "all", "ha-noi").map((e) => e.id),
+    ).toEqual(["dai-hoi-iii", "dien-bien-tren-khong"]);
+    expect(historyEvents(content, 1961, 1965, "north", "cai-lay")).toHaveLength(
+      0,
+    );
+  });
+  it("coverage validation catches accidental loss of an entire requested band", () => {
+    expect(
+      validateHistory({
+        ...content,
+        events: content.events.filter((e) => e.year < 1961 || e.year >= 1965),
+      }),
+    ).toContain("History coverage below 5: 1961–1965");
+  });
+  it("map period and view choices survive reload without invalidating existing quiz progress", () => {
+    const s = initialState(content);
+    s.ui.historyAll = false;
+    s.ui.period = 1;
+    s.ui.historyView = "lanes";
+    s.progress.bestQuiz = 400;
+    const restored = restoreSession(JSON.stringify(s), content);
+    expect(restored.ui.historyAll).toBe(false);
+    expect(restored.ui.period).toBe(1);
+    expect(restored.ui.historyView).toBe("lanes");
+    expect(restored.progress.bestQuiz).toBe(400);
+  });
 });

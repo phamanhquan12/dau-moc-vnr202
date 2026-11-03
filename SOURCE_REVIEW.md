@@ -1,6 +1,6 @@
 # Source review — VNR202
 
-Checked 3 November 2026. Scope remains the supplied 26 selected events, 1920–2018, and their 52 questions for Lịch sử Đảng Cộng sản Việt Nam. Event/question IDs, answer keys and game rules are unchanged. No additional subject or runtime-generated historical claims are introduced.
+Initial review: 3 November 2026; expanded 4 November 2026. Scope is now 43 selected profiles, 1920–2018, and the original 52 questions for Lịch sử Đảng Cộng sản Việt Nam. The original 26 event IDs, all question IDs, answer keys and game rules are retained. Seventeen sourced profiles were added to fill the five 1954–1975 bands at the user’s request. No additional subject or runtime-generated historical claims are introduced.
 
 ## Textbook edition and method
 
@@ -29,9 +29,26 @@ The publicly accessible June 2019 teaching text identifies Ban Tuyên giáo Trun
 | nghi-quyet-15 | 91 | 92 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=92) |
 | dong-khoi | 92 | 93 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=93) |
 | dai-hoi-iii | 93–95 | 94–96 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=94) |
+| ke-hoach-5-nam-1 | 95–96 | 96–97 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=96) |
+| duong-bien-1961 | 91 | 92 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=92) |
+| ap-bac | 97 | 98 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=98) |
+| hoi-nghi-9-1963 | 98–99 | 99–100 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=99) |
+| binh-gia | 98–99 | 99–100 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=99) |
+| mien-bac-chuyen-huong | 101–103 | 102–104 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=102) |
+| nghi-quyet-11-12 | 99–101 | 100–102 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=100) |
+| van-tuong | 103 | 104 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=104) |
+| loi-keu-goi-1966 | 102 | 103 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=103) |
 | mau-than | 105–106 | 106–107 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=106) |
+| khoi-phuc-1969 | 107–108 | 108–109 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=108) |
+| paris-bon-ben | 105–106 | 106–107 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=106) |
+| chinh-phu-cmlt | 106 | 107 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=107) |
+| tien-cong-1972 | 110 | 111 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=111) |
 | dien-bien-tren-khong | 107 | 108 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=108) |
 | paris | 110–111 | 111–112 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=111) |
+| nghi-quyet-21 | 111 | 112 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=112) |
+| khoi-phuc-1974 | 107–108 | 108–109 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=108) |
+| phuoc-long | 111–112 | 112–113 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=112) |
+| buon-ma-thuot | 112 | 113 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=113) |
 | giai-phong | 112–113 | 113–114 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=113) |
 | thong-nhat | 116–117 | 117–118 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=117) |
 | doi-moi | 127–129 | 128–130 | [PDF](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf#page=128) |
@@ -72,3 +89,7 @@ Unanswered date quizzes contain neither photos nor source cards. Checked referen
 ## Exhibition overview revision
 
 The user's later instruction requests an opening summary tab and representative photographs in the two-region view. The opening route is now `overview`; the previous board remains available via `board`. The three chapter images introduce the subject before activities. Lane cover photographs introduce a broad theme and explicitly retain their own date even when the active period filter changes. Filtered event dates continue to determine lane membership; imagery does not change the historical ordering or source map. Credits expand inline and include each image's author, license and source. No historical claim is inferred from a decorative photograph.
+
+## Period expansion and map
+
+Seventeen additional chapter-2 profiles use the checked textbook passages listed above. Fourteen also link supplementary articles from government, Party, national museum or official press publishers. The supplementary URLs were fetched successfully during review; the directly linked textbook remains the main passage reference. New records distinguish a campaign’s opening from its duration and retain month/year precision where multiple dates exist. See MAP_REVIEW.md for band counts, coordinate sources, broad-area cases and map limitations. No extra quiz questions or automatic mastery were introduced.

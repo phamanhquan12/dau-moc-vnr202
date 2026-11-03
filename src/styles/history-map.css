@@ -1,0 +1,388 @@
+.history-view-switch {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0 24px;
+  flex-wrap: wrap;
+}
+.history-view-switch button {
+  background: transparent;
+  font-size: 13px;
+}
+.history-view-switch button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+.map-introduction {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+  padding: 25px 0;
+  border-top: 1px solid var(--line);
+}
+.map-introduction h2 {
+  font-size: 27px;
+  line-height: 1.4;
+  margin: 0;
+}
+.map-introduction > p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 430px;
+}
+.map-region-filter {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  margin: 0 0 24px;
+}
+.map-region-filter button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  background: white;
+}
+.map-region-filter small {
+  font-size: 11px;
+  color: inherit;
+  border-left: 1px solid var(--line);
+  padding-left: 9px;
+}
+.region-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  background: #5b6058;
+  border-radius: 50%;
+}
+.region-dot.north {
+  background: #3e6d56;
+}
+.region-dot.south {
+  background: #a52d27;
+}
+.region-dot.common {
+  background: #90621f;
+}
+.map-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 35px;
+  align-items: start;
+}
+.map-column {
+  position: sticky;
+  top: 20px;
+}
+.map-canvas {
+  background: #eef1eb;
+  border: 1px solid #c9d0c4;
+}
+.map-canvas-heading,
+.map-canvas-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 18px;
+  color: #525e4e;
+}
+.map-canvas-heading > span {
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+.map-canvas-heading > strong {
+  font-size: 14px;
+}
+.map-canvas-footer {
+  font-size: 11px;
+  border-top: 1px solid #d2d9cc;
+}
+.vietnam-map {
+  display: block;
+  width: 100%;
+  max-height: 650px;
+}
+.vietnam-outline {
+  fill: #fafaf5;
+  stroke: #87977c;
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+}
+.map-region-name {
+  fill: #596b53;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+.map-sea-name {
+  fill: #8b9a88;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+.map-north-arrow {
+  stroke: #61745b;
+  fill: none;
+  stroke-width: 1.3;
+}
+.map-north-arrow text {
+  stroke: none;
+  fill: #61745b;
+  font-size: 12px;
+}
+.map-marker {
+  cursor: pointer;
+  outline: none;
+}
+.marker-leader {
+  stroke: #77876b;
+  fill: none;
+  stroke-width: 1;
+}
+.marker-anchor {
+  fill: #657559;
+}
+.marker-halo {
+  fill: transparent;
+  stroke: transparent;
+  stroke-width: 2;
+}
+.marker-badge {
+  fill: white;
+  stroke: #657559;
+  stroke-width: 1.5;
+}
+.marker-count {
+  fill: #3d4e35;
+  font:
+    600 14px VNR,
+    sans-serif;
+  pointer-events: none;
+}
+.marker-name {
+  fill: #3b4635;
+  font:
+    600 13px VNR,
+    sans-serif;
+  paint-order: stroke;
+  stroke: #eef1eb;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+.map-marker.active .marker-badge {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+.map-marker.active .marker-count {
+  fill: white;
+}
+.map-marker.active .marker-halo {
+  stroke: #a52d2744;
+}
+.map-marker:focus-visible .marker-halo {
+  stroke: #805d17;
+  stroke-width: 3;
+}
+.map-reading-note {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 14px 0 6px;
+}
+.map-attribution {
+  font-size: 11px;
+  color: var(--muted);
+}
+.map-attribution summary {
+  font-size: 12px;
+}
+.map-attribution p {
+  margin-bottom: 10px;
+}
+.map-list-heading {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  padding: 0 0 15px;
+  border-bottom: 1px solid var(--line);
+}
+.map-list-heading h3 {
+  margin: 0;
+  font-size: 21px;
+}
+.map-list-heading > span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.map-list-heading > button {
+  font-size: 11px;
+  padding: 6px 10px;
+  min-height: 36px;
+}
+.map-event-list {
+  list-style: none;
+  padding: 0 15px 0 0;
+  margin: 0 0 24px;
+  max-height: 390px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #b9bcae transparent;
+}
+.map-event-list li {
+  border-bottom: 1px solid var(--line);
+}
+.map-event-list button {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  column-gap: 17px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  padding: 14px 12px;
+}
+.map-event-list button[aria-pressed="true"] {
+  border-left-color: var(--accent);
+  background: #f2e8e1;
+  color: var(--text);
+}
+.map-event-list time {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+  grid-row: span 2;
+  padding-top: 2px;
+}
+.map-event-list strong {
+  font-size: 13px;
+  line-height: 1.6;
+}
+.map-event-list button > span {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.map-event-detail {
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  background: white;
+  padding: 22px;
+}
+.map-event-detail > h3 {
+  font-size: 25px;
+  line-height: 1.45;
+  margin: 0 0 16px;
+}
+.map-location-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+.map-event-detail .archive-frame,
+.map-event-detail .archive-frame img {
+  aspect-ratio: 16 / 8;
+}
+.map-event-detail dl {
+  margin: 20px 0;
+}
+.map-event-detail dl > div {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+.map-event-detail dt {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+.map-event-detail dd {
+  margin: 0;
+  font-size: 13px;
+}
+.map-event-detail .primary {
+  font-size: 12px;
+}
+.map-source-disclosure {
+  margin-top: 12px;
+}
+.map-source-disclosure summary {
+  font-size: 12px;
+}
+.map-empty {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 20px 0;
+}
+.profile-return-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+}
+@media (max-width: 900px) {
+  .map-workspace {
+    gap: 22px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .map-event-list button {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .map-event-list time {
+    grid-row: auto;
+  }
+  .map-column {
+    position: static;
+  }
+}
+@media (max-width: 680px) {
+  .map-introduction {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .map-introduction h2 {
+    font-size: 24px;
+  }
+  .map-workspace {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .map-region-filter {
+    gap: 6px;
+  }
+  .map-region-filter button {
+    font-size: 11px;
+    padding: 8px 10px;
+    gap: 7px;
+  }
+  .map-event-list {
+    max-height: 310px;
+  }
+  .map-event-list button {
+    grid-template-columns: 90px 1fr;
+    gap: 9px;
+  }
+  .map-event-list time {
+    grid-row: span 2;
+  }
+  .map-event-detail {
+    padding: 18px;
+  }
+  .history-view-switch button {
+    font-size: 12px;
+  }
+  .vietnam-map {
+    max-height: none;
+  }
+}
+.period-boundary-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 11px;
+}

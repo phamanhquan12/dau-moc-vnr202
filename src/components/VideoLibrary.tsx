@@ -48,7 +48,7 @@ export function VideoLibrary({ eventId }: { eventId?: string }) {
                     Đóng video
                   </button>
                   <a href={video.sourceUrl} target="_blank" rel="noreferrer">
-                    Xem trực tiếp trên YouTube ↗
+                    Xem trực tiếp trên YouTube
                   </a>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export function VideoLibrary({ eventId }: { eventId?: string }) {
                     aria-label={`Xem video tại Báo Nhân Dân: ${video.title}`}
                   >
                     <span aria-hidden="true">▶</span>
-                    <b>Xem tại Báo Nhân Dân ↗</b>
+                    <b>Xem tại Báo Nhân Dân</b>
                   </a>
                 )}
               </div>
@@ -86,9 +86,7 @@ export function VideoLibrary({ eventId }: { eventId?: string }) {
             </div>
             <div className="video-links">
               <a href={video.sourceUrl} target="_blank" rel="noreferrer">
-                {video.youtubeId
-                  ? "Mở trên YouTube ↗"
-                  : "Mở trang video gốc ↗"}
+                {video.youtubeId ? "Mở trên YouTube" : "Mở trang video gốc"}
               </a>
               <a href={`#profile/${video.eventId}`}>
                 Đọc hồ sơ:{" "}
@@ -96,7 +94,6 @@ export function VideoLibrary({ eventId }: { eventId?: string }) {
                   content.events.find((event) => event.id === video.eventId)!
                     .title
                 }{" "}
-                →
               </a>
             </div>
           </article>

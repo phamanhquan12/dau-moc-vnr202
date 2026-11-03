@@ -28,7 +28,7 @@ describe("real React and domain integration", () => {
     expect(state().progress.seenEventIds).toContain("tours");
     expect(state().progress.correctQuestionIds).toHaveLength(0);
     expect(state().progress.bestQuiz).toBe(0);
-    fireEvent.click(screen.getByText("← Trở lại node đã chọn"));
+    fireEvent.click(screen.getByText("Trở lại node đã chọn"));
     await screen.findByRole("heading", { name: /Nối sự kiện/ });
   });
   it("selection, double confirmation and feedback remount retain one answer", async () => {
@@ -99,7 +99,7 @@ describe("real React and domain integration", () => {
     fireEvent(window, new HashChangeEvent("hashchange"));
     await screen.findByText("Tư liệu ảnh chưa được tích hợp");
     expect(
-      screen.getByRole("link", { name: "Trang nguồn & điều kiện sử dụng ↗" }),
+      screen.getByRole("link", { name: "Trang nguồn & điều kiện sử dụng" }),
     ).toBeTruthy();
   });
   it("new session and reset require confirmation and do not clear unrelated keys", async () => {
@@ -132,7 +132,7 @@ it("failed verified image preserves caption/source and switches to honest fallba
       screen.getByText("Không tải được ảnh. Mở trang nguồn để xem."),
     ).toBeTruthy();
     expect(
-      screen.getByRole("link", { name: "Trang nguồn & điều kiện sử dụng ↗" }),
+      screen.getByRole("link", { name: "Trang nguồn & điều kiện sử dụng" }),
     ).toBeTruthy();
   } finally {
     Object.assign(image, before);
@@ -144,7 +144,7 @@ it("WTO evidence includes authoritative date and explains the textbook's differe
   expect(screen.getByText(/Trang in 165–166 · Trang PDF 166–167/)).toBeTruthy();
   expect(
     screen
-      .getByRole("link", { name: "Đọc nguồn đối chiếu ↗" })
+      .getByRole("link", { name: "Đọc nguồn đối chiếu" })
       .getAttribute("href"),
   ).toContain("wto.org");
   expect(screen.getByText(/ngày tư cách thành viên/i)).toBeTruthy();
@@ -197,7 +197,7 @@ it("guides a new learner into the recommended profile without starting a timed q
     screen.getByRole("heading", { name: "Mỗi mục dùng để làm gì?" }),
   ).toBeTruthy();
   expect(state().quiz).toBeNull();
-  fireEvent.click(screen.getByRole("link", { name: "Đọc hồ sơ đầu tiên →" }));
+  fireEvent.click(screen.getByRole("link", { name: "Đọc hồ sơ đầu tiên" }));
   await screen.findByRole("heading", {
     level: 1,
     name: "Đảng ra đời, Cương lĩnh đầu tiên",
@@ -223,9 +223,9 @@ it("loads one publisher player on request and keeps original links when embeddin
   );
   expect(document.querySelectorAll("iframe")).toHaveLength(1);
   expect(document.querySelector("iframe")!.src).toContain("5ODYUerrQ88");
-  expect(
-    screen.getAllByRole("link", { name: "Mở trên YouTube ↗" }),
-  ).toHaveLength(2);
+  expect(screen.getAllByRole("link", { name: "Mở trên YouTube" })).toHaveLength(
+    2,
+  );
   expect(
     screen
       .getByRole("link", { name: /Xem video tại Báo Nhân Dân/ })
@@ -233,4 +233,22 @@ it("loads one publisher player on request and keeps original links when embeddin
   ).toContain("nhandan.vn/video-dai-hoi-lan-thu-vi");
   fireEvent.click(screen.getByRole("button", { name: "Đóng video" }));
   expect(document.querySelectorAll("iframe")).toHaveLength(0);
+});
+
+it("map starts with all periods and filtered profiles remain separate from mastery", async () => {
+  location.hash = "lanes";
+  render(<App />);
+  expect(document.querySelectorAll(".map-event-list li")).toHaveLength(26);
+  fireEvent.click(screen.getByRole("button", { name: "1961–1965" }));
+  expect(document.querySelectorAll(".map-event-list li")).toHaveLength(5);
+  fireEvent.click(document.querySelector('[data-history-event="ap-bac"]')!);
+  expect(
+    screen.getByRole("region", { name: "Sự kiện đang chọn" }).textContent,
+  ).toContain("Chiến thắng Ấp Bắc");
+  expect(state().progress.seenEventIds).toHaveLength(0);
+  expect(state().progress.correctQuestionIds).toHaveLength(0);
+  fireEvent.click(screen.getByRole("button", { name: "Ba làn tư liệu" }));
+  expect(document.querySelectorAll(".three-lanes article")).toHaveLength(5);
+  expect(state().ui.historyView).toBe("lanes");
+  expect(state().ui.historyAll).toBe(false);
 });

@@ -18,8 +18,8 @@ export function SourceNote({ id }: { id: string }) {
       {s.url && (
         <a href={s.url} target="_blank" rel="noreferrer">
           {s.pdfPage
-            ? "Mở PDF tại đoạn tham chiếu ↗"
-            : "Đọc nguồn đối chiếu ↗"}
+            ? "Mở PDF tại đoạn tham chiếu"
+            : "Đọc nguồn đối chiếu"}
         </a>
       )}
       {s.publisher && <small>{s.publisher}</small>}
@@ -77,19 +77,19 @@ export function ImageEvidence({ id }: { id: string | null }) {
         {image.license && (
           <p className="image-license">
             <a href={image.licenseUrl} target="_blank" rel="noreferrer">
-              {image.license} ↗
+              {image.license}
             </a>
           </p>
         )}
         <a href={image.sourceUrl} target="_blank" rel="noreferrer">
-          Trang nguồn & điều kiện sử dụng ↗
+          Trang nguồn & điều kiện sử dụng
         </a>
         {image.originalUrl && (
           <>
             {" "}
             ·{" "}
             <a href={image.originalUrl} target="_blank" rel="noreferrer">
-              Tệp gốc ↗
+              Tệp gốc
             </a>
           </>
         )}

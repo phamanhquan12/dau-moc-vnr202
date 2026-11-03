@@ -9,7 +9,7 @@ test("six-question real UI, stable shuffle/reload, 840, independent best and con
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("./");
-  await page.getByRole("button", { name: "Bắt đầu quiz →" }).click();
+  await page.getByRole("button", { name: "Bắt đầu quiz" }).click();
   for (let i = 0; i < 6; i++) {
     const saved = await snapshot(page);
     const q = data.questions.find((q) => q.id === saved.quiz.questionIds[i])!;
@@ -27,7 +27,7 @@ test("six-question real UI, stable shuffle/reload, 840, independent best and con
     await expect(
       page.getByRole("heading", { name: /✓ Chính xác/ }),
     ).toBeVisible();
-    await page.getByRole("button", { name: "Tiếp tục →" }).click();
+    await page.getByRole("button", { name: "Tiếp tục" }).click();
   }
   await expect(page.getByRole("heading", { name: "840 điểm" })).toBeVisible();
   expect((await snapshot(page)).progress.bestOrdering).toBe(0);
@@ -55,7 +55,7 @@ test("absolute deadline while away, timeout once across reload, wrong answers an
   expect((await snapshot(page)).quiz.answers).toHaveLength(1);
   expect((await snapshot(page)).quiz.lives).toBe(2);
   for (let i = 0; i < 2; i++) {
-    await page.getByRole("button", { name: "Tiếp tục →" }).click();
+    await page.getByRole("button", { name: "Tiếp tục" }).click();
     const s = (await snapshot(page)).quiz,
       q = data.questions.find((q) => q.id === s.questionIds[s.index])!;
     const wrong = q.options.find((o) => o.id !== q.correctOptionId)!;
@@ -65,7 +65,7 @@ test("absolute deadline while away, timeout once across reload, wrong answers an
       page.getByRole("heading", { name: /Chưa đúng/ }),
     ).toBeVisible();
   }
-  await page.getByRole("button", { name: "Tiếp tục →" }).click();
+  await page.getByRole("button", { name: "Tiếp tục" }).click();
   await expect(
     page.getByRole("heading", { name: "Câu cần ôn lại" }),
   ).toBeVisible();
@@ -99,7 +99,7 @@ test("ordering entirely by keyboard/select-slot locks grading and retains set", 
   expect((await snapshot(page)).progress.bestQuiz).toBe(0);
   expect((await snapshot(page)).progress.bestOrdering).toBe(600);
   await expect(page.locator(".order-tray button").first()).toBeDisabled();
-  await page.getByRole("link", { name: "Xem kết quả xếp mốc →" }).click();
+  await page.getByRole("link", { name: "Xem kết quả xếp mốc" }).click();
   await expect(page.getByRole("heading", { name: "600 điểm" })).toBeVisible();
 });
 test("mobile play, direct routes, search without accents and honest image fallback", async ({
@@ -107,7 +107,7 @@ test("mobile play, direct routes, search without accents and honest image fallba
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("./");
-  await page.getByRole("button", { name: "Bắt đầu quiz →" }).click();
+  await page.getByRole("button", { name: "Bắt đầu quiz" }).click();
   await page.locator(".options button").first().click();
   await page.getByRole("button", { name: "Chốt đáp án" }).click();
   await expect(page.locator(".feedback")).toBeVisible();
@@ -135,6 +135,9 @@ test("visual routes desktop/projector/mobile/360, all five shared time bands and
     if (r.status() === 404) assets.push(r.url());
   });
   await page.goto("./#lanes");
+  await page
+    .getByRole("button", { name: "Ba làn tư liệu", exact: true })
+    .click();
   for (const period of [
     { label: "1954–1960", start: 1954, end: 1961 },
     { label: "1961–1965", start: 1961, end: 1965 },
@@ -197,6 +200,9 @@ test("visual routes desktop/projector/mobile/360, all five shared time bands and
       fullPage: true,
     });
     await page.goto("./#lanes");
+    await page
+      .getByRole("button", { name: "Ba làn tư liệu", exact: true })
+      .click();
     await page.getByRole("button", { name: "1973–1975", exact: true }).click();
     await expect(page.locator(".three-lanes>section")).toHaveCount(3);
     await expect(
@@ -219,7 +225,7 @@ test("visual routes desktop/projector/mobile/360, all five shared time bands and
   expect(assets).toEqual([]);
 });
 
-test("all 26 profiles expose specific source passages and all five historical images load on desktop and mobile", async ({
+test("all 43 profiles expose specific source passages and all five historical images load on desktop and mobile", async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -366,6 +372,9 @@ test("two-region gallery shows three loaded representative images with honest me
   ] as const) {
     await page.setViewportSize({ width, height });
     await page.goto("./#lanes");
+    await page
+      .getByRole("button", { name: "Ba làn tư liệu", exact: true })
+      .click();
     await page.getByRole("button", { name: "1954–1960", exact: true }).click();
     await expect(page.locator(".three-lanes .archive-image")).toHaveCount(3);
     await expect(page.locator(".three-lanes")).toContainText(
@@ -435,10 +444,10 @@ test("beginner guide leads to a first profile and video sources remain usable if
       page
         .locator(".video-card")
         .first()
-        .getByRole("link", { name: "Mở trên YouTube ↗" }),
+        .getByRole("link", { name: "Mở trên YouTube" }),
     ).toBeVisible();
     await expect(
-      page.getByRole("link", { name: "Xem trực tiếp trên YouTube ↗" }),
+      page.getByRole("link", { name: "Xem trực tiếp trên YouTube" }),
     ).toBeVisible();
     const playerBox = await page.locator("iframe").boundingBox();
     expect(playerBox!.width).toBeGreaterThanOrEqual(200);
@@ -452,7 +461,7 @@ test("beginner guide leads to a first profile and video sources remain usable if
     await expect(page.locator("iframe")).toHaveCount(0);
   }
   await page
-    .getByRole("link", { name: "Đọc hồ sơ đầu tiên →", exact: true })
+    .getByRole("link", { name: "Đọc hồ sơ đầu tiên", exact: true })
     .click();
   await expect(
     page.getByRole("heading", {
@@ -463,4 +472,105 @@ test("beginner guide leads to a first profile and video sources remain usable if
   await expect(page.locator(".video-card")).toHaveCount(1);
   expect((await snapshot(page)).quiz).toBeNull();
   expect((await snapshot(page)).progress.correctQuestionIds).toHaveLength(0);
+});
+
+test("map filters dates and regions, keyboard markers show sources, and navigation preserves the period", async ({
+  page,
+}) => {
+  await page.goto("./#lanes");
+  await expect(page.locator(".vietnam-map")).toBeVisible();
+  await expect(page.locator(".map-event-list li")).toHaveCount(26);
+  const marker = page.locator('[data-place-id="ha-noi"]');
+  await marker.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".map-event-list li")).toHaveCount(2);
+  await page.locator('[data-history-event="dien-bien-tren-khong"]').click();
+  await expect(page.locator(".map-event-detail h3")).toHaveText(
+    "Bảo vệ bầu trời miền Bắc",
+  );
+  await page.getByText("Đối chiếu nguồn sự kiện", { exact: true }).click();
+  await expect(
+    page.locator(".map-event-detail a[href*='#page=108']"),
+  ).toBeVisible();
+  expect((await snapshot(page)).progress.correctQuestionIds).toHaveLength(0);
+  for (const [label, count] of [
+    ["1954–1960", 5],
+    ["1961–1965", 5],
+    ["1965–1968", 5],
+    ["1969–1973", 5],
+    ["1973–1975", 6],
+  ] as const) {
+    await page.getByRole("button", { name: label, exact: true }).click();
+    await expect(page.locator(".map-event-list li")).toHaveCount(count);
+  }
+  await page.getByRole("button", { name: "1961–1965", exact: true }).click();
+  await page
+    .getByRole("group", { name: "Lọc nhóm sự kiện" })
+    .getByRole("button", { name: /Miền Bắc/ })
+    .click();
+  await expect(page.locator(".map-event-list li")).toHaveCount(1);
+  await expect(page.locator(".map-event-detail")).toContainText(
+    "Phạm vi miền Bắc",
+  );
+  await page
+    .getByRole("group", { name: "Lọc nhóm sự kiện" })
+    .getByRole("button", { name: /Tất cả/ })
+    .click();
+  await page.locator('[data-history-event="ap-bac"]').click();
+  await page
+    .getByRole("link", { name: "Mở hồ sơ đầy đủ", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { level: 1, name: "Chiến thắng Ấp Bắc" }),
+  ).toBeVisible();
+  await page
+    .getByRole("link", { name: "Bản đồ & dòng thời gian", exact: true })
+    .click();
+  await expect(
+    page.getByRole("button", { name: "1961–1965", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await page.reload();
+  await expect(page.locator(".map-event-list li")).toHaveCount(5);
+});
+
+test("map is readable at four widths and decorative arrows are absent from cards and links", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  for (const [name, width, height] of [
+    ["desktop", 1440, 900],
+    ["projector", 1280, 720],
+    ["mobile", 390, 844],
+    ["small", 360, 780],
+  ] as const) {
+    await page.setViewportSize({ width, height });
+    await page.goto("./#lanes");
+    await page
+      .getByRole("button", { name: "Toàn giai đoạn", exact: true })
+      .click();
+    await expect(page.locator(".map-event-list li")).toHaveCount(26);
+    await expect(page.locator('[data-place-id="mo-cay"]')).toBeVisible();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth,
+      ),
+    ).toBe(false);
+    await page.screenshot({
+      path: `screenshots/${name}-history-map.png`,
+      fullPage: true,
+    });
+    await page.goto("./#overview");
+    expect(
+      await page
+        .locator(
+          ".journey-link, .overview-summary a, .activity-guide a, .video-links a",
+        )
+        .allTextContents(),
+    ).not.toEqual(expect.arrayContaining([expect.stringMatching(/[↗→↓]/)]));
+    await expect(
+      page.locator('.journey-link [aria-hidden="true"]'),
+    ).toHaveCount(0);
+  }
+  expect(errors).toEqual([]);
 });

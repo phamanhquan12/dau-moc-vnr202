@@ -1,0 +1,184 @@
+[
+  {
+    "eventId": "dien-bien",
+    "kind": "places",
+    "placeIds": [
+      "dien-bien"
+    ],
+    "note": "Vị trí tham chiếu theo địa danh; không phải tọa độ chính xác của toàn bộ sự kiện."
+  },
+  {
+    "eventId": "geneva",
+    "kind": "overseas",
+    "placeIds": [],
+    "note": "Hoạt động ngoại giao tại Giơnevơ, Thụy Sĩ. Xem trong danh sách; không đặt trên lãnh thổ Việt Nam."
+  },
+  {
+    "eventId": "nghi-quyet-15",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi miền Nam; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "dong-khoi",
+    "kind": "places",
+    "placeIds": [
+      "mo-cay"
+    ],
+    "note": "Vị trí tham chiếu theo địa danh; không phải tọa độ chính xác của toàn bộ sự kiện."
+  },
+  {
+    "eventId": "dai-hoi-iii",
+    "kind": "places",
+    "placeIds": [
+      "ha-noi"
+    ],
+    "note": "Vị trí tham chiếu theo địa danh; không phải tọa độ chính xác của toàn bộ sự kiện."
+  },
+  {
+    "eventId": "mau-than",
+    "kind": "places",
+    "placeIds": [
+      "hue",
+      "sai-gon"
+    ],
+    "note": "Huế và Sài Gòn là hai địa bàn minh họa; cuộc tiến công diễn ra trên nhiều địa bàn miền Nam."
+  },
+  {
+    "eventId": "dien-bien-tren-khong",
+    "kind": "places",
+    "placeIds": [
+      "ha-noi",
+      "hai-phong"
+    ],
+    "note": "Vị trí tham chiếu theo địa danh; không phải tọa độ chính xác của toàn bộ sự kiện."
+  },
+  {
+    "eventId": "paris",
+    "kind": "overseas",
+    "placeIds": [],
+    "note": "Hoạt động ngoại giao tại Paris, Pháp. Xem trong danh sách; không đặt trên lãnh thổ Việt Nam."
+  },
+  {
+    "eventId": "giai-phong",
+    "kind": "places",
+    "placeIds": [
+      "sai-gon"
+    ],
+    "note": "Vị trí tham chiếu theo địa danh; không phải tọa độ chính xác của toàn bộ sự kiện."
+  },
+  {
+    "eventId": "ke-hoach-5-nam-1",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi miền Bắc; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "duong-bien-1961",
+    "kind": "places",
+    "placeIds": [
+      "hai-phong"
+    ],
+    "note": "Hải Phòng là địa danh tham chiếu cho đầu tuyến chi viện; không vẽ hoặc giả định hành trình của từng chuyến tàu."
+  },
+  {
+    "eventId": "ap-bac",
+    "kind": "places",
+    "placeIds": [
+      "cai-lay"
+    ],
+    "note": "Cai Lậy là địa danh tham chiếu cho Ấp Bắc; dấu trên bản đồ không phải vị trí đo đạc của trận đánh."
+  },
+  {
+    "eventId": "hoi-nghi-9-1963",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi đường lối chung; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "binh-gia",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi địa bàn chiến dịch ở Đông Nam Bộ; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "nghi-quyet-11-12",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi cả nước; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "mien-bac-chuyen-huong",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi miền Bắc; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "van-tuong",
+    "kind": "places",
+    "placeIds": [
+      "van-tuong"
+    ],
+    "note": "Vị trí tham chiếu theo địa danh; không phải tọa độ chính xác của toàn bộ sự kiện."
+  },
+  {
+    "eventId": "loi-keu-goi-1966",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi cả nước; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "paris-bon-ben",
+    "kind": "overseas",
+    "placeIds": [],
+    "note": "Hoạt động ngoại giao tại Paris, Pháp. Xem trong danh sách; không đặt trên lãnh thổ Việt Nam."
+  },
+  {
+    "eventId": "chinh-phu-cmlt",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi miền Nam; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "khoi-phuc-1969",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi miền Bắc; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "tien-cong-1972",
+    "kind": "places",
+    "placeIds": [
+      "quang-tri"
+    ],
+    "note": "Quảng Trị minh họa một hướng tiến công; toàn bộ cuộc tiến công còn diễn ra ở Tây Nguyên và Đông Nam Bộ."
+  },
+  {
+    "eventId": "nghi-quyet-21",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi đường lối cách mạng miền Nam; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "khoi-phuc-1974",
+    "kind": "area",
+    "placeIds": [],
+    "note": "Phạm vi miền Bắc; không gán sự kiện vào một điểm đơn lẻ."
+  },
+  {
+    "eventId": "phuoc-long",
+    "kind": "places",
+    "placeIds": [
+      "phuoc-long"
+    ],
+    "note": "Vị trí tham chiếu theo địa danh; không phải tọa độ chính xác của toàn bộ sự kiện."
+  },
+  {
+    "eventId": "buon-ma-thuot",
+    "kind": "places",
+    "placeIds": [
+      "buon-ma-thuot"
+    ],
+    "note": "Vị trí tham chiếu theo địa danh; không phải tọa độ chính xác của toàn bộ sự kiện."
+  }
+]
