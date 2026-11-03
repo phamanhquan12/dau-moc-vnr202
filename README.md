@@ -19,3 +19,9 @@ Narration/dialogue are read verbatim from `content/story_manifest.v1.json`. Sour
 ## Remaining work
 
 Qualified historical review and claim/source mapping; licensed media and recorded narration; expanded synchronized timeline treatment; browser E2E, accessibility, device and performance audit. Current checks validate content integrity, TypeScript, lint and static export; they do not establish production readiness.
+
+## Typography and UI revision
+
+Self-hosted Be Vietnam Pro and Noto Serif (SIL OFL licenses in `public/fonts`) include every Vietnamese letter used by the manuscript. Next.js emits hashed WOFF2 font URLs for static hosting; no runtime Google Fonts request. Natural letter spacing, complete normal/italic faces, and no synthetic styles. Custom SVG window illustration is symbolic original artwork, not historical evidence.
+
+Visual checks: Chromium screenshots at 320, 390 and 1440px; homepage, contents and chapters 07/08 tested at 320, 390, 768 and 1440px for font loading and horizontal overflow. `qa/visual-check.mjs` records the browser checks (requires Playwright and Chromium; set REVIEW_URL to target another host).

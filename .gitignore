@@ -4,3 +4,5 @@ out/
 *.tsbuildinfo
 Ngay_Mai_Minh_Se_Developer_Handoff_Full_v1.0/
 *.pdf
+
+node_modules
