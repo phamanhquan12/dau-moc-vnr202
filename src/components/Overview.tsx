@@ -1,3 +1,5 @@
+import type { MouseEvent } from "react";
+import { VideoLibrary } from "./VideoLibrary";
 import type { Chapter } from "../domain/types";
 import { ArchiveImage } from "./ArchiveImage";
 
@@ -36,6 +38,14 @@ export function Overview({
   onQuiz: () => void;
   onOrder: () => void;
 }) {
+  const jumpTo = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault();
+    document.getElementById(id)?.scrollIntoView({
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
+  };
   return (
     <section className="overview-view">
       <div className="overview-kicker">
@@ -44,40 +54,92 @@ export function Overview({
       </div>
       <div className="overview-intro">
         <div>
-          <p className="eyebrow">KHÁM PHÁ · KẾT NỐI · GHI NHỚ</p>
+          <p className="eyebrow">DẤU MỐC LÀ GÌ?</p>
           <h1>
-            Lịch sử được nối
+            Học Lịch sử Đảng
             <br />
-            từ những <em>dấu mốc.</em>
+            qua từng <em>dấu mốc.</em>
           </h1>
         </div>
         <div className="overview-summary">
           <p>
-            Điều gì dẫn đến một quyết định? Một sự kiện đã mở ra bước chuyển
-            nào?
+            Dấu Mốc là trang học và ôn tập học phần{" "}
+            <strong>VNR202 — Lịch sử Đảng Cộng sản Việt Nam</strong>.
           </p>
           <p>
-            Cùng đọc bối cảnh, tìm hiểu đường lối và kết nối ba chặng đường lịch
-            sử qua 26 hồ sơ có nguồn, ảnh tư liệu và những thử thách kiến thức.
+            Bạn đọc bài ngắn về từng sự kiện, xem ảnh và video, rồi tự kiểm tra
+            bằng câu hỏi trắc nghiệm và trò chơi xếp mốc. Mục tiêu là hiểu{" "}
+            <strong>bối cảnh, chủ trương và kết quả</strong> trong ba chặng
+            đường 1920–2018.
           </p>
           <a
-            href="#journeys"
-            onClick={(event) => {
-              event.preventDefault();
-              document
-                .getElementById("journeys")
-                ?.scrollIntoView({
-                  behavior: matchMedia("(prefers-reduced-motion: reduce)")
-                    .matches
-                    ? "instant"
-                    : "smooth",
-                });
-            }}
+            className="primary overview-first-action"
+            href="#profile/thanh-lap-dang"
           >
-            Khám phá hành trình <span aria-hidden="true">↓</span>
+            Đọc hồ sơ đầu tiên →
           </a>
+          <div className="overview-shortcuts">
+            <a href="#how-to" onClick={(event) => jumpTo(event, "how-to")}>
+              Xem cách học ↓
+            </a>
+            <a
+              href="#video-library"
+              onClick={(event) => jumpTo(event, "video-library")}
+            >
+              Xem video ↓
+            </a>
+          </div>
         </div>
       </div>
+      <section
+        className="getting-started"
+        id="how-to"
+        aria-labelledby="start-heading"
+      >
+        <div className="guide-heading">
+          <div>
+            <p className="eyebrow">GỢI Ý CHO NGƯỜI MỚI</p>
+            <h2 id="start-heading">Bắt đầu với ba bước nhỏ</h2>
+          </div>
+          <p>
+            Đọc để hiểu một sự kiện, đặt nó vào dòng lịch sử, rồi thử điều mình
+            nhớ.
+          </p>
+        </div>
+        <ol className="first-steps">
+          <li>
+            <span className="step-number">01</span>
+            <h3>Đọc một hồ sơ sự kiện</h3>
+            <p>
+              “Hồ sơ” là bài đọc ngắn gồm bối cảnh, chủ trương, kết quả và
+              nguồn. Bắt đầu với sự kiện Đảng ra đời năm 1930.
+            </p>
+            <a href="#profile/thanh-lap-dang">Mở hồ sơ: Đảng ra đời →</a>
+          </li>
+          <li>
+            <span className="step-number">02</span>
+            <h3>Đặt sự kiện vào một chương</h3>
+            <p>
+              Mở Bàn nhiệm vụ, chọn một mốc trên tuyến rồi đọc hồ sơ. Các mốc
+              giúp bạn lần theo tiến trình của chương.
+            </p>
+            <button className="guide-text-action" onClick={() => onChapter(1)}>
+              Khám phá Chương 1 →
+            </button>
+          </li>
+          <li>
+            <span className="step-number">03</span>
+            <h3>Tự kiểm tra bằng Quiz</h3>
+            <p>
+              Mỗi lượt tối đa 6 câu, 30 giây/câu và 3 mạng. Chọn đáp án rồi bấm
+              “Chốt đáp án”; đọc lời giải và nguồn sau mỗi câu.
+            </p>
+            <button className="primary" onClick={onQuiz}>
+              Bắt đầu quiz →
+            </button>
+          </li>
+        </ol>
+      </section>
       <div className="journey-heading" id="journeys">
         <h2>Ba chặng đường, một dòng lịch sử</h2>
         <span>CHỌN MỘT CHƯƠNG ĐỂ BẮT ĐẦU</span>
@@ -101,42 +163,67 @@ export function Overview({
           </article>
         ))}
       </div>
-      <section className="learning-invitation" aria-labelledby="learning-title">
-        <div>
-          <p className="eyebrow">TỪ TƯ LIỆU ĐẾN HIỂU BIẾT</p>
-          <h2 id="learning-title">
-            Đọc một hồ sơ.
-            <br />
-            Thử điều mình nhớ.
-          </h2>
+      <section className="activity-guide" aria-labelledby="activity-heading">
+        <div className="guide-heading">
+          <div>
+            <p className="eyebrow">CHỌN THEO ĐIỀU BẠN MUỐN HỌC</p>
+            <h2 id="activity-heading">Mỗi mục dùng để làm gì?</h2>
+          </div>
           <p>
-            Chọn chương để học theo chủ đề, xếp sự kiện theo thời gian, hoặc đặt
-            hai miền cạnh nhau để hiểu cùng một giai đoạn.
+            Bạn có thể quay về Tổng quan bất cứ lúc nào để chọn hoạt động tiếp
+            theo.
           </p>
-        </div>
-        <div className="learning-actions">
-          <button className="primary" onClick={onQuiz}>
-            Bắt đầu quiz →
-          </button>
-          <button onClick={onOrder}>Xếp mốc →</button>
-          <a href="#lanes">Khám phá hai miền cùng thời ↗</a>
-          <a href="#materials">Tra cứu hồ sơ & nguồn ↗</a>
         </div>
         <dl>
           <div>
-            <dt>26</dt>
-            <dd>hồ sơ sự kiện</dd>
+            <dt>
+              <a href="#board">Bàn nhiệm vụ ↗</a>
+            </dt>
+            <dd>Chọn chương và mở lần lượt các hồ sơ trên tuyến sự kiện.</dd>
           </div>
           <div>
-            <dt>52</dt>
-            <dd>câu hỏi kiến thức</dd>
+            <dt>
+              <a href="#quiz">Quiz ↗</a>
+            </dt>
+            <dd>
+              Trả lời câu hỏi trắc nghiệm để ôn kiến thức. Đọc giải thích và
+              nguồn sau khi chốt đáp án.
+            </dd>
           </div>
           <div>
-            <dt>03</dt>
-            <dd>chặng đường lịch sử</dd>
+            <dt>
+              <a href="#order">Xếp mốc ↗</a>
+            </dt>
+            <dd>
+              Xếp các sự kiện từ sớm đến muộn rồi bấm “Kiểm tra”. Có thể chọn
+              thẻ và vị trí bằng nút.
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="#lanes">Hai miền cùng thời ↗</a>
+            </dt>
+            <dd>
+              So sánh các mốc ở miền Bắc, miền Nam và ngoại giao trong cùng một
+              giai đoạn 1954–1975.
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <a href="#materials">Hồ sơ tư liệu ↗</a>
+            </dt>
+            <dd>
+              Tìm sự kiện theo tên hoặc thời gian, lọc chương và mở nguồn để đối
+              chiếu. Tìm kiếm dùng được cả chữ có dấu và không dấu.
+            </dd>
           </div>
         </dl>
+        <div className="overview-practice">
+          <span>Sẵn sàng thử thứ tự các sự kiện?</span>
+          <button onClick={onOrder}>Xếp mốc →</button>
+        </div>
       </section>
+      <VideoLibrary />
     </section>
   );
 }

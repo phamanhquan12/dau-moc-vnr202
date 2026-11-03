@@ -7,6 +7,7 @@ import {
 } from "@testing-library/react";
 import { beforeEach, describe, it, expect, vi } from "vitest";
 import { ImageEvidence, EventSources } from "../../src/components/Evidence";
+import { VideoLibrary } from "../../src/components/VideoLibrary";
 import { App } from "../../src/app/App";
 import { content } from "../../src/domain/content";
 import { initialState, STORAGE_KEY } from "../../src/storage/state";
@@ -167,7 +168,7 @@ it("opens on the historical overview and selecting a chapter enters its mission 
   location.hash = "";
   render(<App />);
   expect(
-    screen.getByRole("heading", { level: 1, name: /Lịch sử được nối/ }),
+    screen.getByRole("heading", { level: 1, name: /Học Lịch sử Đảng/ }),
   ).toBeTruthy();
   expect(
     screen
@@ -181,4 +182,55 @@ it("opens on the historical overview and selecting a chapter enters its mission 
   await screen.findByRole("heading", { name: /Nối sự kiện/ });
   expect(state().ui.chapter).toBe(3);
   expect(state().progress.seenEventIds).toHaveLength(0);
+});
+
+it("guides a new learner into the recommended profile without starting a timed quiz", async () => {
+  location.hash = "";
+  render(<App />);
+  expect(
+    screen.getByText(/Dấu Mốc là trang học và ôn tập học phần/),
+  ).toBeTruthy();
+  expect(
+    screen.getByRole("heading", { name: "Bắt đầu với ba bước nhỏ" }),
+  ).toBeTruthy();
+  expect(
+    screen.getByRole("heading", { name: "Mỗi mục dùng để làm gì?" }),
+  ).toBeTruthy();
+  expect(state().quiz).toBeNull();
+  fireEvent.click(screen.getByRole("link", { name: "Đọc hồ sơ đầu tiên →" }));
+  await screen.findByRole("heading", {
+    level: 1,
+    name: "Đảng ra đời, Cương lĩnh đầu tiên",
+  });
+  await waitFor(() =>
+    expect(state().progress.seenEventIds).toEqual(["thanh-lap-dang"]),
+  );
+  expect(state().progress.correctQuestionIds).toHaveLength(0);
+  expect(state().quiz).toBeNull();
+  expect(document.querySelectorAll(".video-card")).toHaveLength(1);
+});
+
+it("loads one publisher player on request and keeps original links when embedding is unavailable", () => {
+  render(<VideoLibrary />);
+  expect(document.querySelectorAll("iframe")).toHaveLength(0);
+  const open = screen.getAllByRole("button", { name: /^Mở video:/ });
+  fireEvent.click(open[0]);
+  expect(document.querySelector("iframe")!.src).toContain(
+    "youtube-nocookie.com/embed/ZI4UOQD8c6g",
+  );
+  fireEvent.click(
+    screen.getByRole("button", { name: /Mở video: Điện Biên Phủ/ }),
+  );
+  expect(document.querySelectorAll("iframe")).toHaveLength(1);
+  expect(document.querySelector("iframe")!.src).toContain("5ODYUerrQ88");
+  expect(
+    screen.getAllByRole("link", { name: "Mở trên YouTube ↗" }),
+  ).toHaveLength(2);
+  expect(
+    screen
+      .getByRole("link", { name: /Xem video tại Báo Nhân Dân/ })
+      .getAttribute("href"),
+  ).toContain("nhandan.vn/video-dai-hoi-lan-thu-vi");
+  fireEvent.click(screen.getByRole("button", { name: "Đóng video" }));
+  expect(document.querySelectorAll("iframe")).toHaveLength(0);
 });

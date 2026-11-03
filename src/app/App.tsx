@@ -29,6 +29,7 @@ import {
 } from "../storage/state";
 import { ImageEvidence, EventSources } from "../components/Evidence";
 import { Overview } from "../components/Overview";
+import { VideoLibrary } from "../components/VideoLibrary";
 import { ArchiveImage } from "../components/ArchiveImage";
 export const parseRoute = (hash: string) => {
   const [view, id] = hash.replace(/^#\/?/, "").split("/");
@@ -729,6 +730,7 @@ export function App() {
           <ImageEvidence key={e.imageId || e.id} id={e.imageId} />
           <EventSources eventId={e.id} />
         </section>
+        <VideoLibrary key={e.id} eventId={e.id} />
         <div className="actions">
           <button className="primary" onClick={requestQuiz}>
             Bắt đầu quiz theo bộ lọc

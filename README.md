@@ -24,7 +24,7 @@ Dev: http://127.0.0.1:3041. Production preview: http://127.0.0.1:3042. Build emi
 
 ## Product
 
-The opening **Tổng quan** tab introduces VNR202 through three illustrated historical periods, a short subject summary and direct routes into chapter boards, quiz, ordering and source research. This first-screen change follows the user's later request for an overview before entering the activities. A warm white, charcoal and vermilion exhibition theme replaces the navy/mint palette throughout. All typography remains self-hosted Vietnamese sans.
+The opening **Tổng quan** tab explicitly explains that Dấu Mốc is a learning and revision site for VNR202 — Lịch sử Đảng Cộng sản Việt Nam. A recommended first-profile action, three beginner steps and a five-activity guide explain where to start, what a profile is and how quiz confirmation works. The three illustrated chapters and optional videos provide historical context. A warm white, charcoal and vermilion exhibition theme runs throughout; typography remains self-hosted Vietnamese sans.
 
 The mission board retains three chapter filters, a six-node viewing window and selection panel. Dedicated game views, searchable profiles and mode-specific results remain available. “Hai miền cùng thời” now uses three photographic introductions with captions, expandable attribution and the period-filtered events below. Representative images have independently labeled photo dates; the modern Nguyễn Thị Định memorial image is not presented as a 1960 event photograph. Mobile navigation wraps to show all six tabs.
 Quiz stays within the selected chapter: two recall first, four understanding, preferring distinct events. Three lives, 30 seconds per absolute deadline. Select before confirming. Feedback waits for explicit continuation; reload and route changes grant no time. Six correct gain 100/120/140/160/160/160=840. New active rounds require in-app confirmation.
@@ -47,3 +47,7 @@ Eight historical, artifact and location photographs are bundled locally with sou
 All 26/52 IDs are retained. Seven understanding-question option sets were revised to reduce extreme distractors; one recall-like understanding prompt was revised with its options/explanation. Classification is editorial, not psychometrically validated. No professor approval is claimed.
 
 Fonts: Be Vietnam Pro, SIL OFL, license in `public/fonts`. `public/media/` contains the eight checked photographs and their provenance log. Build validates seed dates, IDs, references, options and claimed local media. See `TEST_REPORT.md` for actual results and limitations.
+
+## Supplementary videos
+
+Three checked publisher resources cover the founding of the Party (VTV24), Điện Biên Phủ (VTV24) and Đại hội VI (Báo Nhân Dân). They appear on Tổng quan and their matching profiles with viewing prompts and original-source links. Two YouTube players load only after a click; the Nhân Dân video opens on the publisher's page. Introductory photos are labeled separately from actual footage. No video is rehosted. Playback depends on the publisher/network and may require opening the original page; direct links remain visible. VIDEO_REVIEW.md records metadata checks and the review browser's authentication limitation. The app itself has no analytics; opening a publisher player connects to that provider.

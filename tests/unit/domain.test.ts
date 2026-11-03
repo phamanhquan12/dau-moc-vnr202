@@ -1,3 +1,4 @@
+import { videos } from "../../src/data/videos";
 import { describe, it, expect } from "vitest";
 import { createHash } from "node:crypto";
 import { readFileSync, existsSync } from "node:fs";
@@ -326,4 +327,28 @@ describe("ordering, evidence and restoration", () => {
     });
     expect(parseRoute("#invalid").view).toBe("overview");
   });
+});
+
+it("curated videos match existing course events, photos and checked publisher metadata", () => {
+  expect(videos).toHaveLength(3);
+  expect(new Set(videos.map((v) => v.id)).size).toBe(3);
+  for (const video of videos) {
+    expect(
+      content.events.some(
+        (e) => e.id === video.eventId && e.chapter === video.chapter,
+      ),
+    ).toBe(true);
+    expect(
+      content.images.some(
+        (i) => i.id === video.imageId && i.licenseStatus === "verified",
+      ),
+    ).toBe(true);
+    expect(video.checkedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    if (video.youtubeId) {
+      expect(video.youtubeId).toMatch(/^[a-zA-Z0-9_-]{11}$/);
+      expect(video.sourceUrl).toBe(
+        `https://www.youtube.com/watch?v=${video.youtubeId}`,
+      );
+    } else expect(new URL(video.sourceUrl).hostname).toBe("nhandan.vn");
+  }
 });

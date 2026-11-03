@@ -309,7 +309,7 @@ test("overview is the first screen, source credits expand, chapter actions and b
     await page.setViewportSize({ width, height });
     await page.goto("./");
     await expect(
-      page.getByRole("heading", { level: 1, name: /Lịch sử được nối/ }),
+      page.getByRole("heading", { level: 1, name: /Học Lịch sử Đảng/ }),
     ).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Tổng quan", exact: true }),
@@ -399,4 +399,65 @@ test("two-region gallery shows three loaded representative images with honest me
   await expect(
     page.locator(".three-lanes > section").nth(1).locator("img"),
   ).toHaveAttribute("src", /geneva-photo.jpg/);
+});
+
+test("beginner guide leads to a first profile and video sources remain usable if the embedded publisher fails", async ({
+  page,
+}) => {
+  await page.route("https://www.youtube-nocookie.com/embed/**", (route) =>
+    route.fulfill({
+      status: 503,
+      contentType: "text/html",
+      body: "Publisher temporarily unavailable",
+    }),
+  );
+  for (const width of [1440, 360]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto("./");
+    await expect(
+      page.getByText(/Dấu Mốc là trang học và ôn tập học phần/),
+    ).toBeVisible();
+    await expect(page.locator(".first-steps > li")).toHaveCount(3);
+    await expect(page.locator(".activity-guide dt")).toHaveCount(5);
+    await expect(page.locator(".video-library .video-card")).toHaveCount(3);
+    await expect(page.locator("iframe")).toHaveCount(0);
+    expect((await snapshot(page)).quiz).toBeNull();
+    await page
+      .getByRole("button", {
+        name: "Mở video: Đảng ra đời – Bước ngoặt lớn trong lịch sử dân tộc",
+      })
+      .click();
+    await expect(page.locator("iframe")).toHaveAttribute(
+      "src",
+      "https://www.youtube-nocookie.com/embed/ZI4UOQD8c6g?rel=0&playsinline=1",
+    );
+    await expect(
+      page
+        .locator(".video-card")
+        .first()
+        .getByRole("link", { name: "Mở trên YouTube ↗" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Xem trực tiếp trên YouTube ↗" }),
+    ).toBeVisible();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth,
+      ),
+    ).toBe(false);
+    await page.getByRole("button", { name: "Đóng video" }).click();
+    await expect(page.locator("iframe")).toHaveCount(0);
+  }
+  await page
+    .getByRole("link", { name: "Đọc hồ sơ đầu tiên →", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", {
+      level: 1,
+      name: "Đảng ra đời, Cương lĩnh đầu tiên",
+    }),
+  ).toBeVisible();
+  await expect(page.locator(".video-card")).toHaveCount(1);
+  expect((await snapshot(page)).quiz).toBeNull();
+  expect((await snapshot(page)).progress.correctQuestionIds).toHaveLength(0);
 });
