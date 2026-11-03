@@ -514,6 +514,48 @@
       "localPath": "media/paris-photo.jpg",
       "licenseStatus": "verified",
       "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "geneva-photo",
+      "title": "Hội nghị Giơnevơ về Đông Dương, 1954",
+      "credit": "US Army Photograph · qua Wikimedia Commons",
+      "kind": "Ảnh sự kiện · 1954",
+      "license": "Phạm vi công cộng · PD-USGov (theo Commons)",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+      "usageNote": "Trang nguồn xác định hội nghị năm 1954; không gán riêng bức ảnh này cho một ngày ký. Bản thu nhỏ từ Commons, không cắt xén hay đổi màu.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1954_Geneva_Conference.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/1954_Geneva_Conference.jpg",
+      "localPath": "media/geneva-photo.jpg",
+      "licenseStatus": "verified",
+      "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "nguyen-thi-dinh",
+      "title": "Tượng đồng Nguyễn Thị Định tại đền thờ ở Bến Tre, ảnh 03/03/2008",
+      "credit": "Bùi Thụy Đào Nguyên · Wikimedia Commons",
+      "kind": "Ảnh hiện vật tưởng niệm · chụp năm 2008",
+      "license": "CC BY-SA 3.0 · Bùi Thụy Đào Nguyên",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "usageNote": "Ảnh tượng tưởng niệm Nguyễn Thị Định, không phải ảnh chụp phong trào Đồng khởi năm 1960. Dùng làm ảnh dẫn nhập chủ đề miền Nam. Bản thu nhỏ từ Commons, giữ nguyên khung hình và sắc độ.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:T%C6%B0%E1%BB%A3ng_%C4%91%E1%BB%93ng_Nguy%E1%BB%85n_Th%E1%BB%8B_%C4%90%E1%BB%8Bnh.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/T%C6%B0%E1%BB%A3ng_%C4%91%E1%BB%93ng_Nguy%E1%BB%85n_Th%E1%BB%8B_%C4%90%E1%BB%8Bnh.jpg",
+      "localPath": "media/nguyen-thi-dinh.jpg",
+      "licenseStatus": "verified",
+      "checkedAt": "2026-11-03"
+    },
+    {
+      "id": "national-assembly",
+      "title": "Nhà Quốc hội Việt Nam tại Hà Nội, ảnh 14/01/2025",
+      "credit": "David Stanley · Flickr / Wikimedia Commons",
+      "kind": "Ảnh địa điểm hiện nay · chụp năm 2025",
+      "license": "CC BY 2.0 · David Stanley",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+      "usageNote": "Ảnh công trình Nhà Quốc hội hiện nay để dẫn nhập chủ đề xây dựng đất nước; không phải ảnh kỳ họp Quốc hội năm 1976. Thời gian ảnh nằm ngoài phạm vi 1920–2018 của các hồ sơ sự kiện. Bản thu nhỏ từ Commons, không cắt xén hay đổi màu.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vietnam_National_Assembly_Building.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Vietnam_National_Assembly_Building.jpg",
+      "localPath": "media/national-assembly.jpg",
+      "licenseStatus": "verified",
+      "checkedAt": "2026-11-03"
     }
   ],
   "events": [
@@ -707,7 +749,7 @@
       "datePrecision": "month",
       "displayDate": "07/1954",
       "sourceId": "textbook-2019-geneva",
-      "imageId": null
+      "imageId": "geneva-photo"
     },
     {
       "id": "nghi-quyet-15",
@@ -739,7 +781,7 @@
       "datePrecision": "day",
       "displayDate": "17/01/1960",
       "sourceId": "textbook-2019-dong-khoi",
-      "imageId": null
+      "imageId": "nguyen-thi-dinh"
     },
     {
       "id": "dai-hoi-iii",

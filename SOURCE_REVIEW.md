@@ -52,7 +52,7 @@ The publicly accessible June 2019 teaching text identifies Ban Tuyên giáo Trun
 
 ## Photographs and reuse records
 
-Five downloaded Commons thumbnail files are served locally under public/media. No recoloring, cropping, retouching or generated historical imagery. The full composition remains visible using object-fit:contain. Exact source/original/download URLs, reuse statements, check date and SHA-256 of every local file are in [provenance.json](public/media/provenance.json). Credit and license links appear in profiles and the media catalogue.
+Eight downloaded Commons thumbnail files are served locally under public/media. No recoloring, cropping, retouching or generated historical imagery. The full composition remains visible using object-fit:contain. Exact source/original/download URLs, reuse statements, check date and SHA-256 of every local file are in [provenance.json](public/media/provenance.json). Credit and license links appear in profiles and the media catalogue.
 
 | Local image | Source identification | Reuse statement recorded from source | Caption limitation |
 | --- | --- | --- | --- |
@@ -61,7 +61,14 @@ Five downloaded Commons thumbnail files are served locally under public/media. N
 | dien-bien.jpg | Vietnam People's Army / army museum system via Commons; 1954 | Commons PD-Vietnam | Exact capture day and whether this is the instant of victory are not established by the source. |
 | duong-kach-menh.jpg | Hoangkid's photograph, 8 February 2017, of the 1927 artifact | CC BY-SA 4.0, linked with author credit | Artifact year and photo year are distinct. |
 | paris-photo.jpg | Robert LeRoy Knudsen, official White House photo / NARA NAID 194482 | PD-USGov | William Rogers signing; this frame does not show every delegation. |
+| geneva-photo.jpg | US Army Photograph via Commons, 1954 Geneva Conference | PD-USGov | Source provides the year; the caption does not invent an exact signing day for the frame. |
+| nguyen-thi-dinh.jpg | Bùi Thụy Đào Nguyên, 3 March 2008, bronze memorial statue at Bến Tre | CC BY-SA 3.0 | Modern artifact image, not a photo of Đồng khởi in 1960. |
+| national-assembly.jpg | David Stanley / Flickr via Commons, 14 January 2025 | CC BY 2.0 | Contemporary location image introducing chapter 3, not the 1976 session. Does not add an out-of-scope event. |
 
 Commons public-domain templates are recorded as source declarations with their stated territorial scope. They are not relabeled as global CC permissions or a separate legal determination. The Trần Mai Hưởng / TTXVN tank photo remains unbundled with its original source link and an explicit pending-media placeholder. The site does not claim photos for every event.
 
 Unanswered date quizzes contain neither photos nor source cards. Checked references are shown after grading, including supplementary sources. Events without an image do not repeat a no-photo message; real failed downloads keep their caption, credit and source links with an error fallback.
+
+## Exhibition overview revision
+
+The user's later instruction requests an opening summary tab and representative photographs in the two-region view. The opening route is now `overview`; the previous board remains available via `board`. The three chapter images introduce the subject before activities. Lane cover photographs introduce a broad theme and explicitly retain their own date even when the active period filter changes. Filtered event dates continue to determine lane membership; imagery does not change the historical ordering or source map. Credits expand inline and include each image's author, license and source. No historical claim is inferred from a decorative photograph.

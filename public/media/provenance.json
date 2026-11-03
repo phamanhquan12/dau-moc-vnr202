@@ -53,5 +53,38 @@
     "license": "Phạm vi công cộng · tác phẩm công vụ của Chính phủ Hoa Kỳ",
     "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
     "modifications": "Commons-generated thumbnail; no additional cropping, colorization or retouching."
+  },
+  "geneva-photo": {
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1954_Geneva_Conference.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/1954_Geneva_Conference.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/1954_Geneva_Conference.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+    "localPath": "public/media/geneva-photo.jpg",
+    "sha256": "87a5fc6f13f0e2fd0a283f66e14e274eb4bc7af30fd5d68e1004cd583e5d4861",
+    "checkedAt": "2026-11-03",
+    "modifications": "Commons thumbnail, with no additional cropping, recoloring or retouching. Displayed in full frame.",
+    "license": "Phạm vi công cộng · PD-USGov (theo Commons)",
+    "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov"
+  },
+  "nguyen-thi-dinh": {
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:T%C6%B0%E1%BB%A3ng_%C4%91%E1%BB%93ng_Nguy%E1%BB%85n_Th%E1%BB%8B_%C4%90%E1%BB%8Bnh.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e9/T%C6%B0%E1%BB%A3ng_%C4%91%E1%BB%93ng_Nguy%E1%BB%85n_Th%E1%BB%8B_%C4%90%E1%BB%8Bnh.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/T%C6%B0%E1%BB%A3ng_%C4%91%E1%BB%93ng_Nguy%E1%BB%85n_Th%E1%BB%8B_%C4%90%E1%BB%8Bnh.jpg/1280px-T%C6%B0%E1%BB%A3ng_%C4%91%E1%BB%93ng_Nguy%E1%BB%85n_Th%E1%BB%8B_%C4%90%E1%BB%8Bnh.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail",
+    "localPath": "public/media/nguyen-thi-dinh.jpg",
+    "sha256": "d069ccdffabda535d141edf1c685b09a575bc2248ec89a097d3cfc63bf988ced",
+    "checkedAt": "2026-11-03",
+    "modifications": "Commons thumbnail, with no additional cropping, recoloring or retouching. Displayed in full frame.",
+    "license": "CC BY-SA 3.0 · Bùi Thụy Đào Nguyên",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "national-assembly": {
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vietnam_National_Assembly_Building.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Vietnam_National_Assembly_Building.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Vietnam_National_Assembly_Building.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled",
+    "localPath": "public/media/national-assembly.jpg",
+    "sha256": "f9099898f3953e4a46e48a2f4480de714aa68f0f259ca12691bdc5231513d18d",
+    "checkedAt": "2026-11-03",
+    "modifications": "Commons thumbnail, with no additional cropping, recoloring or retouching. Displayed in full frame.",
+    "license": "CC BY 2.0 · David Stanley",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/"
   }
 }

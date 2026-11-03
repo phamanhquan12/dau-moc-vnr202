@@ -75,7 +75,7 @@ test("absolute deadline while away, timeout once across reload, wrong answers an
 test("ordering entirely by keyboard/select-slot locks grading and retains set", async ({
   page,
 }) => {
-  await page.goto("./");
+  await page.goto("./#board");
   await page.locator(".chapter-dock>button").nth(1).click();
   await page.getByRole("link", { name: "Xếp mốc", exact: true }).click();
   await page.getByRole("button", { name: "Tạo lượt xếp mốc" }).click();
@@ -276,9 +276,9 @@ test("image catalogue has complete credits and unanswered date quiz does not exp
   await page.setViewportSize({ width: 360, height: 780 });
   await page.goto("./#materials");
   await expect(page.locator(".media-catalog .image-evidence img")).toHaveCount(
-    5,
+    8,
   );
-  await expect(page.locator(".media-catalog .image-license")).toHaveCount(5);
+  await expect(page.locator(".media-catalog .image-license")).toHaveCount(8);
   await expect(page.locator(".media-catalog .image-placeholder")).toHaveCount(
     1,
   );
@@ -293,4 +293,110 @@ test("image catalogue has complete credits and unanswered date quiz does not exp
   await page.locator(".options button").first().click();
   await page.getByRole("button", { name: "Chốt đáp án" }).click();
   await expect(page.locator(".source-note").first()).toBeVisible();
+});
+
+test("overview is the first screen, source credits expand, chapter actions and back navigation work", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  for (const [name, width, height] of [
+    ["desktop", 1440, 900],
+    ["projector", 1280, 720],
+    ["mobile", 390, 844],
+    ["small", 360, 780],
+  ] as const) {
+    await page.setViewportSize({ width, height });
+    await page.goto("./");
+    await expect(
+      page.getByRole("heading", { level: 1, name: /Lịch sử được nối/ }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "Tổng quan", exact: true }),
+    ).toHaveAttribute("aria-current", "page");
+    await expect(page.locator(".journey-gallery article")).toHaveCount(3);
+    for (const img of await page.locator(".journey-gallery img").all()) {
+      await expect
+        .poll(() =>
+          img.evaluate(
+            (el: HTMLImageElement) => el.complete && el.naturalWidth > 0,
+          ),
+        )
+        .toBe(true);
+    }
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth,
+      ),
+    ).toBe(false);
+    await page.screenshot({
+      path: `screenshots/${name}-overview.png`,
+      fullPage: true,
+    });
+  }
+  const credit = page.locator(".journey-gallery details").last();
+  await credit.locator("summary").click();
+  await expect(credit).toContainText("David Stanley");
+  await expect(credit.getByRole("link", { name: /CC BY 2.0/ })).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth > innerWidth,
+    ),
+  ).toBe(false);
+  await page
+    .getByRole("button", { name: /Xây dựng. Đổi mới. Hội nhập/ })
+    .click();
+  await expect(page.locator(".desk")).toBeVisible();
+  expect((await snapshot(page)).ui.chapter).toBe(3);
+  expect((await snapshot(page)).progress.seenEventIds).toHaveLength(0);
+  await page.getByRole("link", { name: "Tổng quan", exact: true }).click();
+  await expect(page.locator(".overview-view")).toBeVisible();
+  expect((await snapshot(page)).ui.chapter).toBe(3);
+  expect(errors).toEqual([]);
+});
+
+test("two-region gallery shows three loaded representative images with honest memorial dates", async ({
+  page,
+}) => {
+  for (const [name, width, height] of [
+    ["desktop", 1440, 900],
+    ["projector", 1280, 720],
+    ["mobile", 390, 844],
+    ["small", 360, 780],
+  ] as const) {
+    await page.setViewportSize({ width, height });
+    await page.goto("./#lanes");
+    await page.getByRole("button", { name: "1954–1960", exact: true }).click();
+    await expect(page.locator(".three-lanes .archive-image")).toHaveCount(3);
+    await expect(page.locator(".three-lanes")).toContainText(
+      "ảnh hiện vật 2008",
+    );
+    for (const img of await page.locator(".three-lanes img").all()) {
+      await img.scrollIntoViewIfNeeded();
+      await expect
+        .poll(() =>
+          img.evaluate(
+            (el: HTMLImageElement) => el.complete && el.naturalWidth > 0,
+          ),
+        )
+        .toBe(true);
+    }
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth,
+      ),
+    ).toBe(false);
+    await page.screenshot({
+      path: `screenshots/${name}-lanes-gallery.png`,
+      fullPage: true,
+    });
+  }
+  await page.getByRole("button", { name: "1969–1973", exact: true }).click();
+  await expect(
+    page.locator(".three-lanes > section").nth(1).locator("img"),
+  ).toHaveAttribute("src", /paris-photo.jpg/);
+  await page.getByRole("button", { name: "1954–1960", exact: true }).click();
+  await expect(
+    page.locator(".three-lanes > section").nth(1).locator("img"),
+  ).toHaveAttribute("src", /geneva-photo.jpg/);
 });

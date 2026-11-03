@@ -182,7 +182,7 @@ describe("ordering, evidence and restoration", () => {
     const bundled = content.images.filter(
       (i) => i.licenseStatus === "verified",
     );
-    expect(bundled).toHaveLength(5);
+    expect(bundled).toHaveLength(8);
     for (const image of bundled) {
       const record = provenance[image.id];
       expect(record.localPath).toBe(`public/${image.localPath}`);
@@ -324,6 +324,6 @@ describe("ordering, evidence and restoration", () => {
       view: "profile",
       id: "dien-bien",
     });
-    expect(parseRoute("#invalid").view).toBe("board");
+    expect(parseRoute("#invalid").view).toBe("overview");
   });
 });

@@ -162,3 +162,23 @@ it("unassigned photographs omit empty messaging; real artifact includes date and
     screen.getByRole("link", { name: /CC BY-SA 4.0/ }).getAttribute("href"),
   ).toBe("https://creativecommons.org/licenses/by-sa/4.0/");
 });
+
+it("opens on the historical overview and selecting a chapter enters its mission board", async () => {
+  location.hash = "";
+  render(<App />);
+  expect(
+    screen.getByRole("heading", { level: 1, name: /Lịch sử được nối/ }),
+  ).toBeTruthy();
+  expect(
+    screen
+      .getByRole("link", { name: "Tổng quan" })
+      .getAttribute("aria-current"),
+  ).toBe("page");
+  expect(state().progress.seenEventIds).toHaveLength(0);
+  fireEvent.click(
+    screen.getByRole("button", { name: /Xây dựng. Đổi mới. Hội nhập/ }),
+  );
+  await screen.findByRole("heading", { name: /Nối sự kiện/ });
+  expect(state().ui.chapter).toBe(3);
+  expect(state().progress.seenEventIds).toHaveLength(0);
+});

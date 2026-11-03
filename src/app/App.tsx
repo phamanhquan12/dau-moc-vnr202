@@ -28,10 +28,13 @@ import {
   STORAGE_KEY,
 } from "../storage/state";
 import { ImageEvidence, EventSources } from "../components/Evidence";
+import { Overview } from "../components/Overview";
+import { ArchiveImage } from "../components/ArchiveImage";
 export const parseRoute = (hash: string) => {
   const [view, id] = hash.replace(/^#\/?/, "").split("/");
   return {
     view: [
+      "overview",
       "board",
       "quiz",
       "order",
@@ -41,7 +44,7 @@ export const parseRoute = (hash: string) => {
       "results",
     ].includes(view)
       ? view
-      : "board",
+      : "overview",
     id: id || "",
   };
 };
@@ -213,7 +216,7 @@ export function App() {
         <div className="dock-note">
           26 hồ sơ / 52 câu hỏi
           <br />
-          Tham chiếu giáo trình cấp chương.
+          Tham chiếu đoạn nguồn cụ thể.
         </div>
       </aside>
       <section className="board">
@@ -743,12 +746,21 @@ export function App() {
     const cards = (region: string) => events.filter((e) => lane(e) === region);
     return (
       <section className="lanes-view">
-        <p className="eyebrow">HAI MIỀN CÙNG THỜI</p>
-        <h1>
-          Một trục thời gian.
-          <br />
-          Ba làn bối cảnh.
-        </h1>
+        <div className="lanes-intro">
+          <div>
+            <p className="eyebrow">HAI MIỀN CÙNG THỜI / 1954–1975</p>
+            <h1>
+              Khác nhiệm vụ.
+              <br />
+              <em>Chung một mục tiêu.</em>
+            </h1>
+          </div>
+          <p>
+            Đặt miền Bắc, miền Nam và mặt trận ngoại giao cạnh nhau. Chọn một
+            giai đoạn để đọc các mốc cùng thời và tìm hiểu mối liên hệ giữa hậu
+            phương, tiền tuyến và ngoại giao.
+          </p>
+        </div>
         <div className="period-selector">
           {periods.map((p, i) => (
             <button
@@ -763,16 +775,54 @@ export function App() {
           ))}
         </div>
         <div className="period-banner">
-          Dải đang xem: {period.label} · các mốc ranh giới chỉ thuộc một dải
+          <span>GIAI ĐOẠN ĐANG KHÁM PHÁ</span>
+          <strong>{period.label}</strong>
+          <small>{events.length} hồ sơ trong ba làn bối cảnh</small>
         </div>
         <div className="three-lanes">
           {[
-            ["north", "Miền Bắc"],
-            ["common", "Chung / ngoại giao"],
-            ["south", "Miền Nam"],
-          ].map(([region, title]) => (
+            [
+              "north",
+              "Miền Bắc",
+              "Hậu phương & kháng chiến",
+              "dien-bien",
+              "Điện Biên Phủ · tư liệu 1954",
+            ],
+            [
+              "common",
+              "Chung / ngoại giao",
+              "Đàm phán & cục diện chung",
+              "geneva-photo",
+              "Hội nghị Giơnevơ · tư liệu 1954",
+            ],
+            [
+              "south",
+              "Miền Nam",
+              "Phong trào & đấu tranh giải phóng",
+              "nguyen-thi-dinh",
+              "Tượng Nguyễn Thị Định · ảnh hiện vật 2008",
+            ],
+          ].map(([region, title, subtitle, image, caption], index) => (
             <section key={region}>
-              <h2>{title}</h2>
+              <div className="lane-heading">
+                <span>0{index + 1}</span>
+                <div>
+                  <h2>{title}</h2>
+                  <p>{subtitle}</p>
+                </div>
+              </div>
+              <ArchiveImage
+                id={
+                  region === "common" && period.start >= 1969
+                    ? "paris-photo"
+                    : image
+                }
+                caption={
+                  region === "common" && period.start >= 1969
+                    ? "Lễ ký Hiệp định Paris · tư liệu 1973"
+                    : caption
+                }
+              />
               {cards(region).length ? (
                 cards(region).map((e) => (
                   <article key={e.id}>
@@ -788,6 +838,11 @@ export function App() {
             </section>
           ))}
         </div>
+        <p className="lane-photo-note">
+          Ảnh đầu mỗi làn giới thiệu chủ đề; ngày chụp được ghi riêng và có thể
+          nằm ngoài giai đoạn đang lọc. Các mốc bên dưới thuộc đúng giai đoạn đã
+          chọn.
+        </p>
         <section className="evidence relation-notes">
           <h2>Kết nối có giới hạn</h2>
           {[
@@ -900,7 +955,8 @@ export function App() {
         </section>
         <h2>Ảnh & xuất xứ</h2>
         <p>
-          5 ảnh đã tích hợp; 1 hồ sơ ảnh xe tăng còn chờ xác minh quyền sử dụng.
+          8 ảnh tư liệu, hiện vật và địa điểm đã tích hợp; 1 hồ sơ ảnh xe tăng
+          còn chờ xác minh quyền sử dụng.
         </p>
         <div className="media-catalog">
           {content.images.map((i) => (
@@ -988,12 +1044,33 @@ export function App() {
   }
   return (
     <>
-      <a className="skip" href="#main">
+      <a
+        className="skip"
+        href="#main"
+        onClick={(event) => {
+          event.preventDefault();
+          document.getElementById("main")?.focus();
+        }}
+      >
         Đến nội dung
       </a>
       <header>
-        <a className="brand" href="#board">
-          <span className="brand-symbol">⌘</span>DẤU MỐC <b>VNR202</b>
+        <a className="brand" href="#overview">
+          <span className="brand-symbol" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path
+                d="M7 4v24M16 4v24M25 4v24"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+              <path
+                d="M4 10h6M13 22h6M22 14h6"
+                stroke="currentColor"
+                strokeWidth="5"
+              />
+            </svg>
+          </span>
+          DẤU MỐC <b>VNR202</b>
         </a>
         <div className="session-meta">
           {state.progress.seenEventIds.length}/26 đã xem ·{" "}
@@ -1004,11 +1081,12 @@ export function App() {
             Tiếp tục lượt đang dở →
           </a>
         ) : (
-          <span className="session-tag">MỘT NGƯỜI CHƠI / LOCAL</span>
+          <span className="session-tag">HỌC LỊCH SỬ QUA TƯ LIỆU</span>
         )}
       </header>
       <nav className="main-nav" aria-label="Màn nhiệm vụ">
         {[
+          ["overview", "Tổng quan"],
           ["board", "Bàn nhiệm vụ"],
           ["quiz", "Quiz"],
           ["order", "Xếp mốc"],
@@ -1027,10 +1105,12 @@ export function App() {
           Xóa tiến độ
         </button>
       </nav>
-      <div className="scope-note">
-        26 HỒ SƠ CÓ NGUỒN / 52 MCQ · 5 ẢNH TƯ LIỆU · Best quiz{" "}
-        {state.progress.bestQuiz} / Best xếp mốc {state.progress.bestOrdering}
-      </div>
+      {route.view !== "overview" && (
+        <div className="scope-note">
+          26 HỒ SƠ / 52 CÂU HỎI · 8 ẢNH TƯ LIỆU & ĐỊA ĐIỂM · Best quiz{" "}
+          {state.progress.bestQuiz} / Best xếp mốc {state.progress.bestOrdering}
+        </div>
+      )}
       {(state.notice || storageError) && (
         <div className="recovery" role="status">
           {storageError
@@ -1039,19 +1119,30 @@ export function App() {
         </div>
       )}
       <main id="main" tabIndex={-1}>
-        {route.view === "board"
-          ? board
-          : route.view === "quiz"
-            ? quizView()
-            : route.view === "order"
-              ? orderView()
-              : route.view === "lanes"
-                ? lanesView()
-                : route.view === "profile"
-                  ? profileView()
-                  : route.view === "results"
-                    ? resultsView()
-                    : materialsView()}
+        {route.view === "overview" ? (
+          <Overview
+            onChapter={(chapter) => {
+              chooseChapter(chapter);
+              navigate("board");
+            }}
+            onQuiz={requestQuiz}
+            onOrder={requestOrder}
+          />
+        ) : route.view === "board" ? (
+          board
+        ) : route.view === "quiz" ? (
+          quizView()
+        ) : route.view === "order" ? (
+          orderView()
+        ) : route.view === "lanes" ? (
+          lanesView()
+        ) : route.view === "profile" ? (
+          profileView()
+        ) : route.view === "results" ? (
+          resultsView()
+        ) : (
+          materialsView()
+        )}
       </main>
       <footer>
         VNR202 · Đường nối thể hiện tiến trình học, không tự khẳng định quan hệ
