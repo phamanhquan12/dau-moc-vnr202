@@ -39,3 +39,7 @@ The original 26/52 content and 17-test regression suite, original image provenan
 Measured sRGB contrast for the principal solid text/background pairs: light/panel 13.65:1, muted/panel 8.33:1, mint/panel 8.49:1, amber/panel 9.45:1, primary-button text/mint 9.00:1. These measurements do not substitute for checking every focus/disabled/hover state.
 
 Additional executed checks: full six-correct browser session finishes at 840 in HUD/storage/results; direct hash/back/forward navigation; CSS `zoom:200%` at 1280×720 (screenshots/css-zoom-200.png); reduced-motion session with localStorage deliberately blocked remains playable. Native browser UI zoom remains distinct from this CSS zoom check.
+
+## Deployed verification
+
+GitHub Actions run 41663854061 built and deployed commit 9cf6f08 successfully to https://phamanhquan12.github.io/dau-moc-vnr202/. The complete browser walkthrough was rerun against that live URL: migration/unrelated storage/profile return; correct/wrong/timeout/reload/results/new session; six-correct 840; keyboard ordering/reload; synchronized periods; desktop/projector/mobile checks; corrupted snapshot; zero unexpected page errors. Live-run screenshots were kept outside the working tree to preserve the committed local comparison set.
