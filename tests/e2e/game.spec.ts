@@ -1,0 +1,222 @@
+import { test, expect } from "@playwright/test";
+import data from "../../src/data/content.json" with { type: "json" };
+const key = "dau-moc-vnr-v3";
+const snapshot = async (page: import("@playwright/test").Page) =>
+  page.evaluate((k) => JSON.parse(localStorage.getItem(k)!), key);
+test("six-question real UI, stable shuffle/reload, 840, independent best and confirmation", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.goto("./");
+  await page.getByRole("button", { name: "Bắt đầu quiz →" }).click();
+  for (let i = 0; i < 6; i++) {
+    const saved = await snapshot(page);
+    const q = data.questions.find((q) => q.id === saved.quiz.questionIds[i])!;
+    expect(q.chapter).toBe(1);
+    await page.locator(`[data-option-id="${q.correctOptionId}"]`).click();
+    if (i === 0) {
+      const before = await snapshot(page);
+      await page.reload();
+      await expect(
+        page.locator(`[data-option-id="${q.correctOptionId}"]`),
+      ).toHaveAttribute("aria-pressed", "true");
+      expect((await snapshot(page)).quiz).toEqual(before.quiz);
+    }
+    await page.getByRole("button", { name: "Chốt đáp án" }).click();
+    await expect(
+      page.getByRole("heading", { name: /✓ Chính xác/ }),
+    ).toBeVisible();
+    await page.getByRole("button", { name: "Tiếp tục →" }).click();
+  }
+  await expect(page.getByRole("heading", { name: "840 điểm" })).toBeVisible();
+  expect((await snapshot(page)).progress.bestOrdering).toBe(0);
+  await page.getByRole("button", { name: "Lượt mới", exact: true }).click();
+  await page.getByRole("button", { name: "Lượt mới", exact: true }).click();
+  await expect(page.getByRole("alertdialog")).toBeVisible();
+  const id = (await snapshot(page)).quiz.sessionId;
+  await page.getByRole("button", { name: "Hủy" }).click();
+  expect((await snapshot(page)).quiz.sessionId).toBe(id);
+  expect(errors).toEqual([]);
+});
+test("absolute deadline while away, timeout once across reload, wrong answers and early finish", async ({
+  page,
+}) => {
+  await page.clock.install({ time: new Date("2026-11-03T12:00:00Z") });
+  await page.goto("./#quiz");
+  await page.getByRole("button", { name: "Bắt đầu lượt", exact: true }).click();
+  await page.getByRole("link", { name: "Bàn nhiệm vụ", exact: true }).click();
+  await page.clock.fastForward(31000);
+  await page.reload();
+  await page.getByRole("link", { name: "Quiz", exact: true }).click();
+  await expect(page.getByRole("heading", { name: /Hết giờ/ })).toBeVisible();
+  const after = (await snapshot(page)).quiz;
+  await page.reload();
+  expect((await snapshot(page)).quiz.answers).toHaveLength(1);
+  expect((await snapshot(page)).quiz.lives).toBe(2);
+  for (let i = 0; i < 2; i++) {
+    await page.getByRole("button", { name: "Tiếp tục →" }).click();
+    const s = (await snapshot(page)).quiz,
+      q = data.questions.find((q) => q.id === s.questionIds[s.index])!;
+    const wrong = q.options.find((o) => o.id !== q.correctOptionId)!;
+    await page.locator(`[data-option-id="${wrong.id}"]`).click();
+    await page.getByRole("button", { name: "Chốt đáp án" }).click();
+    await expect(
+      page.getByRole("heading", { name: /Chưa đúng/ }),
+    ).toBeVisible();
+  }
+  await page.getByRole("button", { name: "Tiếp tục →" }).click();
+  await expect(
+    page.getByRole("heading", { name: "Câu cần ôn lại" }),
+  ).toBeVisible();
+  expect((await snapshot(page)).quiz.answers).toHaveLength(3);
+  expect(after.score).toBe(0);
+});
+test("ordering entirely by keyboard/select-slot locks grading and retains set", async ({
+  page,
+}) => {
+  await page.goto("./");
+  await page.locator(".chapter-dock>button").nth(1).click();
+  await page.getByRole("link", { name: "Xếp mốc", exact: true }).click();
+  await page.getByRole("button", { name: "Tạo lượt xếp mốc" }).click();
+  const s = (await snapshot(page)).ordering;
+  const sorted = s.eventIds
+    .map((id: string) => data.events.find((e) => e.id === id)!)
+    .sort((a: { year: number }, b: { year: number }) => a.year - b.year);
+  for (const [i, e] of sorted.entries()) {
+    await page.locator(`[data-event-id="${e.id}"]`).focus();
+    await page.keyboard.press("Enter");
+    await page
+      .getByRole("button", { name: "Vị trí " + (i + 1), exact: true })
+      .focus();
+    await page.keyboard.press("Enter");
+    await expect(page.locator(`[data-event-id="${e.id}"]`)).toBeFocused();
+  }
+  await page.getByRole("button", { name: "Kiểm tra", exact: true }).click();
+  await expect(page.getByRole("heading", { name: /600\/600/ })).toBeVisible();
+  await page.reload();
+  expect((await snapshot(page)).ordering.eventIds).toEqual(s.eventIds);
+  expect((await snapshot(page)).progress.bestQuiz).toBe(0);
+  expect((await snapshot(page)).progress.bestOrdering).toBe(600);
+  await expect(page.locator(".order-tray button").first()).toBeDisabled();
+  await page.getByRole("link", { name: "Xem kết quả xếp mốc →" }).click();
+  await expect(page.getByRole("heading", { name: "600 điểm" })).toBeVisible();
+});
+test("mobile play, direct routes, search without accents and honest image fallback", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("./");
+  await page.getByRole("button", { name: "Bắt đầu quiz →" }).click();
+  await page.locator(".options button").first().click();
+  await page.getByRole("button", { name: "Chốt đáp án" }).click();
+  await expect(page.locator(".feedback")).toBeVisible();
+  await page.goto("./#profile/duong-kach-menh");
+  await expect(page.getByText("Tư liệu ảnh chưa được tích hợp")).toBeVisible();
+  expect((await snapshot(page)).progress.seenEventIds).toContain(
+    "duong-kach-menh",
+  );
+  await page.getByRole("link", { name: "Hồ sơ tư liệu", exact: true }).click();
+  await page.getByLabel("Tìm kiếm", { exact: true }).fill("Doi moi");
+  await expect(
+    page.getByRole("link", { name: "Đại hội VI: khởi xướng Đổi mới" }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth > innerWidth,
+    ),
+  ).toBe(false);
+});
+test("visual routes desktop/projector/mobile/360, all five shared time bands and asset health", async ({
+  page,
+}) => {
+  const errors: string[] = [],
+    assets: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  page.on("response", (r) => {
+    if (r.status() === 404) assets.push(r.url());
+  });
+  await page.goto("./#lanes");
+  for (const period of [
+    { label: "1954–1960", start: 1954, end: 1961 },
+    { label: "1961–1965", start: 1961, end: 1965 },
+    { label: "1965–1968", start: 1965, end: 1969 },
+    { label: "1969–1973", start: 1969, end: 1973 },
+    { label: "1973–1975", start: 1973, end: 1976 },
+  ]) {
+    await page.getByRole("button", { name: period.label, exact: true }).click();
+    const expected = data.events
+      .filter((e) => e.year >= period.start && e.year < period.end)
+      .map((e) => e.title)
+      .sort();
+    expect(
+      (await page.locator(".three-lanes article h3").allTextContents()).sort(),
+    ).toEqual(expected);
+  }
+  for (const [name, width, height] of [
+    ["desktop", 1440, 900],
+    ["projector", 1280, 720],
+    ["mobile", 390, 844],
+    ["small", 360, 780],
+  ] as const) {
+    await page.setViewportSize({ width, height });
+    await page.goto("./#board");
+    await page.locator(".desk").waitFor();
+    await page.screenshot({
+      path: `screenshots/${name}-board.png`,
+      fullPage: true,
+    });
+    await page.goto("./#quiz");
+    if (
+      await page
+        .getByRole("button", { name: "Bắt đầu lượt", exact: true })
+        .count()
+    )
+      await page
+        .getByRole("button", { name: "Bắt đầu lượt", exact: true })
+        .click();
+    await page.locator(".options button").first().click();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth,
+      ),
+    ).toBe(false);
+    if (name === "projector") {
+      const box = await page
+        .getByRole("button", { name: "Chốt đáp án" })
+        .boundingBox();
+      expect(box!.y + box!.height).toBeLessThanOrEqual(height);
+    }
+    await page.screenshot({
+      path: `screenshots/${name}-quiz.png`,
+      fullPage: true,
+    });
+    await page.goto("./#order");
+    if (await page.getByRole("button", { name: "Tạo lượt xếp mốc" }).count())
+      await page.getByRole("button", { name: "Tạo lượt xếp mốc" }).click();
+    await page.screenshot({
+      path: `screenshots/${name}-order.png`,
+      fullPage: true,
+    });
+    await page.goto("./#lanes");
+    await page.getByRole("button", { name: "1973–1975", exact: true }).click();
+    await expect(page.locator(".three-lanes>section")).toHaveCount(3);
+    await expect(
+      page
+        .locator(".three-lanes>section")
+        .nth(1)
+        .getByRole("heading", { name: "Hiệp định Paris" }),
+    ).toBeVisible();
+    await page.screenshot({
+      path: `screenshots/${name}-lanes.png`,
+      fullPage: true,
+    });
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth,
+      ),
+    ).toBe(false);
+  }
+  expect(errors).toEqual([]);
+  expect(assets).toEqual([]);
+});

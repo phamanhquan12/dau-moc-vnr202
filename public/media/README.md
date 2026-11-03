@@ -1,0 +1,1 @@
+No historical image files are currently bundled. The four leads in src/data/content.json retain localPath:null and verify-before-embedding. Source links and honest placeholders are intentional. Add an image only after checking the precise work, credit and license; set licenseStatus:verified and localPath:media/... only when the file really exists. The build checks that claim.

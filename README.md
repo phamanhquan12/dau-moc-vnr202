@@ -1,43 +1,47 @@
-# Dấu Mốc VNR202
+# Dấu Mốc · VNR202
 
-Mission-based history learning board, implemented in the existing repository according to `README_AGENT_VNR202.md`. The Ngày mai, mình sẽ implementation has been removed, including its framework, narrative engine, artwork, manuscript and old handoffs. Git history remains available for recovery.
-
-## Important input mismatch
-
-This workspace contained the notebook app, **not** the described Dấu Mốc source (`dist/core.mjs`, `make-data.py`, 26 profiles, 52 questions, four images, textbook PDF and 17 tests). Those files could not be preserved or regression-tested because they were absent. No alternative source path was supplied during implementation.
-
-The delivered starter contains **6 sourced profiles and 12 questions**. It is explicitly labeled, does not claim full course coverage through 2018, and does not fabricate missing photos, textbook page links, or northern/southern profiles. The source-backed content was adapted from the previously available records; source IDs and uncertainties are retained in `app/data.json`. The PDF group report stays local and is not redistributed.
+Vietnamese educational web game implemented from **README_AGENT_VNR202 (1).md**, including its exact 26-event / 52-question seed IDs. The revised handoff supersedes the earlier independently authored bank and dependency-free implementation; those renderers and engine have been removed. This is not derived from HCM202.
 
 ## Run
 
-Node 22, no dependencies or backend:
+Node 22.12+ (Node 22 used in verification):
 
 ```sh
 npm ci
-npm test
-npm run lint
-npm run build
 npm run dev
+npm run typecheck
+npm run test:unit
+npm run test:integration
+npx playwright install --with-deps chromium
+npm run test:e2e
+npm run build
+npm run preview
 ```
 
-Local preview: http://127.0.0.1:3040. Publish the contents of `dist/` to static hosting. All asset links are relative; hash routes refresh without server rewrites. The existing repository was renamed to `phamanhquan12/dau-moc-vnr202`, preserving Git history and audience; no duplicate site was created. GitHub Pages publishes https://phamanhquan12.github.io/dau-moc-vnr202/.
+Dev: http://127.0.0.1:3041. Production preview: http://127.0.0.1:3042. Build emits `dist/`. `base: './'` and hash routes support GitHub Pages subpaths. Existing repository/hosting identity: https://github.com/phamanhquan12/dau-moc-vnr202, https://phamanhquan12.github.io/dau-moc-vnr202/.
 
-## Structure
+`REVIEW_URL=https://.../dau-moc-vnr202/ npm run test:e2e` tests an already deployed build; include the trailing slash. No backend, accounts, runtime AI, analytics, payment or multiplayer.
 
-`app/core.mjs`: pure quiz, ordering, validation, migration and routing rules. `app/app.mjs`: storage, route shell and event handling. Separate renderers: `board`, `profile`, `quiz`, `ordering`, `lanes`, `results`, `materials`. `app/data.json`: content/evidence. Build copies these to `dist/` without bundling. Tests use Node's built-in runner.
+## Product
 
-## State and rules
+The first screen is a mission board with three chapter filters, a six-node viewing window, selection panel, and direct quiz/ordering actions. Dedicated views provide quiz, ordering, three synchronized history lanes, searchable event profiles and mode-specific results. Navy/mint/amber, self-hosted Vietnamese sans; no old notebook/serif hero or modal games.
 
-Quiz: up to 6 questions, 3 lives, 30-second absolute deadlines. Selection does not submit. Correct +100 and streak +0/+20/+40/+60 capped at +60: six correct =840. IDs stay stable through shuffled order. Reload preserves question and option order, selection, deadline and feedback. Navigation never pauses a deadline. Timeout is graded once; feedback waits for explicit continuation. Results list mistakes and source-backed explanations.
+Quiz stays within the selected chapter: two recall first, four understanding, preferring distinct events. Three lives, 30 seconds per absolute deadline. Select before confirming. Feedback waits for explicit continuation; reload and route changes grant no time. Six correct gain 100/120/140/160/160/160=840. New active rounds require in-app confirmation.
 
-Ordering: six distinct years, stable set and placements until “Bộ mới”; select-card/select-slot controls, swaps, undo, check and reload. Partial-date labels remain partial; no invented first-of-month dates.
+Ordering selects distinct years within the filter, supports select-card/slot and move buttons, undo before grading, then **locks on check**. Each correct position scores100, max600. Standard order and explanations appear after grading. Quiz and ordering bests are independent. Short pools display actual count.
 
-Storage: `dau-moc-vnr-v2`; legacy `dau-moc-vnr-v1` migrates valid seen IDs to viewed and retains numeric best. Legacy sessions are not trusted. Unknown event IDs are omitted. Invalid sessions recover with a notice. Other apps' storage is not cleared. Reading never awards points/mastery. Stored data is local, without analytics or accounts.
+History lanes share five half-open time bands. `region` determines north/common/south, never inferred from place. Missing events remain explicit. Relation notes do not reduce complex events to a single cause.
 
-## Evidence and assets
+## Architecture and state
 
-Profiles link to H02, H04, H10, H14, H21 from the available source register. A sixth profile describes the documented 1944 Kim Đồng certificate. No external text or photos were scraped into the product. No historical images were supplied for this build. Typography is self-hosted Be Vietnam Pro under SIL OFL (`app/assets/fonts/BeVietnamPro-LICENSE.txt`). No serif/paper/AI-photo visual treatment remains.
+React + TypeScript + Vite; CSS; Vitest + Testing Library; Playwright. `src/data/content.json` is the supplied seed with seven targeted question revisions recorded in `CONTENT_REVIEW.json`. `src/domain/` contains pure, time/random-injectable engines and content validation. `src/storage/state.ts` handles versioned snapshots, progress and corruption recovery. `src/app/App.tsx` provides the routed screens and atomic transitions; `src/components/Evidence.tsx` separates sources/media.
 
-The sparse Bắc–Nam view uses one selected period for both lanes, with explicit missing-profile wording and a separate shared/connection area. The 1962 departure/receiving relationship is described and sourced, not presented as a direct causal arrow or military map.
+Storage key: `dau-moc-vnr-v3`. Separate seen-event IDs, correct-question IDs, quiz best, ordering best, sessions and UI. Session schema/content versions and reconstructed answer scores are validated. Incompatible sessions are discarded with a notice, retaining valid progress. Only this app's current key is reset, after confirmation; other keys are untouched. Viewing never implies mastery. Browser storage failure permits session-only play.
 
-See `TEST_REPORT.md` and `screenshots/` for actual verification and before/after notes. Browser checks require a separately installed Playwright/Chromium: `REVIEW_URL=http://127.0.0.1:3040 node tests/browser-check.mjs`. Browser dependencies are not required to build or host.
+## Content and image status
+
+This is **starter content requiring academic review**, as specified in the seed. References are to chapters of the 2019 textbook; page/url fields remain null. No invented PDF download or unverified page links are exposed. The four image records are source leads, not bundled pictures. All currently retain `localPath: null` and `licenseStatus: verify-before-embedding`; profiles show “Tư liệu ảnh chưa được tích hợp”, proper credit, usage note and source link. This valid fallback does not prevent playing. No source photo is assumed to be openly licensed, especially the TTXVN tank photograph.
+
+All 26/52 IDs are retained. Seven understanding-question option sets were revised to reduce extreme distractors; one recall-like understanding prompt was revised with its options/explanation. Classification is editorial, not psychometrically validated. No professor approval is claimed.
+
+Fonts: Be Vietnam Pro, SIL OFL, license in `public/fonts`. `public/media/` contains only verified media if integrated in a future revision. Build validates seed dates, IDs, references, options and claimed local media. See `TEST_REPORT.md` for actual results and limitations.

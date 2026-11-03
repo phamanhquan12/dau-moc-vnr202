@@ -1,0 +1,106 @@
+export type Chapter = 0 | 1 | 2 | 3;
+export type EventRecord = {
+  id: string;
+  title: string;
+  chapter: number;
+  year: number;
+  region: string;
+  place: string;
+  context: string;
+  decision: string;
+  result: string;
+  date: string;
+  datePrecision: "year" | "month" | "day";
+  displayDate: string;
+  sourceId: string;
+  imageId: string | null;
+};
+export type Question = {
+  id: string;
+  eventId: string;
+  chapter: number;
+  kind: string;
+  difficulty: number;
+  prompt: string;
+  options: { id: string; text: string }[];
+  correctOptionId: string;
+  explanation: string;
+  sourceId: string;
+};
+export type Source = {
+  id: string;
+  title: string;
+  chapter: number;
+  locator: string;
+  page: number | null;
+  url: string | null;
+  reviewStatus: string;
+};
+export type ImageRecord = {
+  id: string;
+  title: string;
+  sourceUrl: string;
+  credit: string;
+  kind: string;
+  localPath: string | null;
+  licenseStatus: string;
+  usageNote: string;
+};
+export type Content = {
+  schemaVersion: number;
+  contentStatus: string;
+  sources: Source[];
+  images: ImageRecord[];
+  events: EventRecord[];
+  questions: Question[];
+};
+export type Answer = {
+  questionId: string;
+  optionId: string | null;
+  correct: boolean;
+  timeout: boolean;
+  gain: number;
+};
+export type QuizSession = {
+  sessionId: string;
+  schemaVersion: 3;
+  contentVersion: string;
+  chapter: Chapter;
+  questionIds: string[];
+  optionOrderByQuestion: Record<string, string[]>;
+  index: number;
+  selectedOptionId: string | null;
+  phase: "question" | "feedback" | "finished";
+  deadline: number;
+  score: number;
+  streak: number;
+  lives: number;
+  answers: Answer[];
+  notice: string;
+};
+export type OrderingRound = {
+  roundId: string;
+  schemaVersion: 3;
+  contentVersion: string;
+  chapter: Chapter;
+  eventIds: string[];
+  slots: (string | null)[];
+  history: (string | null)[][];
+  phase: "arranging" | "graded";
+  score: number | null;
+  notice: string;
+};
+export type Progress = {
+  seenEventIds: string[];
+  correctQuestionIds: string[];
+  bestQuiz: number;
+  bestOrdering: number;
+};
+export type AppState = {
+  schemaVersion: 3;
+  progress: Progress;
+  quiz: QuizSession | null;
+  ordering: OrderingRound | null;
+  ui: { chapter: Chapter; selected: string; period: number };
+  notice: string;
+};
