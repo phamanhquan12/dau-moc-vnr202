@@ -1,3 +1,0 @@
-"use client";
-import {useEffect,useState} from 'react';
-export default function Controls(){const [reader,setReader]=useState(false);const [motion,setMotion]=useState(false);useEffect(()=>{try{setReader(localStorage.getItem('reader')==='true');setMotion(localStorage.getItem('motion')==='true')}catch{}},[]);useEffect(()=>{document.documentElement.dataset.reader=String(reader);document.documentElement.dataset.motion=String(motion);try{localStorage.setItem('reader',String(reader));localStorage.setItem('motion',String(motion))}catch{}},[reader,motion]);return <div className="controls"><button aria-pressed={reader} onClick={()=>setReader(!reader)}>Aa <span>Chế độ đọc</span></button><button aria-pressed={motion} onClick={()=>setMotion(!motion)}>Giảm chuyển động</button></div>}

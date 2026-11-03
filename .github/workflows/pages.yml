@@ -1,4 +1,4 @@
-name: Interactive notebook on Pages
+name: Dau Moc VNR202 on Pages
 on:
   push:
     branches: [main]
@@ -20,13 +20,10 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - run: npm run lint && npm run typecheck && npm test
-      - run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /ngay-mai-minh-se
+      - run: npm run lint && npm run typecheck && npm test && npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest

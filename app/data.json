@@ -1,0 +1,527 @@
+{
+  "title": "Dấu Mốc VNR202",
+  "chapters": [
+    {
+      "id": 1,
+      "title": "Cách mạng & tổ chức",
+      "range": "1930–1945"
+    },
+    {
+      "id": 2,
+      "title": "Kiến quốc & kháng chiến",
+      "range": "1945–1954"
+    },
+    {
+      "id": 3,
+      "title": "Hai miền & thống nhất",
+      "range": "1954–1975"
+    }
+  ],
+  "events": [
+    {
+      "id": "tin-hieu",
+      "chapter": 1,
+      "year": 1941,
+      "date": "1941–1943",
+      "precision": "range",
+      "title": "Một tín hiệu giữa núi rừng",
+      "place": "Cao Bằng",
+      "region": "common",
+      "context": "Tại Cao Bằng trong giai đoạn chuẩn bị giành độc lập, liên lạc và bảo vệ cán bộ là những công việc cần thiết của mạng lưới cách mạng.",
+      "action": "Kim Đồng, tên thật Nông Văn Dền, là đội trưởng đầu tiên của tổ chức thiếu nhi cách mạng ở Nà Mạ. Tư liệu bảo tàng ghi lại công việc liên lạc và việc anh đánh lạc hướng nguy hiểm để bảo vệ cán bộ. Anh hy sinh năm 1943.",
+      "result": "Điều được nối lại không chỉ là hai địa điểm. Đó là khả năng cùng hành động của cả một mạng lưới.",
+      "meaning": "Trong quá trình chuẩn bị giành độc lập, tổ chức Việt Minh và các cơ sở địa phương cần những người làm công việc liên lạc, vận động và bảo vệ. Câu chuyện Kim Đồng đưa một công việc thường ở phía sau vào tầm nhìn.",
+      "sources": [
+        "H02"
+      ],
+      "note": "Không tái dựng lộ trình, mật mã hay lời nói cuối. Lược bỏ chi tiết dân tộc vì các bản giới thiệu chưa thống nhất.",
+      "course": "Chương 1 · Chuẩn bị giải phóng dân tộc · trang in 44–48"
+    },
+    {
+      "id": "bang-khen",
+      "chapter": 1,
+      "year": 1944,
+      "date": "02/09/1944",
+      "precision": "day",
+      "title": "Ghi nhận một người giữ liên lạc",
+      "place": "Việt Minh",
+      "region": "common",
+      "context": "Sau khi Kim Đồng hy sinh năm 1943, đóng góp của anh được ghi nhận bằng một văn bản truy tặng.",
+      "action": "Ngày 2/9/1944, Tổng bộ Việt Minh truy tặng Kim Đồng bằng Có công với nước.",
+      "result": "Bảo tàng Lịch sử Quốc gia lưu giữ và giới thiệu bằng truy tặng này.",
+      "meaning": "Hiện vật giúp liên hệ một con người với hoạt động của tổ chức cách mạng. Đây là mốc ghi nhận, khác với thời điểm anh hy sinh.",
+      "sources": [
+        "H02"
+      ],
+      "note": "Chỉ dùng mô tả của bảo tàng. Không có ảnh hiện vật được cấp quyền trong gói hiện tại.",
+      "course": "Chương 1 · Chuẩn bị giải phóng dân tộc; chưa có PDF để đối chiếu trang"
+    },
+    {
+      "id": "nam-gao",
+      "chapter": 2,
+      "year": 1945,
+      "date": "1945–1946",
+      "precision": "range",
+      "title": "Một nắm gạo",
+      "place": "Việt Nam sau độc lập",
+      "region": "common",
+      "context": "Sau khi giành độc lập, chính quyền và nhân dân phải đối mặt với nạn đói cùng nhiều khó khăn kinh tế, xã hội.",
+      "action": "Các cuộc vận động tiết kiệm gạo và đóng góp cứu đói tập hợp sự sẻ chia. Công việc cứu trợ, chuyên chở và phân phối đi cùng yêu cầu tăng gia sản xuất để bảo vệ đời sống.",
+      "result": "Một nắm gạo nhỏ đặt cạnh những nắm gạo khác: hành động của từng người có thể trở thành một nguồn lực chung.",
+      "meaning": "Xây dựng chính quyền mới còn là chống đói, chống dốt và ổn định đời sống. Tương trợ xã hội là một phần của nhiệm vụ kiến quốc, bên cạnh bảo vệ nền độc lập.",
+      "sources": [
+        "H04"
+      ],
+      "note": "Đây là câu chuyện tập thể, không phải tiểu sử một gia đình xác định. Không gán khẩu phần hoặc cho rằng hũ gạo đơn lẻ chấm dứt nạn đói.",
+      "course": "Chương 2.I · 1945–1946 · trang in 63–64"
+    },
+    {
+      "id": "xe-dap",
+      "chapter": 2,
+      "year": 1954,
+      "date": "1954",
+      "precision": "year",
+      "title": "Chiếc xe chở hơn một chuyến hàng",
+      "place": "Điện Biên Phủ",
+      "region": "common",
+      "context": "Trong chiến dịch Điện Biên Phủ năm 1954, xe đạp được cải tiến để vận chuyển hàng hóa trên các tuyến tiếp tế.",
+      "action": "Đoạn tre nối vào ghi đông hỗ trợ điều khiển xe. Điểm cầm, đẩy ở trục yên và việc gia cố săm, lốp giúp phương tiện thích ứng với chở hàng và đường khó đi. Những cải tiến này gắn với sức lao động của lực lượng dân công.",
+      "result": "Ma Văn Thắng là một trong những dân công gắn với câu chuyện xe đạp thồ. Chiếc xe thuộc câu chuyện của cả lực lượng vận chuyển, không phải sáng kiến riêng của một người.",
+      "meaning": "Hậu cần và sự huy động nhân dân góp phần duy trì chiến dịch Điện Biên Phủ. Phía sau chiến đấu là việc đưa lương thực, hàng hóa tới nơi cần đến.",
+      "sources": [
+        "H10"
+      ],
+      "note": "Không gán mọi cải tiến cho một người. Không dùng tải trọng kỷ lục vì các nguồn H10/H11 trong handoff trước đưa số khác nhau.",
+      "course": "Chương 2.I · Điện Biên Phủ · trang in 81–83"
+    },
+    {
+      "id": "hai-bo",
+      "chapter": 3,
+      "year": 1962,
+      "date": "Tháng 10/1962",
+      "precision": "month",
+      "title": "Hai bờ của một chuyến đi",
+      "place": "Đồ Sơn → Cà Mau",
+      "region": "relation",
+      "context": "Tuyến vận tải biển cần sự phối hợp giữa nơi xuất phát, thủy thủ đoàn và lực lượng tiếp nhận ở miền Nam.",
+      "action": "Phương Đông 1 rời Đồ Sơn ngày 11/10/1962, do Lê Văn Một làm thuyền trưởng và Bông Văn Dĩa làm chính trị viên. Chuyến tàu kết nối thành công với khu vực tiếp nhận Cà Mau trong tháng 10/1962.",
+      "result": "Một đường nối có hai đầu và nhiều người ở giữa. Hậu phương, thủy thủ đoàn và nơi tiếp nhận cùng làm nên ý nghĩa của chuyến đi.",
+      "meaning": "Tuyến vận tải biển được mở năm 1961; chuyến Phương Đông 1 trong câu chuyện diễn ra năm 1962. Hai mốc này khác nhau. Chi viện và tổ chức tiếp nhận thể hiện quan hệ giữa hai miền trong kháng chiến.",
+      "sources": [
+        "H14"
+      ],
+      "note": "Không khẳng định ngày cập bến cụ thể do H14/H15 trong handoff trước khác nhau. Đường nối trong giao diện chỉ biểu thị quan hệ chi viện–tiếp nhận, không phải hải trình xác thực.",
+      "course": "Chương 2.II · trang in 91, 95–96 · Báo cáo nhóm D.2"
+    },
+    {
+      "id": "chiec-dai",
+      "chapter": 3,
+      "year": 1975,
+      "date": "30/4–1/5/1975",
+      "precision": "range",
+      "title": "Khi tin tức vượt qua cánh cửa",
+      "place": "Côn Đảo",
+      "region": "common",
+      "context": "Tại Côn Đảo, những người bị giam giữ cần xác nhận tin tức về các diễn biến bên ngoài vào cuối tháng 4/1975.",
+      "action": "Tối 30/4/1975, chiếc đài được dùng để nghe tin Sài Gòn được giải phóng. Tin tức được truyền giữa các khu giam giữ. Bài giới thiệu của bảo tàng phân biệt thời điểm nhận tin với giải phóng Côn Đảo ngày 1/5/1975.",
+      "result": "Lịch sử có thể bước vào đời sống qua một vật nhỏ. Sau tin tức là những con người bước sang một thời kỳ khác.",
+      "meaning": "Đại thắng mùa Xuân 1975 kết thúc cuộc kháng chiến. Thống nhất nhà nước năm 1976 là mốc tiếp theo, không đồng nhất với ngày 30/4/1975. Hòa bình mở ra công việc khôi phục và xây dựng đất nước.",
+      "sources": [
+        "H21"
+      ],
+      "note": "Không tái tạo bản phát thanh hoặc phản ứng cá nhân chưa có nguồn. Chưa có ảnh chiếc đài được cấp quyền trong gói hiện tại.",
+      "course": "Chương 2.II · trang in 112–114; Chương 3 · trang in 116–118"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-1",
+      "eventId": "tin-hieu",
+      "prompt": "Vai trò nào gắn với Kim Đồng trong tư liệu?",
+      "options": [
+        {
+          "id": "q1-o0",
+          "text": "Liên lạc và bảo vệ cán bộ"
+        },
+        {
+          "id": "q1-o1",
+          "text": "Chỉ huy chuyến tàu Phương Đông 1"
+        },
+        {
+          "id": "q1-o2",
+          "text": "Phụ trách vận tải xe đạp"
+        },
+        {
+          "id": "q1-o3",
+          "text": "Điều hành đài phát thanh"
+        }
+      ],
+      "answerId": "q1-o0",
+      "explanation": "Kim Đồng, tên thật Nông Văn Dền, là đội trưởng đầu tiên của tổ chức thiếu nhi cách mạng ở Nà Mạ. Tư liệu bảo tàng ghi lại công việc liên lạc và việc anh đánh lạc hướng nguy hiểm để bảo vệ cán bộ. Anh hy sinh năm 1943. Trong quá trình chuẩn bị giành độc lập, tổ chức Việt Minh và các cơ sở địa phương cần những người làm công việc liên lạc, vận động và bảo vệ. Câu chuyện Kim Đồng đưa một công việc thường ở phía sau vào tầm nhìn.",
+      "sourceIds": [
+        "H02"
+      ]
+    },
+    {
+      "id": "q-2",
+      "eventId": "tin-hieu",
+      "prompt": "Vì sao sơ đồ liên lạc không phải bản đồ hành quân?",
+      "options": [
+        {
+          "id": "q2-o0",
+          "text": "Nó giải thích quan hệ, không tái dựng lộ trình có thật"
+        },
+        {
+          "id": "q2-o1",
+          "text": "Nó cho biết tọa độ chính xác"
+        },
+        {
+          "id": "q2-o2",
+          "text": "Nó ghi lại một mệnh lệnh gốc"
+        },
+        {
+          "id": "q2-o3",
+          "text": "Nó mô tả toàn bộ chiến dịch"
+        }
+      ],
+      "answerId": "q2-o0",
+      "explanation": "Kim Đồng, tên thật Nông Văn Dền, là đội trưởng đầu tiên của tổ chức thiếu nhi cách mạng ở Nà Mạ. Tư liệu bảo tàng ghi lại công việc liên lạc và việc anh đánh lạc hướng nguy hiểm để bảo vệ cán bộ. Anh hy sinh năm 1943. Trong quá trình chuẩn bị giành độc lập, tổ chức Việt Minh và các cơ sở địa phương cần những người làm công việc liên lạc, vận động và bảo vệ. Câu chuyện Kim Đồng đưa một công việc thường ở phía sau vào tầm nhìn.",
+      "sourceIds": [
+        "H02"
+      ]
+    },
+    {
+      "id": "q-3",
+      "eventId": "bang-khen",
+      "prompt": "Bằng truy tặng Kim Đồng trong hồ sơ được ghi ngày nào?",
+      "options": [
+        {
+          "id": "q3-o0",
+          "text": "02/09/1944"
+        },
+        {
+          "id": "q3-o1",
+          "text": "02/09/1945"
+        },
+        {
+          "id": "q3-o2",
+          "text": "30/04/1975"
+        },
+        {
+          "id": "q3-o3",
+          "text": "11/10/1962"
+        }
+      ],
+      "answerId": "q3-o0",
+      "explanation": "Ngày 2/9/1944, Tổng bộ Việt Minh truy tặng Kim Đồng bằng Có công với nước. Hiện vật giúp liên hệ một con người với hoạt động của tổ chức cách mạng. Đây là mốc ghi nhận, khác với thời điểm anh hy sinh.",
+      "sourceIds": [
+        "H02"
+      ]
+    },
+    {
+      "id": "q-4",
+      "eventId": "bang-khen",
+      "prompt": "Cần phân biệt hai mốc nào khi đọc hồ sơ này?",
+      "options": [
+        {
+          "id": "q4-o0",
+          "text": "Năm hy sinh và năm truy tặng"
+        },
+        {
+          "id": "q4-o1",
+          "text": "Ngày khai giảng và ngày thi"
+        },
+        {
+          "id": "q4-o2",
+          "text": "Ngày xuất bản và ngày tái bản"
+        },
+        {
+          "id": "q4-o3",
+          "text": "Ngày xuất phát và ngày cập bến"
+        }
+      ],
+      "answerId": "q4-o0",
+      "explanation": "Ngày 2/9/1944, Tổng bộ Việt Minh truy tặng Kim Đồng bằng Có công với nước. Hiện vật giúp liên hệ một con người với hoạt động của tổ chức cách mạng. Đây là mốc ghi nhận, khác với thời điểm anh hy sinh.",
+      "sourceIds": [
+        "H02"
+      ]
+    },
+    {
+      "id": "q-5",
+      "eventId": "nam-gao",
+      "prompt": "Hũ gạo cứu đói thể hiện điều gì?",
+      "options": [
+        {
+          "id": "q5-o0",
+          "text": "Sự sẻ chia trong nỗ lực cứu trợ chung"
+        },
+        {
+          "id": "q5-o1",
+          "text": "Một biện pháp tự nó chấm dứt mọi khó khăn"
+        },
+        {
+          "id": "q5-o2",
+          "text": "Một cuộc thi phân chia khẩu phần"
+        },
+        {
+          "id": "q5-o3",
+          "text": "Một hình thức trả thưởng cá nhân"
+        }
+      ],
+      "answerId": "q5-o0",
+      "explanation": "Các cuộc vận động tiết kiệm gạo và đóng góp cứu đói tập hợp sự sẻ chia. Công việc cứu trợ, chuyên chở và phân phối đi cùng yêu cầu tăng gia sản xuất để bảo vệ đời sống. Xây dựng chính quyền mới còn là chống đói, chống dốt và ổn định đời sống. Tương trợ xã hội là một phần của nhiệm vụ kiến quốc, bên cạnh bảo vệ nền độc lập.",
+      "sourceIds": [
+        "H04"
+      ]
+    },
+    {
+      "id": "q-6",
+      "eventId": "nam-gao",
+      "prompt": "Hoạt động nào đi cùng cứu trợ trước mắt?",
+      "options": [
+        {
+          "id": "q6-o0",
+          "text": "Tăng gia sản xuất"
+        },
+        {
+          "id": "q6-o1",
+          "text": "Ngừng toàn bộ vận chuyển gạo"
+        },
+        {
+          "id": "q6-o2",
+          "text": "Chỉ tập trung vào kỷ lục cá nhân"
+        },
+        {
+          "id": "q6-o3",
+          "text": "Đóng cửa mọi tổ chức cứu tế"
+        }
+      ],
+      "answerId": "q6-o0",
+      "explanation": "Các cuộc vận động tiết kiệm gạo và đóng góp cứu đói tập hợp sự sẻ chia. Công việc cứu trợ, chuyên chở và phân phối đi cùng yêu cầu tăng gia sản xuất để bảo vệ đời sống. Xây dựng chính quyền mới còn là chống đói, chống dốt và ổn định đời sống. Tương trợ xã hội là một phần của nhiệm vụ kiến quốc, bên cạnh bảo vệ nền độc lập.",
+      "sourceIds": [
+        "H04"
+      ]
+    },
+    {
+      "id": "q-7",
+      "eventId": "xe-dap",
+      "prompt": "Tay điều khiển nối thêm giúp xe đạp thồ làm gì?",
+      "options": [
+        {
+          "id": "q7-o0",
+          "text": "Phù hợp hơn với việc điều khiển xe chở hàng"
+        },
+        {
+          "id": "q7-o1",
+          "text": "Trở thành tàu vận tải"
+        },
+        {
+          "id": "q7-o2",
+          "text": "Tự chạy không cần người đẩy"
+        },
+        {
+          "id": "q7-o3",
+          "text": "Thay thế mọi phương tiện hậu cần"
+        }
+      ],
+      "answerId": "q7-o0",
+      "explanation": "Đoạn tre nối vào ghi đông hỗ trợ điều khiển xe. Điểm cầm, đẩy ở trục yên và việc gia cố săm, lốp giúp phương tiện thích ứng với chở hàng và đường khó đi. Những cải tiến này gắn với sức lao động của lực lượng dân công. Hậu cần và sự huy động nhân dân góp phần duy trì chiến dịch Điện Biên Phủ. Phía sau chiến đấu là việc đưa lương thực, hàng hóa tới nơi cần đến.",
+      "sourceIds": [
+        "H10"
+      ]
+    },
+    {
+      "id": "q-8",
+      "eventId": "xe-dap",
+      "prompt": "Ý nghĩa của xe đạp thồ trong chiến dịch là gì?",
+      "options": [
+        {
+          "id": "q8-o0",
+          "text": "Góp phần tiếp tế nhờ sáng kiến và sức người"
+        },
+        {
+          "id": "q8-o1",
+          "text": "Chứng minh một người làm toàn bộ hậu cần"
+        },
+        {
+          "id": "q8-o2",
+          "text": "Chỉ dùng để chở người tham quan"
+        },
+        {
+          "id": "q8-o3",
+          "text": "Không liên quan đến huy động nhân dân"
+        }
+      ],
+      "answerId": "q8-o0",
+      "explanation": "Đoạn tre nối vào ghi đông hỗ trợ điều khiển xe. Điểm cầm, đẩy ở trục yên và việc gia cố săm, lốp giúp phương tiện thích ứng với chở hàng và đường khó đi. Những cải tiến này gắn với sức lao động của lực lượng dân công. Hậu cần và sự huy động nhân dân góp phần duy trì chiến dịch Điện Biên Phủ. Phía sau chiến đấu là việc đưa lương thực, hàng hóa tới nơi cần đến.",
+      "sourceIds": [
+        "H10"
+      ]
+    },
+    {
+      "id": "q-9",
+      "eventId": "hai-bo",
+      "prompt": "Phương Đông 1 rời nơi nào trong tháng 10/1962?",
+      "options": [
+        {
+          "id": "q9-o0",
+          "text": "Đồ Sơn"
+        },
+        {
+          "id": "q9-o1",
+          "text": "Côn Đảo"
+        },
+        {
+          "id": "q9-o2",
+          "text": "Điện Biên Phủ"
+        },
+        {
+          "id": "q9-o3",
+          "text": "Cao Bằng"
+        }
+      ],
+      "answerId": "q9-o0",
+      "explanation": "Phương Đông 1 rời Đồ Sơn ngày 11/10/1962, do Lê Văn Một làm thuyền trưởng và Bông Văn Dĩa làm chính trị viên. Chuyến tàu kết nối thành công với khu vực tiếp nhận Cà Mau trong tháng 10/1962. Tuyến vận tải biển được mở năm 1961; chuyến Phương Đông 1 trong câu chuyện diễn ra năm 1962. Hai mốc này khác nhau. Chi viện và tổ chức tiếp nhận thể hiện quan hệ giữa hai miền trong kháng chiến.",
+      "sourceIds": [
+        "H14"
+      ]
+    },
+    {
+      "id": "q-10",
+      "eventId": "hai-bo",
+      "prompt": "Vì sao phải xét cả bờ gửi và bờ nhận?",
+      "options": [
+        {
+          "id": "q10-o0",
+          "text": "Vận tải cần cả chi viện lẫn tổ chức tiếp nhận"
+        },
+        {
+          "id": "q10-o1",
+          "text": "Hai bờ là cùng một địa điểm"
+        },
+        {
+          "id": "q10-o2",
+          "text": "Chỉ bờ gửi có đóng góp"
+        },
+        {
+          "id": "q10-o3",
+          "text": "Bờ nhận không cần chuẩn bị"
+        }
+      ],
+      "answerId": "q10-o0",
+      "explanation": "Phương Đông 1 rời Đồ Sơn ngày 11/10/1962, do Lê Văn Một làm thuyền trưởng và Bông Văn Dĩa làm chính trị viên. Chuyến tàu kết nối thành công với khu vực tiếp nhận Cà Mau trong tháng 10/1962. Tuyến vận tải biển được mở năm 1961; chuyến Phương Đông 1 trong câu chuyện diễn ra năm 1962. Hai mốc này khác nhau. Chi viện và tổ chức tiếp nhận thể hiện quan hệ giữa hai miền trong kháng chiến.",
+      "sourceIds": [
+        "H14"
+      ]
+    },
+    {
+      "id": "q-11",
+      "eventId": "chiec-dai",
+      "prompt": "Hồ sơ chiếc đài phân biệt những mốc nào?",
+      "options": [
+        {
+          "id": "q11-o0",
+          "text": "Tin tối 30/4 và giải phóng Côn Đảo ngày 1/5/1975"
+        },
+        {
+          "id": "q11-o1",
+          "text": "Năm 1941 và năm 1944"
+        },
+        {
+          "id": "q11-o2",
+          "text": "Ngày xuất phát và ngày cập bến 1962"
+        },
+        {
+          "id": "q11-o3",
+          "text": "Năm 1954 và năm 1960"
+        }
+      ],
+      "answerId": "q11-o0",
+      "explanation": "Tối 30/4/1975, chiếc đài được dùng để nghe tin Sài Gòn được giải phóng. Tin tức được truyền giữa các khu giam giữ. Bài giới thiệu của bảo tàng phân biệt thời điểm nhận tin với giải phóng Côn Đảo ngày 1/5/1975. Đại thắng mùa Xuân 1975 kết thúc cuộc kháng chiến. Thống nhất nhà nước năm 1976 là mốc tiếp theo, không đồng nhất với ngày 30/4/1975. Hòa bình mở ra công việc khôi phục và xây dựng đất nước.",
+      "sourceIds": [
+        "H21"
+      ]
+    },
+    {
+      "id": "q-12",
+      "eventId": "chiec-dai",
+      "prompt": "Chiếc đài giúp những người bị giam giữ làm gì?",
+      "options": [
+        {
+          "id": "q12-o0",
+          "text": "Xác nhận tin tức từ bên ngoài"
+        },
+        {
+          "id": "q12-o1",
+          "text": "Thay đổi kết quả lịch sử"
+        },
+        {
+          "id": "q12-o2",
+          "text": "Định vị chính xác tuyến biển"
+        },
+        {
+          "id": "q12-o3",
+          "text": "Điều hành chiến dịch Điện Biên Phủ"
+        }
+      ],
+      "answerId": "q12-o0",
+      "explanation": "Tối 30/4/1975, chiếc đài được dùng để nghe tin Sài Gòn được giải phóng. Tin tức được truyền giữa các khu giam giữ. Bài giới thiệu của bảo tàng phân biệt thời điểm nhận tin với giải phóng Côn Đảo ngày 1/5/1975. Đại thắng mùa Xuân 1975 kết thúc cuộc kháng chiến. Thống nhất nhà nước năm 1976 là mốc tiếp theo, không đồng nhất với ngày 30/4/1975. Hòa bình mở ra công việc khôi phục và xây dựng đất nước.",
+      "sourceIds": [
+        "H21"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "H02",
+      "title": "Bằng khen truy tặng Kim Đồng",
+      "publisher": "Bảo tàng Lịch sử Quốc gia",
+      "url": "https://baotanglichsu.vn/VI/Articles/1002/14283/bang-khen-cua-tong-bo-viet-minh-truy-tang-anh-kim-djong-nguoi-djoi-truong-djau-tien-cua-djoi-tntp-hcm.html"
+    },
+    {
+      "id": "H04",
+      "title": "Từ Hũ gạo cứu đói đến Tuần lễ vàng",
+      "publisher": "Bảo tàng Lịch sử Quốc gia",
+      "url": "https://baotanglichsuquocgia.vn/vi/Articles/2001/66851/suc-manh-cua-long-dan-tu-hu-gao-cuu-djoi-djen-tuan-le-vang-va-bai-hoc-cua-lich-su.html"
+    },
+    {
+      "id": "H10",
+      "title": "Chiếc xe đạp thồ huyền thoại",
+      "publisher": "Sở Văn hóa, Thể thao và Du lịch Điện Biên",
+      "url": "https://svhttdl.dienbien.gov.vn/ditich/pages/2015/Chiec-xe-dap-tho-huyen-thoai-tai-Bao-tang-Chien-th-7521.aspx"
+    },
+    {
+      "id": "H14",
+      "title": "Nơi khai mở tuyến đường huyền thoại",
+      "publisher": "Nhân Dân",
+      "url": "https://nhandan.vn/noi-khai-mo-tuyen-duong-huyen-thoai-post669706.html"
+    },
+    {
+      "id": "H21",
+      "title": "Chiếc đài bán dẫn Sony dùng nghe tin miền Nam hoàn toàn giải phóng",
+      "publisher": "Bảo tàng Lịch sử Quốc gia",
+      "url": "https://baotanglichsu.vn/VI/Articles/1002/13728/chiec-djai-ban-dan-sony-dung-nghe-tin-mien-nam-hoan-toan-giai-phong.html"
+    }
+  ],
+  "limitations": "Bộ khởi tạo gồm 6 hồ sơ, 12 câu hỏi từ tư liệu hiện có; không phải bộ 26 hồ sơ/52 câu hỏi hay toàn bộ giáo trình đến 2018. Chưa có PDF giáo trình và ảnh tư liệu được cung cấp.",
+  "periods": [
+    {
+      "id": "1954-1960",
+      "label": "1954–1960",
+      "start": 1954,
+      "end": 1960
+    },
+    {
+      "id": "1961-1965",
+      "label": "1961–1965",
+      "start": 1961,
+      "end": 1965
+    },
+    {
+      "id": "1966-1975",
+      "label": "1966–1975",
+      "start": 1966,
+      "end": 1975
+    }
+  ]
+}

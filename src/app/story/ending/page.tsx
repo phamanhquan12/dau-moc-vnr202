@@ -1,1 +1,0 @@
-import Link from 'next/link';import Reflection from '../../../components/Reflection';export default function Ending(){return <div className="reading"><h1>Ngày mai của bạn</h1><Reflection/><Link href="/">Trở lại sổ tay ↗</Link></div>}
