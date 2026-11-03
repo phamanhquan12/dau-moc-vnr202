@@ -440,6 +440,9 @@ test("beginner guide leads to a first profile and video sources remain usable if
     await expect(
       page.getByRole("link", { name: "Xem trực tiếp trên YouTube ↗" }),
     ).toBeVisible();
+    const playerBox = await page.locator("iframe").boundingBox();
+    expect(playerBox!.width).toBeGreaterThanOrEqual(200);
+    expect(playerBox!.height).toBeGreaterThanOrEqual(200);
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth > innerWidth,
